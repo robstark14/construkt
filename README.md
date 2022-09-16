@@ -49,14 +49,14 @@ Submittals with workflow
 <h1>Specialty Contractors<h1>  
 
  
-    1. Daily Logs  : upload and download photos 
+1. Daily Logs  : upload and download photos 
 
-    2. Scheduled work: with manpower, duration, assignee, upload pdf/download 
+2. Scheduled work: with manpower, duration, assignee, upload pdf/download 
 
-    3. Shopdrawings: upload and download, assign in workflow 
+3. Shopdrawings: upload and download, assign in workflow 
 
-    4. Can raise RFI to the owner/general contractor for inquiries - assign in workflow 
+4. Can raise RFI to the owner/general contractor for inquiries - assign in workflow 
 
-    5. Construction drawings – can download  
+5. Construction drawings – can download  
 
-    6. Dashboard- Summary of submittals, QA/QC with analytics and open items 
+6. Dashboard- Summary of submittals, QA/QC with analytics and open items 
