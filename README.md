@@ -46,7 +46,7 @@ Submittals with workflow
     Summary of design, QA/QC with analytics and open items 
 
 
-<h1>Specialty Contractors<h1>  
+<h1>Specialty Contractors</h1>  
 
  
 1. Daily Logs  : upload and download photos 
