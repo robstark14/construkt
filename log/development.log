@@ -1,0 +1,948 @@
+Started GET "/" for 127.0.0.1 at 2022-09-20 16:25:27 +0800
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/share/rvm/gems/ruby-3.0.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 2.9ms | Allocations: 730)
+Completed 200 OK in 29ms (Views: 11.8ms | ActiveRecord: 0.0ms | Allocations: 6956)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-20 16:30:10 +0800
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/share/rvm/gems/ruby-3.0.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 2.1ms | Allocations: 625)
+Completed 200 OK in 14ms (Views: 6.1ms | ActiveRecord: 0.0ms | Allocations: 5692)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-20 16:31:06 +0800
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/share/rvm/gems/ruby-3.0.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.5ms | Allocations: 626)
+Completed 200 OK in 14ms (Views: 7.0ms | ActiveRecord: 0.0ms | Allocations: 5693)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-20 16:37:51 +0800
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 5.8ms | Allocations: 2574)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 2662)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms | Allocations: 7839)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Pages#home</h1>
+<p>Find me in app/views/pages/home.html.erb</p>
+<%= content_tag (:div, '', id: "app", data:{
+    controller: "react"
+})%>
+
+):
+1:    <h1>Pages#home</h1>
+2:    <p>Find me in app/views/pages/home.html.erb</p>
+3:    <%= content_tag (:div, '', id: "app", data:{
+4:        controller: "react"
+5:    })%>
+  
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:5: syntax error, unexpected ')', expecting `end'
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:5: syntax error, unexpected ')', expecting `end'
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:5: syntax error, unexpected ')', expecting `end'
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:5: syntax error, unexpected ')', expecting `end'
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:5: syntax error, unexpected ')', expecting `end'
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:5: syntax error, unexpected ')', expecting `end'
+Started GET "/" for 127.0.0.1 at 2022-09-20 16:41:17 +0800
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1091)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 1164)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms | Allocations: 2118)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Pages#home</h1>
+<p>Find me in app/views/pages/home.html.erb</p>
+<%= content_tag (:div, "", id: "app", data:{
+    controller: "react"
+})%>
+
+):
+1:    <h1>Pages#home</h1>
+2:    <p>Find me in app/views/pages/home.html.erb</p>
+3:    <%= content_tag (:div, "", id: "app", data:{
+4:        controller: "react"
+5:    })%>
+  
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:5: syntax error, unexpected ')', expecting `end'
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:5: syntax error, unexpected ')', expecting `end'
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:5: syntax error, unexpected ')', expecting `end'
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:5: syntax error, unexpected ')', expecting `end'
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:5: syntax error, unexpected ')', expecting `end'
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:5: syntax error, unexpected ')', expecting `end'
+Started GET "/" for 127.0.0.1 at 2022-09-20 16:42:03 +0800
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 4.2ms | Allocations: 2076)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 2164)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms | Allocations: 7341)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Pages#home</h1>
+<p>Find me in app/views/pages/home.html.erb</p>
+<%= content_tag (:div, "", id: "app", data:{
+    controller: "react"
+})%>
+
+):
+1:    <h1>Pages#home</h1>
+2:    <p>Find me in app/views/pages/home.html.erb</p>
+3:    <%= content_tag (:div, "", id: "app", data:{
+4:        controller: "react"
+5:    })%>
+  
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:5: syntax error, unexpected ')', expecting `end'
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:5: syntax error, unexpected ')', expecting `end'
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:5: syntax error, unexpected ')', expecting `end'
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:5: syntax error, unexpected ')', expecting `end'
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:5: syntax error, unexpected ')', expecting `end'
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:5: syntax error, unexpected ')', expecting `end'
+Started GET "/" for 127.0.0.1 at 2022-09-20 16:43:01 +0800
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1081)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | Allocations: 1154)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 1416)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Pages#home</h1>
+<p>Find me in app/views/pages/home.html.erb</p>
+<%= content_tag (:div, "", id: "app", data:{
+    controller: "react"
+})%>
+
+):
+1:    <h1>Pages#home</h1>
+2:    <p>Find me in app/views/pages/home.html.erb</p>
+3:    <%= content_tag (:div, "", id: "app", data:{
+4:        controller: "react"
+5:    })%>
+  
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:5: syntax error, unexpected ')', expecting `end'
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:5: syntax error, unexpected ')', expecting `end'
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:5: syntax error, unexpected ')', expecting `end'
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:5: syntax error, unexpected ')', expecting `end'
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:5: syntax error, unexpected ')', expecting `end'
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:5: syntax error, unexpected ')', expecting `end'
+Started GET "/" for 127.0.0.1 at 2022-09-20 16:48:08 +0800
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 3.3ms | Allocations: 2076)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 2164)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms | Allocations: 7341)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Pages#home</h1>
+<p>Find me in app/views/pages/home.html.erb</p>
+<%= content_tag (:div, "", id: "app", data: {
+    controller: "react"
+})%>
+
+):
+1:    <h1>Pages#home</h1>
+2:    <p>Find me in app/views/pages/home.html.erb</p>
+3:    <%= content_tag (:div, "", id: "app", data: {
+4:        controller: "react"
+5:    })%>
+  
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:5: syntax error, unexpected ')', expecting `end'
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:5: syntax error, unexpected ')', expecting `end'
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:5: syntax error, unexpected ')', expecting `end'
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:5: syntax error, unexpected ')', expecting `end'
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:5: syntax error, unexpected ')', expecting `end'
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:5: syntax error, unexpected ')', expecting `end'
+Started GET "/" for 127.0.0.1 at 2022-09-20 16:51:53 +0800
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.4ms | Allocations: 450)
+  Rendered layout layouts/application.html.erb (Duration: 820.7ms | Allocations: 71370)
+Completed 200 OK in 839ms (Views: 824.1ms | ActiveRecord: 0.0ms | Allocations: 76597)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-20 16:59:33 +0800
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.3ms | Allocations: 450)
+  Rendered layout layouts/application.html.erb (Duration: 245.0ms | Allocations: 30979)
+Completed 200 OK in 256ms (Views: 248.6ms | ActiveRecord: 0.0ms | Allocations: 36206)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-20 17:04:21 +0800
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.3ms | Allocations: 450)
+  Rendered layout layouts/application.html.erb (Duration: 259.4ms | Allocations: 31200)
+Completed 200 OK in 270ms (Views: 263.7ms | ActiveRecord: 0.0ms | Allocations: 36427)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-20 17:05:31 +0800
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 46)
+  Rendered layout layouts/application.html.erb (Duration: 173.4ms | Allocations: 12217)
+Completed 200 OK in 180ms (Views: 179.6ms | ActiveRecord: 0.0ms | Allocations: 12511)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-20 17:07:19 +0800
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 46)
+  Rendered layout layouts/application.html.erb (Duration: 475.6ms | Allocations: 33328)
+Completed 200 OK in 481ms (Views: 480.4ms | ActiveRecord: 0.0ms | Allocations: 33621)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-20 17:12:35 +0800
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 46)
+  Rendered layout layouts/application.html.erb (Duration: 411.6ms | Allocations: 33356)
+Completed 200 OK in 414ms (Views: 413.2ms | Allocations: 33641)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-20 17:13:08 +0800
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 46)
+  Rendered layout layouts/application.html.erb (Duration: 419.6ms | Allocations: 33354)
+Completed 200 OK in 421ms (Views: 420.3ms | Allocations: 33639)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-20 17:13:22 +0800
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 46)
+  Rendered layout layouts/application.html.erb (Duration: 412.4ms | Allocations: 33782)
+Completed 200 OK in 414ms (Views: 413.2ms | Allocations: 34068)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-20 18:03:54 +0800
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 46)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 2026)
+Completed 200 OK in 10ms (Views: 10.0ms | Allocations: 2311)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-20 19:23:48 +0800
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 46)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 2022)
+Completed 200 OK in 7ms (Views: 6.8ms | Allocations: 2307)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-20 19:52:06 +0800
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 46)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 2027)
+Completed 200 OK in 8ms (Views: 7.7ms | Allocations: 2313)
+
+
+  [1m[35m (1714.1ms)[0m  [1m[35mCREATE DATABASE "construkt_app_postgresql" ENCODING = 'unicode'[0m
+  [1m[35m (824.2ms)[0m  [1m[35mCREATE DATABASE "construkt_app_test" ENCODING = 'unicode'[0m
+Started GET "/" for 127.0.0.1 at 2022-09-21 04:01:02 +0800
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 7.9ms | Allocations: 452)
+  Rendered layout layouts/application.html.erb (Duration: 910.1ms | Allocations: 23750)
+Completed 200 OK in 980ms (Views: 930.2ms | ActiveRecord: 0.0ms | Allocations: 28976)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-21 04:32:40 +0800
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.3ms | Allocations: 451)
+  Rendered layout layouts/application.html.erb (Duration: 642.0ms | Allocations: 31808)
+Completed 200 OK in 653ms (Views: 647.9ms | ActiveRecord: 0.0ms | Allocations: 36016)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-21 04:48:24 +0800
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 46)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 2013)
+Completed 200 OK in 6ms (Views: 5.6ms | Allocations: 2301)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-21 05:02:58 +0800
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.7ms | Allocations: 108)
+  Rendered layout layouts/application.html.erb (Duration: 52.3ms | Allocations: 2366)
+Completed 200 OK in 56ms (Views: 55.7ms | Allocations: 3237)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-21 05:03:25 +0800
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 1992)
+Completed 200 OK in 7ms (Views: 5.9ms | Allocations: 2278)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-21 05:03:25 +0800
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 20.7ms | Allocations: 1984)
+Completed 200 OK in 25ms (Views: 23.8ms | Allocations: 2269)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-21 05:04:40 +0800
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.9ms | Allocations: 362)
+  Rendered layout layouts/application.html.erb (Duration: 726.2ms | Allocations: 49317)
+Completed 200 OK in 824ms (Views: 750.1ms | ActiveRecord: 0.0ms | Allocations: 53525)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-21 05:07:25 +0800
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 649.1ms | Allocations: 27559)
+Completed 200 OK in 651ms (Views: 650.5ms | ActiveRecord: 0.0ms | Allocations: 27850)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-21 05:08:02 +0800
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 699.7ms | Allocations: 28642)
+Completed 200 OK in 702ms (Views: 701.6ms | ActiveRecord: 0.0ms | Allocations: 28930)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-21 05:22:58 +0800
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 1987)
+Completed 200 OK in 9ms (Views: 8.3ms | Allocations: 2273)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-21 05:22:59 +0800
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 1985)
+Completed 200 OK in 10ms (Views: 9.6ms | Allocations: 2271)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-21 05:23:00 +0800
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 1984)
+Completed 200 OK in 6ms (Views: 5.9ms | Allocations: 2269)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-21 05:23:00 +0800
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 1980)
+Completed 200 OK in 11ms (Views: 10.2ms | Allocations: 2265)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-21 05:23:00 +0800
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 1976)
+Completed 200 OK in 8ms (Views: 7.2ms | Allocations: 2261)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-21 05:23:01 +0800
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 1988)
+Completed 200 OK in 14ms (Views: 13.3ms | Allocations: 2274)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-21 05:23:01 +0800
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 1988)
+Completed 200 OK in 8ms (Views: 7.2ms | Allocations: 2273)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-21 05:23:01 +0800
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 1984)
+Completed 200 OK in 8ms (Views: 7.4ms | Allocations: 2269)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-21 05:23:02 +0800
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 1981)
+Completed 200 OK in 9ms (Views: 8.7ms | Allocations: 2267)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-21 05:23:02 +0800
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 1990)
+Completed 200 OK in 16ms (Views: 14.8ms | Allocations: 2275)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-21 05:23:02 +0800
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 1994)
+Completed 200 OK in 5ms (Views: 4.8ms | Allocations: 2279)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-21 05:27:24 +0800
+  
+AbstractController::ActionNotFound (The action 'home' could not be found for PagesController):
+  
+actionpack (7.0.4) lib/abstract_controller/base.rb:146:in `process'
+actionview (7.0.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/cookies.rb:696:in `call'
+activerecord (7.0.4) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2022-09-21 05:29:32 +0800
+Processing by PagesController#home as HTML
+Completed 500 Internal Server Error in 3ms (Allocations: 1658)
+
+
+  
+ActionView::MissingTemplate (Missing template pages/home with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/rob/Documents/rails/construkt/app/views"
+  * "/usr/share/rvm/gems/ruby-3.0.0/gems/actiontext-7.0.4/app/views"
+  * "/usr/share/rvm/gems/ruby-3.0.0/gems/actionmailbox-7.0.4/app/views"
+
+Did you mean?  pages/react_app
+               layouts/mailer
+               rails/conductor/action_mailbox/inbound_emails/show
+               layouts/rails/conductor
+               rails/conductor/action_mailbox/inbound_emails/index
+               layouts/application):
+  
+app/controllers/pages_controller.rb:3:in `home'
+Started GET "/" for 127.0.0.1 at 2022-09-21 05:31:00 +0800
+Processing by PagesController#home as HTML
+Completed 500 Internal Server Error in 5ms (Allocations: 1592)
+
+
+  
+ActionView::MissingTemplate (Missing template pages/home with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/rob/Documents/rails/construkt/app/views"
+  * "/usr/share/rvm/gems/ruby-3.0.0/gems/actiontext-7.0.4/app/views"
+  * "/usr/share/rvm/gems/ruby-3.0.0/gems/actionmailbox-7.0.4/app/views"
+
+Did you mean?  pages/react_app
+               layouts/mailer
+               rails/conductor/action_mailbox/inbound_emails/show
+               layouts/rails/conductor
+               rails/conductor/action_mailbox/inbound_emails/index
+               layouts/application):
+  
+app/controllers/pages_controller.rb:3:in `home'
+Started GET "/" for 127.0.0.1 at 2022-09-21 05:31:01 +0800
+Processing by PagesController#home as HTML
+Completed 500 Internal Server Error in 3ms (Allocations: 1187)
+
+
+  
+ActionView::MissingTemplate (Missing template pages/home with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/rob/Documents/rails/construkt/app/views"
+  * "/usr/share/rvm/gems/ruby-3.0.0/gems/actiontext-7.0.4/app/views"
+  * "/usr/share/rvm/gems/ruby-3.0.0/gems/actionmailbox-7.0.4/app/views"
+
+Did you mean?  pages/react_app
+               layouts/mailer
+               rails/conductor/action_mailbox/inbound_emails/show
+               layouts/rails/conductor
+               rails/conductor/action_mailbox/inbound_emails/index
+               layouts/application):
+  
+app/controllers/pages_controller.rb:3:in `home'
+Started GET "/" for 127.0.0.1 at 2022-09-21 05:32:00 +0800
+Processing by ReactController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/react_app.html.erb within layouts/application
+  Rendered pages/react_app.html.erb within layouts/application (Duration: 0.8ms | Allocations: 99)
+  Rendered layout layouts/application.html.erb (Duration: 582.0ms | Allocations: 27951)
+Completed 200 OK in 586ms (Views: 585.4ms | Allocations: 28890)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-21 05:33:05 +0800
+Processing by ReactController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/react_app.html.erb within layouts/application
+  Rendered pages/react_app.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 1990)
+Completed 200 OK in 9ms (Views: 8.1ms | Allocations: 2260)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-21 05:35:15 +0800
+Processing by ReactController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/react_app.html.erb within layouts/application
+  Rendered pages/react_app.html.erb within layouts/application (Duration: 1.7ms | Allocations: 101)
+  Rendered layout layouts/application.html.erb (Duration: 606.6ms | Allocations: 29189)
+Completed 200 OK in 611ms (Views: 610.7ms | Allocations: 30157)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-21 05:35:21 +0800
+Processing by ReactController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/react_app.html.erb within layouts/application
+  Rendered pages/react_app.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 1978)
+Completed 200 OK in 7ms (Views: 6.3ms | Allocations: 2249)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-21 05:47:27 +0800
+Processing by ReactController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/react_app.html.erb within layouts/application
+  Rendered pages/react_app.html.erb within layouts/application (Duration: 0.8ms | Allocations: 103)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 2412)
+Completed 200 OK in 11ms (Views: 11.0ms | Allocations: 3413)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-21 05:47:36 +0800
+Processing by ReactController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/react_app.html.erb within layouts/application
+  Rendered pages/react_app.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 1994)
+Completed 200 OK in 6ms (Views: 5.3ms | Allocations: 2264)
+
+
+Started GET "/users/" for 127.0.0.1 at 2022-09-21 05:47:40 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+  [1m[35m (2268.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (213.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (39.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5870975360544203175)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20220920214911)
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (216.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp(6), "remember_created_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (72.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (68.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (18.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220920214911"]]
+  [1m[36mTRANSACTION (16.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (70.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-09-20 21:54:04.130182"], ["updated_at", "2022-09-20 21:54:04.130182"]]
+  [1m[36mTRANSACTION (32.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(5870975360544203175)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2022-09-21 05:54:25 +0800
+  
+NoMethodError (undefined method `devise_for' for #<ActionDispatch::Routing::Mapper:0x00007f00d0646b30 @set=#<ActionDispatch::Routing::RouteSet:0x000055a69c7e8888>, @draw_paths=[#<Pathname:/home/rob/Documents/rails/construkt/config/routes>], @scope=#<ActionDispatch::Routing::Mapper::Scope:0x00007f00d0646ab8 @hash={:path_names=>{:new=>"new", :edit=>"edit"}}, @parent=#<ActionDispatch::Routing::Mapper::Scope:0x000055a69bead660 @hash=nil, @parent=nil, @scope_level=nil>, @scope_level=nil>, @concerns={}>):
+  
+config/routes.rb:2:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/" for 127.0.0.1 at 2022-09-21 06:29:56 +0800
+  
+NoMethodError (undefined method `devise_for' for #<ActionDispatch::Routing::Mapper:0x00007f00e114ac38 @set=#<ActionDispatch::Routing::RouteSet:0x000055a69c7e8888>, @draw_paths=[#<Pathname:/home/rob/Documents/rails/construkt/config/routes>], @scope=#<ActionDispatch::Routing::Mapper::Scope:0x00007f00e114abe8 @hash={:path_names=>{:new=>"new", :edit=>"edit"}}, @parent=#<ActionDispatch::Routing::Mapper::Scope:0x000055a69bead660 @hash=nil, @parent=nil, @scope_level=nil>, @scope_level=nil>, @concerns={}>):
+  
+config/routes.rb:3:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/" for 127.0.0.1 at 2022-09-21 18:00:42 +0800
+  [1m[36mActiveRecord::SchemaMigration Pluck (39.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ReactController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/react_app.html.erb within layouts/application
+  Rendered pages/react_app.html.erb within layouts/application (Duration: 13.1ms | Allocations: 353)
+  Rendered layout layouts/application.html.erb (Duration: 554.3ms | Allocations: 24712)
+Completed 200 OK in 703ms (Views: 645.0ms | ActiveRecord: 0.0ms | Allocations: 29950)
+
+
+Started GET "/users/" for 127.0.0.1 at 2022-09-21 18:01:48 +0800
+  
+ActionController::RoutingError (uninitialized constant UsersController):
+  
+Started GET "/users/" for 127.0.0.1 at 2022-09-21 18:17:55 +0800
+  
+ActionController::RoutingError (uninitialized constant UsersController):
+  
+Started GET "/" for 127.0.0.1 at 2022-09-21 18:18:00 +0800
+Processing by ReactController#home as HTML
+Completed 401 Unauthorized in 30ms (Allocations: 3873)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-09-21 18:18:00 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 2.8ms | Allocations: 843)
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 46.3ms | Allocations: 4245)
+  Rendered layout layouts/application.html.erb (Duration: 49.2ms | Allocations: 6081)
+Completed 200 OK in 212ms (Views: 51.1ms | ActiveRecord: 75.8ms | Allocations: 27892)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-09-21 18:46:43 +0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/shared/_error_messages.html.erb (Duration: 1.7ms | Allocations: 227)
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 1.4ms | Allocations: 221)
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 12.5ms | Allocations: 2246)
+  Rendered layout layouts/application.html.erb (Duration: 15.6ms | Allocations: 4079)
+Completed 200 OK in 19ms (Views: 18.0ms | Allocations: 5392)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-09-21 18:46:47 +0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 82)
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1226)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 3002)
+Completed 200 OK in 11ms (Views: 9.3ms | Allocations: 3629)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-09-21 18:46:50 +0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 82)
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1226)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 3001)
+Completed 200 OK in 10ms (Views: 8.6ms | Allocations: 3627)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-22 00:59:39 +0800
+  [1m[36mActiveRecord::SchemaMigration Pluck (54.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ReactController#home as HTML
+Completed 401 Unauthorized in 137ms (ActiveRecord: 0.0ms | Allocations: 5999)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-09-22 00:59:41 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 2.8ms | Allocations: 848)
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 109.9ms | Allocations: 4262)
+  Rendered layout layouts/application.html.erb (Duration: 484.8ms | Allocations: 24796)
+Completed 200 OK in 688ms (Views: 575.5ms | ActiveRecord: 60.7ms | Allocations: 45441)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-09-22 01:04:04 +0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/shared/_error_messages.html.erb (Duration: 1.0ms | Allocations: 229)
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 221)
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 11.9ms | Allocations: 2247)
+  Rendered layout layouts/application.html.erb (Duration: 15.7ms | Allocations: 4081)
+Completed 200 OK in 19ms (Views: 18.2ms | ActiveRecord: 0.0ms | Allocations: 5401)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-09-22 03:34:46 +0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/shared/_error_messages.html.erb (Duration: 3.2ms | Allocations: 222)
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 2.5ms | Allocations: 514)
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 12.7ms | Allocations: 2441)
+  Rendered layout layouts/application.html.erb (Duration: 18.5ms | Allocations: 4533)
+Completed 200 OK in 24ms (Views: 22.4ms | Allocations: 6033)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-09-22 03:34:48 +0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 82)
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 8.1ms | Allocations: 1226)
+  Rendered layout layouts/application.html.erb (Duration: 18.4ms | Allocations: 3002)
+Completed 200 OK in 24ms (Views: 21.0ms | Allocations: 3630)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-09-22 03:35:49 +0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/shared/_error_messages.html.erb (Duration: 1.1ms | Allocations: 225)
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 2.2ms | Allocations: 514)
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 22.1ms | Allocations: 2445)
+  Rendered layout layouts/application.html.erb (Duration: 29.4ms | Allocations: 4544)
+Completed 200 OK in 41ms (Views: 38.6ms | Allocations: 6049)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-09-22 03:36:40 +0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/shared/_error_messages.html.erb (Duration: 1.6ms | Allocations: 222)
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 1.8ms | Allocations: 514)
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 9.8ms | Allocations: 2441)
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | Allocations: 4528)
+Completed 200 OK in 20ms (Views: 19.1ms | Allocations: 6009)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-09-22 03:37:05 +0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/shared/_error_messages.html.erb (Duration: 4.8ms | Allocations: 222)
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 2.6ms | Allocations: 514)
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 15.2ms | Allocations: 2441)
+  Rendered layout layouts/application.html.erb (Duration: 22.6ms | Allocations: 4528)
+Completed 200 OK in 37ms (Views: 29.1ms | Allocations: 6013)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-09-22 03:37:07 +0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 82)
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1226)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 3001)
+Completed 200 OK in 18ms (Views: 15.8ms | Allocations: 3622)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5870975360544203175)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddMoreColumnsToUser (20220921194139)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(5870975360544203175)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5870975360544203175)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddMoreColumnsToUser (20220921194139)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5870975360544203175)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5870975360544203175)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddMoreColumnsToUser (20220921194139)
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (82.9ms)[0m  [1m[35mALTER TABLE "users" ADD "first_name" character varying(50) NOT NULL[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ADD "last_name" character varying(50) NOT NULL[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "role" character varying(50) NOT NULL[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "company_name" character varying(100) NOT NULL[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "package" character varying(5)[0m
+  [1m[35m (38.5ms)[0m  [1m[35mALTER TABLE "users" ADD "open_items_count" integer DEFAULT 0[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220921194139"]]
+  [1m[36mTRANSACTION (10.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (51.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_advisory_unlock(5870975360544203175)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (36.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "robellempajarin@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (31.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "first_name", "last_name", "role", "company_name", "package", "open_items_count") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["email", "robellempajarin@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-09-21 20:11:23.598228"], ["updated_at", "2022-09-21 20:11:23.598228"], ["first_name", "Rob"], ["last_name", "Pajarin"], ["role", "admin"], ["company_name", "admin"], ["package", nil], ["open_items_count", 0]]
+  [1m[36mTRANSACTION (13.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-09-22 04:11:43 +0800
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.7ms | Allocations: 223)
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 1.8ms | Allocations: 525)
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 7.8ms | Allocations: 2483)
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | Allocations: 4578)
+Completed 200 OK in 23ms (Views: 16.1ms | ActiveRecord: 0.0ms | Allocations: 8323)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-09-22 04:11:54 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 162)
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 5.6ms | Allocations: 1676)
+  Rendered layout layouts/application.html.erb (Duration: 10.9ms | Allocations: 3502)
+Completed 200 OK in 17ms (Views: 15.3ms | ActiveRecord: 0.0ms | Allocations: 4886)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-09-22 04:12:12 +0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"robellempajarin@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "robellempajarin@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 326ms (ActiveRecord: 1.0ms | Allocations: 6685)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-22 04:12:13 +0800
+Processing by ReactController#home as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering pages/react_app.html.erb within layouts/application
+  Rendered pages/react_app.html.erb within layouts/application (Duration: 21.3ms | Allocations: 98)
+  Rendered layout layouts/application.html.erb (Duration: 40.3ms | Allocations: 1971)
+Completed 200 OK in 50ms (Views: 44.8ms | ActiveRecord: 0.6ms | Allocations: 4114)
+
+
