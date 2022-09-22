@@ -1,24 +1,27 @@
 import React from 'react'
 import ReactDOM from "react-dom/client";
 
-// import {
-//   BrowserRouter,
-//   Routes,
-//   Route,
-// } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom";
 
-// import PlacesList from "./places_list"
-// import NewInternetSpeed from "./new_internet_speed"
+import Home from "./Home";
+import NewUser from './NewUser';
+import Users from './Users';
 
 function App() {
   return (
-    // <BrowserRouter>
-    //   <Routes>
-    //     {/* <Route path="/new-internet-speed" element={<NewInternetSpeed />} />
-    //     <Route path="*" element={<PlacesList />} /> */}
-    //   </Routes>
-    // </BrowserRouter>
-    <div>hello</div>
+    <Router>
+      <Routes>
+        <Route path="*" element={<Home />} />
+        <Route path="/users" element={<Users />} />
+        <Route path="/new-user" element={<NewUser />} />
+        
+        
+      </Routes>
+    </Router>
   );
 }
 
