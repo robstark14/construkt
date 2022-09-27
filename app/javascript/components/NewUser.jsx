@@ -1,62 +1,111 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import IconButton from "@material-ui/core/IconButton";
 import InputLabel from "@material-ui/core/InputLabel";
 import Visibility from "@material-ui/icons/Visibility";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import VisibilityOff from "@material-ui/icons/VisibilityOff";
 import Input from "@material-ui/core/Input";
+import { useNavigate } from 'react-router-dom';
 
 function NewUser() {
-    const [values, setValues] = useState({
-        firstName: "",
-        lastName: "",
-        email:"",
-        password: "",
-        showPassword: true,
-        role: "",
-        company: "",
-        package: ""
-      });
+  const [values, setValues] = useState({
+    firstName: "",
+    lastName: "",
+    email:"",
+    password: "",
+    showPassword: true,
+    role: "",
+    company: "",
+    package: ""
+  });
+  
+  const navigate = useNavigate()
+  const createUser= async () =>{
+  const apiEndpoint ="/api/new-user-create"
+  const data = {
+    "first_name": values.firstName,
+    "last_name": values.lastName,
+    "email": values.email,
+    "password": values.password,
+    "role": values.role,
+    "company": values.company,
+    "package": values.package
+  }
+      try{
+          const response = await fetch(apiEndpoint, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+            
+          })
 
-      const handleClickShowPassword = () => {
-        setValues({ ...values, showPassword: !values.showPassword });
-      };
-      
-      const handleMouseDownPassword = (event) => {
-        event.preventDefault();
-      };
-      
-      const handlePasswordChange = (prop) => (event) => {
-        setValues({ ...values, [prop]: event.target.value });
-      };
+          if (response.ok) {
+            navigate("/users")
+          } 
+      } catch (err) {
+          console.log(err.message);
+      }
+  
+}
+
+
+
+  const handleClickShowPassword = () => {
+    setValues({ ...values, showPassword: !values.showPassword });
+  };
+  
+  const handleMouseDownPassword = (event) => {
+    event.preventDefault();
+  };
+  
+  const handlePasswordChange = (prop) => (event) => {
+    setValues({ ...values, [prop]: event.target.value });
+  };
   const roles= ["Admin", "Document Controller", "Vice President", "Project Manager", "Construction Manager", 
                 "MEP Manager", "Consultant", "Site Engineer", "Site Architect", "QA/QC Engineer", "Contractor-Engineer",
                 "Contractor-Architect", "Contractor-Manager", "Contractor-Doc-Controller","Contractor-Foreman", "Contractor-Leadman", "Vendor/Supplier"]
-  const companies = ['Comp1', 'Comp2', 'Comp3', 'Comp4', 'Comp5']
+  const companies = ['Company A', 'Company B', 'Company C', 'Company D', 'Company E']
   const packages = ['BA101', 'BB102', 'BA412', 'BT101', 'BC222']
 
   return (
     <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col my-2">
-    <h1 className='font-bold text-3xl mb-6'>Create New User</h1>
+    <h1 className='font-bold text-3xl mb-6'>New User</h1>
     <div className="-mx-3 md:flex mb-6">
       <div className="md:w-1/2 px-3 mb-6 md:mb-0">
         <label className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" htmlFor="grid-first-name">
           First Name
         </label>
-        <input className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" id="grid-first-name" type="text" placeholder="Jon"/>
+        <input className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" id="grid-first-name" type="text" placeholder="Jon" 
+         onChange={(e) => {
+          return setValues({ ...values, firstName: e.target.value });
+        }}
+        value={values.firstName}
+        />
         {/* <p className="text-red text-xs italic">Please fill out this field.</p> */}
       </div>
       <div className="md:w-1/2 px-3">
         <label className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" htmlFor="grid-last-name">
           Last Name
         </label>
-        <input className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="grid-last-name" type="text" placeholder="Snow"/>
+        <input className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="grid-last-name" type="text" placeholder="Snow"
+           onChange={(e) => {
+            return setValues({ ...values, lastName: e.target.value });
+          }}
+          value={values.lastName}
+        />
       </div>
       <div className="md:w-1/2 px-3">
         <label className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" htmlFor="grid-last-name">
           Email
         </label>
-        <input className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="grid-last-name" type="text" placeholder="name@project.com"/>
+        <input className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="grid-last-name" type="text" placeholder="name@project.com"
+           onChange={(e) => {
+            return setValues({ ...values, email: e.target.value });
+          }}
+          value={values.email}
+        />
       </div>
     </div>
     <div className="-mx-3 md:flex mb-6">
@@ -145,6 +194,7 @@ function NewUser() {
         </div>
       </div>
     </div>
+      <button onClick={()=>createUser()} type="submit" className="text-white bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mx-auto mb-2 mt-4 w-[150px]">Submit</button>
   </div>
   )
 }

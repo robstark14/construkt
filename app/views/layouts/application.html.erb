@@ -11,8 +11,12 @@
   </head>
 
   <body style= "margin:0;, padding:0;">
-    <nav class="w-full h-[50px] text-white p-2 bg-sky-700 border-b">
-      Construkt
+    <nav class="w-full h-[50px] text-white p-2 bg-sky-700 border-b flex justify-between">
+      <h1 class = "text-xl font-bold text-shadow text-yellow">Construkt</h1>
+      <% if current_user %>
+      <h1 class = "text-xl font-bold text-shadow text-yellow"><%=current_user.first_name%> <%=current_user.last_name%></h1>
+      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+      <%end%>
     </nav>
 
 

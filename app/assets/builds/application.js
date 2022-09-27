@@ -1000,7 +1000,7 @@
             }
             return dispatcher.useContext(Context);
           }
-          function useState11(initialState) {
+          function useState13(initialState) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useState(initialState);
           }
@@ -1012,7 +1012,7 @@
             var dispatcher = resolveDispatcher();
             return dispatcher.useRef(initialValue);
           }
-          function useEffect11(create2, deps) {
+          function useEffect14(create2, deps) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useEffect(create2, deps);
           }
@@ -1792,7 +1792,7 @@
           exports.useContext = useContext4;
           exports.useDebugValue = useDebugValue3;
           exports.useDeferredValue = useDeferredValue;
-          exports.useEffect = useEffect11;
+          exports.useEffect = useEffect14;
           exports.useId = useId;
           exports.useImperativeHandle = useImperativeHandle3;
           exports.useInsertionEffect = useInsertionEffect;
@@ -1800,7 +1800,7 @@
           exports.useMemo = useMemo4;
           exports.useReducer = useReducer;
           exports.useRef = useRef8;
-          exports.useState = useState11;
+          exports.useState = useState13;
           exports.useSyncExternalStore = useSyncExternalStore2;
           exports.useTransition = useTransition;
           exports.version = ReactVersion;
@@ -2296,9 +2296,9 @@
           if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") {
             __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
           }
-          var React22 = require_react();
+          var React24 = require_react();
           var Scheduler = require_scheduler();
-          var ReactSharedInternals = React22.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          var ReactSharedInternals = React24.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
           var suppressWarning = false;
           function setSuppressWarning(newSuppressWarning) {
             {
@@ -3819,7 +3819,7 @@
             {
               if (props.value == null) {
                 if (typeof props.children === "object" && props.children !== null) {
-                  React22.Children.forEach(props.children, function(child) {
+                  React24.Children.forEach(props.children, function(child) {
                     if (child == null) {
                       return;
                     }
@@ -5505,7 +5505,7 @@
           var Snapshot = 1024;
           var Passive = 2048;
           var Hydrating = 4096;
-          var Visibility2 = 8192;
+          var Visibility3 = 8192;
           var StoreConsistency = 16384;
           var LifecycleEffectMask = Passive | Update | Callback | Ref | Snapshot | StoreConsistency;
           var HostEffectMask = 32767;
@@ -5519,8 +5519,8 @@
           var MountLayoutDev = 16777216;
           var MountPassiveDev = 33554432;
           var BeforeMutationMask = Update | Snapshot | 0;
-          var MutationMask = Placement | Update | ChildDeletion | ContentReset | Ref | Hydrating | Visibility2;
-          var LayoutMask = Update | Callback | Ref | Visibility2;
+          var MutationMask = Placement | Update | ChildDeletion | ContentReset | Ref | Hydrating | Visibility3;
+          var LayoutMask = Update | Callback | Ref | Visibility3;
           var PassiveMask = Passive | ChildDeletion;
           var StaticMask = LayoutStatic | PassiveStatic | RefStatic;
           var ReactCurrentOwner = ReactSharedInternals.ReactCurrentOwner;
@@ -11980,7 +11980,7 @@
             }
           }
           var fakeInternalInstance = {};
-          var emptyRefsObject = new React22.Component().refs;
+          var emptyRefsObject = new React24.Component().refs;
           var didWarnAboutStateAssignmentForComponent;
           var didWarnAboutUninitializedState;
           var didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate;
@@ -17699,7 +17699,7 @@
                 if (nextDidTimeout !== prevDidTimeout) {
                   if (nextDidTimeout) {
                     var _offscreenFiber2 = workInProgress2.child;
-                    _offscreenFiber2.flags |= Visibility2;
+                    _offscreenFiber2.flags |= Visibility3;
                     if ((workInProgress2.mode & ConcurrentMode) !== NoMode) {
                       var hasInvisibleChildContext = current2 === null && (workInProgress2.memoizedProps.unstable_avoidThisFallback !== true || !enableSuspenseAvoidThisFallback);
                       if (hasInvisibleChildContext || hasSuspenseContext(suspenseStackCursor.current, InvisibleParentSuspenseContext)) {
@@ -17856,7 +17856,7 @@
                   var _prevState = current2.memoizedState;
                   var prevIsHidden = _prevState !== null;
                   if (prevIsHidden !== nextIsHidden && !enableLegacyHidden) {
-                    workInProgress2.flags |= Visibility2;
+                    workInProgress2.flags |= Visibility3;
                   }
                 }
                 if (!nextIsHidden || (workInProgress2.mode & ConcurrentMode) === NoMode) {
@@ -17866,7 +17866,7 @@
                     bubbleProperties(workInProgress2);
                     {
                       if (workInProgress2.subtreeFlags & (Placement | Update)) {
-                        workInProgress2.flags |= Visibility2;
+                        workInProgress2.flags |= Visibility3;
                       }
                     }
                   }
@@ -19164,7 +19164,7 @@
                 recursivelyTraverseMutationEffects(root3, finishedWork);
                 commitReconciliationEffects(finishedWork);
                 var offscreenFiber = finishedWork.child;
-                if (offscreenFiber.flags & Visibility2) {
+                if (offscreenFiber.flags & Visibility3) {
                   var offscreenInstance = offscreenFiber.stateNode;
                   var newState = offscreenFiber.memoizedState;
                   var isHidden = newState !== null;
@@ -19197,7 +19197,7 @@
                   recursivelyTraverseMutationEffects(root3, finishedWork);
                 }
                 commitReconciliationEffects(finishedWork);
-                if (flags & Visibility2) {
+                if (flags & Visibility3) {
                   var _offscreenInstance = finishedWork.stateNode;
                   var _newState = finishedWork.memoizedState;
                   var _isHidden = _newState !== null;
@@ -22439,7 +22439,7 @@
               unmarkContainerAsRoot(container);
             }
           };
-          function createRoot(container, options2) {
+          function createRoot2(container, options2) {
             if (!isValidContainer(container)) {
               throw new Error("createRoot(...): Target container is not a DOM element.");
             }
@@ -22798,7 +22798,7 @@
                 error('You are importing createRoot from "react-dom" which is not supported. You should instead import it from "react-dom/client".');
               }
             }
-            return createRoot(container, options2);
+            return createRoot2(container, options2);
           }
           function hydrateRoot$1(container, initialChildren, options2) {
             {
@@ -22969,7 +22969,7 @@
           var Memo = REACT_MEMO_TYPE;
           var Portal = REACT_PORTAL_TYPE;
           var Profiler = REACT_PROFILER_TYPE;
-          var StrictMode = REACT_STRICT_MODE_TYPE;
+          var StrictMode2 = REACT_STRICT_MODE_TYPE;
           var Suspense = REACT_SUSPENSE_TYPE;
           var hasWarnedAboutDeprecatedIsAsyncMode = false;
           function isAsyncMode(object) {
@@ -23028,7 +23028,7 @@
           exports.Memo = Memo;
           exports.Portal = Portal;
           exports.Profiler = Profiler;
-          exports.StrictMode = StrictMode;
+          exports.StrictMode = StrictMode2;
           exports.Suspense = Suspense;
           exports.isAsyncMode = isAsyncMode;
           exports.isConcurrentMode = isConcurrentMode;
@@ -24101,7 +24101,7 @@
           var Memo = REACT_MEMO_TYPE;
           var Portal = REACT_PORTAL_TYPE;
           var Profiler = REACT_PROFILER_TYPE;
-          var StrictMode = REACT_STRICT_MODE_TYPE;
+          var StrictMode2 = REACT_STRICT_MODE_TYPE;
           var Suspense = REACT_SUSPENSE_TYPE;
           var hasWarnedAboutDeprecatedIsAsyncMode = false;
           var hasWarnedAboutDeprecatedIsConcurrentMode = false;
@@ -24165,7 +24165,7 @@
           exports.Memo = Memo;
           exports.Portal = Portal;
           exports.Profiler = Profiler;
-          exports.StrictMode = StrictMode;
+          exports.StrictMode = StrictMode2;
           exports.Suspense = Suspense;
           exports.isAsyncMode = isAsyncMode;
           exports.isConcurrentMode = isConcurrentMode;
@@ -31173,7 +31173,7 @@
       exports.default = exports.styles = void 0;
       var _extends22 = _interopRequireDefault(require_extends());
       var _objectWithoutProperties2 = _interopRequireDefault(require_objectWithoutProperties());
-      var React22 = _interopRequireWildcard(require_react());
+      var React24 = _interopRequireWildcard(require_react());
       var _propTypes = _interopRequireDefault(require_prop_types());
       var _clsx = _interopRequireDefault(require_clsx());
       var _utils = require_utils();
@@ -31220,9 +31220,9 @@
         };
       };
       exports.styles = styles14;
-      var SvgIcon = /* @__PURE__ */ React22.forwardRef(function SvgIcon2(props, ref) {
+      var SvgIcon = /* @__PURE__ */ React24.forwardRef(function SvgIcon2(props, ref) {
         var children = props.children, classes = props.classes, className = props.className, _props$color = props.color, color = _props$color === void 0 ? "inherit" : _props$color, _props$component = props.component, Component2 = _props$component === void 0 ? "svg" : _props$component, _props$fontSize = props.fontSize, fontSize = _props$fontSize === void 0 ? "medium" : _props$fontSize, htmlColor = props.htmlColor, titleAccess = props.titleAccess, _props$viewBox = props.viewBox, viewBox = _props$viewBox === void 0 ? "0 0 24 24" : _props$viewBox, other = (0, _objectWithoutProperties2.default)(props, ["children", "classes", "className", "color", "component", "fontSize", "htmlColor", "titleAccess", "viewBox"]);
-        return /* @__PURE__ */ React22.createElement(Component2, (0, _extends22.default)({
+        return /* @__PURE__ */ React24.createElement(Component2, (0, _extends22.default)({
           className: (0, _clsx.default)(classes.root, className, color !== "inherit" && classes["color".concat((0, _capitalize.default)(color))], fontSize !== "default" && fontSize !== "medium" && classes["fontSize".concat((0, _capitalize.default)(fontSize))]),
           focusable: "false",
           viewBox,
@@ -31230,7 +31230,7 @@
           "aria-hidden": titleAccess ? void 0 : true,
           role: titleAccess ? "img" : void 0,
           ref
-        }, other), children, titleAccess ? /* @__PURE__ */ React22.createElement("title", null, titleAccess) : null);
+        }, other), children, titleAccess ? /* @__PURE__ */ React24.createElement("title", null, titleAccess) : null);
       });
       true ? SvgIcon.propTypes = {
         children: _propTypes.default.node,
@@ -31368,9 +31368,9 @@
         value: true
       });
       exports.default = isMuiElement;
-      var React22 = _interopRequireWildcard(require_react());
+      var React24 = _interopRequireWildcard(require_react());
       function isMuiElement(element, muiNames) {
-        return /* @__PURE__ */ React22.isValidElement(element) && muiNames.indexOf(element.type.muiName) !== -1;
+        return /* @__PURE__ */ React24.isValidElement(element) && muiNames.indexOf(element.type.muiName) !== -1;
       }
     }
   });
@@ -31482,26 +31482,26 @@
         value: true
       });
       exports.default = useControlled;
-      var React22 = _interopRequireWildcard(require_react());
+      var React24 = _interopRequireWildcard(require_react());
       function useControlled(_ref) {
         var controlled = _ref.controlled, defaultProp = _ref.default, name = _ref.name, _ref$state = _ref.state, state = _ref$state === void 0 ? "value" : _ref$state;
-        var _React$useRef = React22.useRef(controlled !== void 0), isControlled = _React$useRef.current;
-        var _React$useState = React22.useState(defaultProp), valueState = _React$useState[0], setValue = _React$useState[1];
+        var _React$useRef = React24.useRef(controlled !== void 0), isControlled = _React$useRef.current;
+        var _React$useState = React24.useState(defaultProp), valueState = _React$useState[0], setValue = _React$useState[1];
         var value = isControlled ? controlled : valueState;
         if (true) {
-          React22.useEffect(function() {
+          React24.useEffect(function() {
             if (isControlled !== (controlled !== void 0)) {
               console.error(["Material-UI: A component is changing the ".concat(isControlled ? "" : "un", "controlled ").concat(state, " state of ").concat(name, " to be ").concat(isControlled ? "un" : "", "controlled."), "Elements should not switch from uncontrolled to controlled (or vice versa).", "Decide between using a controlled or uncontrolled ".concat(name, " ") + "element for the lifetime of the component.", "The nature of the state is determined during the first render, it's considered controlled if the value is not `undefined`.", "More info: https://fb.me/react-controlled-components"].join("\n"));
             }
           }, [controlled]);
-          var _React$useRef2 = React22.useRef(defaultProp), defaultValue = _React$useRef2.current;
-          React22.useEffect(function() {
+          var _React$useRef2 = React24.useRef(defaultProp), defaultValue = _React$useRef2.current;
+          React24.useEffect(function() {
             if (!isControlled && defaultValue !== defaultProp) {
               console.error(["Material-UI: A component is changing the default ".concat(state, " state of an uncontrolled ").concat(name, " after being initialized. ") + "To suppress this warning opt to use a controlled ".concat(name, ".")].join("\n"));
             }
           }, [JSON.stringify(defaultProp)]);
         }
-        var setValueIfUncontrolled = React22.useCallback(function(newValue) {
+        var setValueIfUncontrolled = React24.useCallback(function(newValue) {
           if (!isControlled) {
             setValue(newValue);
           }
@@ -31520,14 +31520,14 @@
         value: true
       });
       exports.default = useEventCallback2;
-      var React22 = _interopRequireWildcard(require_react());
-      var useEnhancedEffect5 = typeof window !== "undefined" ? React22.useLayoutEffect : React22.useEffect;
+      var React24 = _interopRequireWildcard(require_react());
+      var useEnhancedEffect5 = typeof window !== "undefined" ? React24.useLayoutEffect : React24.useEffect;
       function useEventCallback2(fn) {
-        var ref = React22.useRef(fn);
+        var ref = React24.useRef(fn);
         useEnhancedEffect5(function() {
           ref.current = fn;
         });
-        return React22.useCallback(function() {
+        return React24.useCallback(function() {
           return (0, ref.current).apply(void 0, arguments);
         }, []);
       }
@@ -31544,10 +31544,10 @@
         value: true
       });
       exports.default = useForkRef2;
-      var React22 = _interopRequireWildcard(require_react());
+      var React24 = _interopRequireWildcard(require_react());
       var _setRef = _interopRequireDefault(require_setRef());
       function useForkRef2(refA, refB) {
-        return React22.useMemo(function() {
+        return React24.useMemo(function() {
           if (refA == null && refB == null) {
             return null;
           }
@@ -31569,11 +31569,11 @@
         value: true
       });
       exports.default = useId;
-      var React22 = _interopRequireWildcard(require_react());
+      var React24 = _interopRequireWildcard(require_react());
       function useId(idOverride) {
-        var _React$useState = React22.useState(idOverride), defaultId = _React$useState[0], setDefaultId = _React$useState[1];
+        var _React$useState = React24.useState(idOverride), defaultId = _React$useState[0], setDefaultId = _React$useState[1];
         var id = idOverride || defaultId;
-        React22.useEffect(function() {
+        React24.useEffect(function() {
           if (defaultId == null) {
             setDefaultId("mui-".concat(Math.round(Math.random() * 1e5)));
           }
@@ -31593,7 +31593,7 @@
       });
       exports.teardown = teardown;
       exports.default = useIsFocusVisible2;
-      var React22 = _interopRequireWildcard(require_react());
+      var React24 = _interopRequireWildcard(require_react());
       var ReactDOM4 = _interopRequireWildcard(require_react_dom());
       var hadKeyboardEvent2 = true;
       var hadFocusVisibleRecently2 = false;
@@ -31672,14 +31672,14 @@
         }, 100);
       }
       function useIsFocusVisible2() {
-        var ref = React22.useCallback(function(instance) {
+        var ref = React24.useCallback(function(instance) {
           var node = ReactDOM4.findDOMNode(instance);
           if (node != null) {
             prepare2(node.ownerDocument);
           }
         }, []);
         if (true) {
-          React22.useDebugValue(isFocusVisible2);
+          React24.useDebugValue(isFocusVisible2);
         }
         return {
           isFocusVisible: isFocusVisible2,
@@ -31840,9 +31840,9 @@
         value: true
       });
       exports.default = void 0;
-      var React22 = _interopRequireWildcard(require_react());
+      var React24 = _interopRequireWildcard(require_react());
       var _createSvgIcon = _interopRequireDefault(require_createSvgIcon2());
-      var _default = (0, _createSvgIcon.default)(/* @__PURE__ */ React22.createElement("path", {
+      var _default = (0, _createSvgIcon.default)(/* @__PURE__ */ React24.createElement("path", {
         d: "M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"
       }), "Visibility");
       exports.default = _default;
@@ -31859,9 +31859,9 @@
         value: true
       });
       exports.default = void 0;
-      var React22 = _interopRequireWildcard(require_react());
+      var React24 = _interopRequireWildcard(require_react());
       var _createSvgIcon = _interopRequireDefault(require_createSvgIcon2());
-      var _default = (0, _createSvgIcon.default)(/* @__PURE__ */ React22.createElement("path", {
+      var _default = (0, _createSvgIcon.default)(/* @__PURE__ */ React24.createElement("path", {
         d: "M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46C3.08 8.3 1.78 10.02 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.53-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.53.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"
       }), "VisibilityOff");
       exports.default = _default;
@@ -31869,7 +31869,7 @@
   });
 
   // app/javascript/components/App.jsx
-  var import_react7 = __toESM(require_react());
+  var import_react9 = __toESM(require_react());
   var import_client = __toESM(require_client());
 
   // node_modules/react-router-dom/dist/index.js
@@ -32565,6 +32565,13 @@
       (!!options.replace ? navigator2.replace : navigator2.push)(path, options.state, options);
     }, [basename, navigator2, routePathnamesJson, locationPathname]);
     return navigate;
+  }
+  function useParams() {
+    let {
+      matches
+    } = React.useContext(RouteContext);
+    let routeMatch = matches[matches.length - 1];
+    return routeMatch ? routeMatch.params : {};
   }
   function useResolvedPath(to, _temp2) {
     let {
@@ -33393,17 +33400,8 @@
     }, [callback]);
   }
 
-  // app/javascript/components/Home.jsx
-  var import_react = __toESM(require_react());
-  function Home() {
-    return /* @__PURE__ */ import_react.default.createElement("div", {
-      className: "bg-slate-400 w-full h-full"
-    }, "Home");
-  }
-  var Home_default = Home;
-
-  // app/javascript/components/NewUser.jsx
-  var import_react5 = __toESM(require_react());
+  // app/javascript/components/EditUser.jsx
+  var import_react4 = __toESM(require_react());
 
   // node_modules/@babel/runtime/helpers/esm/extends.js
   function _extends4() {
@@ -33458,7 +33456,7 @@
   }
 
   // node_modules/@material-ui/core/esm/IconButton/IconButton.js
-  var React12 = __toESM(require_react());
+  var React11 = __toESM(require_react());
   var import_prop_types5 = __toESM(require_prop_types());
   var import_clsx4 = __toESM(require_clsx());
   var import_utils5 = __toESM(require_utils());
@@ -34264,14 +34262,14 @@
   var withStyles_default = withStyles;
 
   // node_modules/@material-ui/core/esm/ButtonBase/ButtonBase.js
-  var React11 = __toESM(require_react());
+  var React10 = __toESM(require_react());
   var import_prop_types4 = __toESM(require_prop_types());
   var ReactDOM2 = __toESM(require_react_dom());
   var import_clsx3 = __toESM(require_clsx());
   var import_utils4 = __toESM(require_utils());
 
   // node_modules/@material-ui/core/esm/utils/useForkRef.js
-  var React4 = __toESM(require_react());
+  var React3 = __toESM(require_react());
 
   // node_modules/@material-ui/core/esm/utils/setRef.js
   function setRef(ref, value) {
@@ -34284,7 +34282,7 @@
 
   // node_modules/@material-ui/core/esm/utils/useForkRef.js
   function useForkRef(refA, refB) {
-    return React4.useMemo(function() {
+    return React3.useMemo(function() {
       if (refA == null && refB == null) {
         return null;
       }
@@ -34296,14 +34294,14 @@
   }
 
   // node_modules/@material-ui/core/esm/utils/useEventCallback.js
-  var React5 = __toESM(require_react());
-  var useEnhancedEffect = typeof window !== "undefined" ? React5.useLayoutEffect : React5.useEffect;
+  var React4 = __toESM(require_react());
+  var useEnhancedEffect = typeof window !== "undefined" ? React4.useLayoutEffect : React4.useEffect;
   function useEventCallback(fn) {
-    var ref = React5.useRef(fn);
+    var ref = React4.useRef(fn);
     useEnhancedEffect(function() {
       ref.current = fn;
     });
-    return React5.useCallback(function() {
+    return React4.useCallback(function() {
       return (0, ref.current).apply(void 0, arguments);
     }, []);
   }
@@ -34326,7 +34324,7 @@
   }
 
   // node_modules/@material-ui/core/esm/utils/useIsFocusVisible.js
-  var React6 = __toESM(require_react());
+  var React5 = __toESM(require_react());
   var ReactDOM = __toESM(require_react_dom());
   var hadKeyboardEvent = true;
   var hadFocusVisibleRecently = false;
@@ -34398,14 +34396,14 @@
     }, 100);
   }
   function useIsFocusVisible() {
-    var ref = React6.useCallback(function(instance) {
+    var ref = React5.useCallback(function(instance) {
       var node = ReactDOM.findDOMNode(instance);
       if (node != null) {
         prepare(node.ownerDocument);
       }
     }, []);
     if (true) {
-      React6.useDebugValue(isFocusVisible);
+      React5.useDebugValue(isFocusVisible);
     }
     return {
       isFocusVisible,
@@ -34462,7 +34460,7 @@
   }
 
   // node_modules/@material-ui/core/esm/ButtonBase/TouchRipple.js
-  var React10 = __toESM(require_react());
+  var React9 = __toESM(require_react());
   var import_prop_types3 = __toESM(require_prop_types());
 
   // node_modules/@babel/runtime/helpers/esm/setPrototypeOf.js
@@ -34482,8 +34480,8 @@
   }
 
   // node_modules/react-transition-group/esm/TransitionGroupContext.js
-  var import_react2 = __toESM(require_react());
-  var TransitionGroupContext_default = import_react2.default.createContext(null);
+  var import_react = __toESM(require_react());
+  var TransitionGroupContext_default = import_react.default.createContext(null);
 
   // node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js
   function _assertThisInitialized(self2) {
@@ -34495,17 +34493,17 @@
 
   // node_modules/react-transition-group/esm/TransitionGroup.js
   var import_prop_types = __toESM(require_prop_types());
-  var import_react4 = __toESM(require_react());
+  var import_react3 = __toESM(require_react());
 
   // node_modules/react-transition-group/esm/utils/ChildMapping.js
-  var import_react3 = __toESM(require_react());
+  var import_react2 = __toESM(require_react());
   function getChildMapping(children, mapFn) {
     var mapper = function mapper2(child) {
-      return mapFn && (0, import_react3.isValidElement)(child) ? mapFn(child) : child;
+      return mapFn && (0, import_react2.isValidElement)(child) ? mapFn(child) : child;
     };
     var result = /* @__PURE__ */ Object.create(null);
     if (children)
-      import_react3.Children.map(children, function(c) {
+      import_react2.Children.map(children, function(c) {
         return c;
       }).forEach(function(child) {
         result[child.key] = mapper(child);
@@ -34551,7 +34549,7 @@
   }
   function getInitialChildMapping(props, onExited) {
     return getChildMapping(props.children, function(child) {
-      return (0, import_react3.cloneElement)(child, {
+      return (0, import_react2.cloneElement)(child, {
         onExited: onExited.bind(null, child),
         in: true,
         appear: getProp(child, "appear", props),
@@ -34565,25 +34563,25 @@
     var children = mergeChildMappings(prevChildMapping, nextChildMapping);
     Object.keys(children).forEach(function(key) {
       var child = children[key];
-      if (!(0, import_react3.isValidElement)(child))
+      if (!(0, import_react2.isValidElement)(child))
         return;
       var hasPrev = key in prevChildMapping;
       var hasNext = key in nextChildMapping;
       var prevChild = prevChildMapping[key];
-      var isLeaving = (0, import_react3.isValidElement)(prevChild) && !prevChild.props.in;
+      var isLeaving = (0, import_react2.isValidElement)(prevChild) && !prevChild.props.in;
       if (hasNext && (!hasPrev || isLeaving)) {
-        children[key] = (0, import_react3.cloneElement)(child, {
+        children[key] = (0, import_react2.cloneElement)(child, {
           onExited: onExited.bind(null, child),
           in: true,
           exit: getProp(child, "exit", nextProps),
           enter: getProp(child, "enter", nextProps)
         });
       } else if (!hasNext && hasPrev && !isLeaving) {
-        children[key] = (0, import_react3.cloneElement)(child, {
+        children[key] = (0, import_react2.cloneElement)(child, {
           in: false
         });
-      } else if (hasNext && hasPrev && (0, import_react3.isValidElement)(prevChild)) {
-        children[key] = (0, import_react3.cloneElement)(child, {
+      } else if (hasNext && hasPrev && (0, import_react2.isValidElement)(prevChild)) {
+        children[key] = (0, import_react2.cloneElement)(child, {
           onExited: onExited.bind(null, child),
           in: prevChild.props.in,
           exit: getProp(child, "exit", nextProps),
@@ -34665,16 +34663,16 @@
       delete props.enter;
       delete props.exit;
       if (Component2 === null) {
-        return /* @__PURE__ */ import_react4.default.createElement(TransitionGroupContext_default.Provider, {
+        return /* @__PURE__ */ import_react3.default.createElement(TransitionGroupContext_default.Provider, {
           value: contextValue
         }, children);
       }
-      return /* @__PURE__ */ import_react4.default.createElement(TransitionGroupContext_default.Provider, {
+      return /* @__PURE__ */ import_react3.default.createElement(TransitionGroupContext_default.Provider, {
         value: contextValue
-      }, /* @__PURE__ */ import_react4.default.createElement(Component2, props, children));
+      }, /* @__PURE__ */ import_react3.default.createElement(Component2, props, children));
     };
     return TransitionGroup2;
-  }(import_react4.default.Component);
+  }(import_react3.default.Component);
   TransitionGroup.propTypes = true ? {
     component: import_prop_types.default.any,
     children: import_prop_types.default.node,
@@ -34690,14 +34688,14 @@
   var import_clsx2 = __toESM(require_clsx());
 
   // node_modules/@material-ui/core/esm/ButtonBase/Ripple.js
-  var React9 = __toESM(require_react());
+  var React8 = __toESM(require_react());
   var import_prop_types2 = __toESM(require_prop_types());
   var import_clsx = __toESM(require_clsx());
-  var useEnhancedEffect2 = typeof window === "undefined" ? React9.useEffect : React9.useLayoutEffect;
+  var useEnhancedEffect2 = typeof window === "undefined" ? React8.useEffect : React8.useLayoutEffect;
   function Ripple(props) {
     var classes = props.classes, _props$pulsate = props.pulsate, pulsate = _props$pulsate === void 0 ? false : _props$pulsate, rippleX = props.rippleX, rippleY = props.rippleY, rippleSize = props.rippleSize, inProp = props.in, _props$onExited = props.onExited, onExited = _props$onExited === void 0 ? function() {
     } : _props$onExited, timeout = props.timeout;
-    var _React$useState = React9.useState(false), leaving = _React$useState[0], setLeaving = _React$useState[1];
+    var _React$useState = React8.useState(false), leaving = _React$useState[0], setLeaving = _React$useState[1];
     var rippleClassName = (0, import_clsx.default)(classes.ripple, classes.rippleVisible, pulsate && classes.ripplePulsate);
     var rippleStyles = {
       width: rippleSize,
@@ -34717,10 +34715,10 @@
       }
       return void 0;
     }, [handleExited, inProp, timeout]);
-    return /* @__PURE__ */ React9.createElement("span", {
+    return /* @__PURE__ */ React8.createElement("span", {
       className: rippleClassName,
       style: rippleStyles
-    }, /* @__PURE__ */ React9.createElement("span", {
+    }, /* @__PURE__ */ React8.createElement("span", {
       className: childClassName
     }));
   }
@@ -34813,30 +34811,30 @@
       }
     };
   };
-  var TouchRipple = /* @__PURE__ */ React10.forwardRef(function TouchRipple2(props, ref) {
+  var TouchRipple = /* @__PURE__ */ React9.forwardRef(function TouchRipple2(props, ref) {
     var _props$center = props.center, centerProp = _props$center === void 0 ? false : _props$center, classes = props.classes, className = props.className, other = _objectWithoutProperties(props, ["center", "classes", "className"]);
-    var _React$useState = React10.useState([]), ripples = _React$useState[0], setRipples = _React$useState[1];
-    var nextKey = React10.useRef(0);
-    var rippleCallback = React10.useRef(null);
-    React10.useEffect(function() {
+    var _React$useState = React9.useState([]), ripples = _React$useState[0], setRipples = _React$useState[1];
+    var nextKey = React9.useRef(0);
+    var rippleCallback = React9.useRef(null);
+    React9.useEffect(function() {
       if (rippleCallback.current) {
         rippleCallback.current();
         rippleCallback.current = null;
       }
     }, [ripples]);
-    var ignoringMouseDown = React10.useRef(false);
-    var startTimer = React10.useRef(null);
-    var startTimerCommit = React10.useRef(null);
-    var container = React10.useRef(null);
-    React10.useEffect(function() {
+    var ignoringMouseDown = React9.useRef(false);
+    var startTimer = React9.useRef(null);
+    var startTimerCommit = React9.useRef(null);
+    var container = React9.useRef(null);
+    React9.useEffect(function() {
       return function() {
         clearTimeout(startTimer.current);
       };
     }, []);
-    var startCommit = React10.useCallback(function(params) {
+    var startCommit = React9.useCallback(function(params) {
       var pulsate2 = params.pulsate, rippleX = params.rippleX, rippleY = params.rippleY, rippleSize = params.rippleSize, cb = params.cb;
       setRipples(function(oldRipples) {
-        return [].concat(_toConsumableArray(oldRipples), [/* @__PURE__ */ React10.createElement(Ripple_default, {
+        return [].concat(_toConsumableArray(oldRipples), [/* @__PURE__ */ React9.createElement(Ripple_default, {
           key: nextKey.current,
           classes,
           timeout: DURATION,
@@ -34849,7 +34847,7 @@
       nextKey.current += 1;
       rippleCallback.current = cb;
     }, [classes]);
-    var start = React10.useCallback(function() {
+    var start = React9.useCallback(function() {
       var event = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
       var options = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
       var cb = arguments.length > 2 ? arguments[2] : void 0;
@@ -34917,12 +34915,12 @@
         });
       }
     }, [centerProp, startCommit]);
-    var pulsate = React10.useCallback(function() {
+    var pulsate = React9.useCallback(function() {
       start({}, {
         pulsate: true
       });
     }, [start]);
-    var stop = React10.useCallback(function(event, cb) {
+    var stop = React9.useCallback(function(event, cb) {
       clearTimeout(startTimer.current);
       if (event.type === "touchend" && startTimerCommit.current) {
         event.persist();
@@ -34942,17 +34940,17 @@
       });
       rippleCallback.current = cb;
     }, []);
-    React10.useImperativeHandle(ref, function() {
+    React9.useImperativeHandle(ref, function() {
       return {
         pulsate,
         start,
         stop
       };
     }, [pulsate, start, stop]);
-    return /* @__PURE__ */ React10.createElement("span", _extends4({
+    return /* @__PURE__ */ React9.createElement("span", _extends4({
       className: (0, import_clsx2.default)(classes.root, className),
       ref: container
-    }, other), /* @__PURE__ */ React10.createElement(TransitionGroup_default, {
+    }, other), /* @__PURE__ */ React9.createElement(TransitionGroup_default, {
       component: null,
       exit: true
     }, ripples));
@@ -34965,7 +34963,7 @@
   var TouchRipple_default = withStyles_default(styles, {
     flip: false,
     name: "MuiTouchRipple"
-  })(/* @__PURE__ */ React10.memo(TouchRipple));
+  })(/* @__PURE__ */ React9.memo(TouchRipple));
 
   // node_modules/@material-ui/core/esm/ButtonBase/ButtonBase.js
   var styles3 = {
@@ -35002,19 +35000,19 @@
     disabled: {},
     focusVisible: {}
   };
-  var ButtonBase = /* @__PURE__ */ React11.forwardRef(function ButtonBase2(props, ref) {
+  var ButtonBase = /* @__PURE__ */ React10.forwardRef(function ButtonBase2(props, ref) {
     var action = props.action, buttonRefProp = props.buttonRef, _props$centerRipple = props.centerRipple, centerRipple = _props$centerRipple === void 0 ? false : _props$centerRipple, children = props.children, classes = props.classes, className = props.className, _props$component = props.component, component = _props$component === void 0 ? "button" : _props$component, _props$disabled = props.disabled, disabled = _props$disabled === void 0 ? false : _props$disabled, _props$disableRipple = props.disableRipple, disableRipple = _props$disableRipple === void 0 ? false : _props$disableRipple, _props$disableTouchRi = props.disableTouchRipple, disableTouchRipple = _props$disableTouchRi === void 0 ? false : _props$disableTouchRi, _props$focusRipple = props.focusRipple, focusRipple = _props$focusRipple === void 0 ? false : _props$focusRipple, focusVisibleClassName = props.focusVisibleClassName, onBlur = props.onBlur, onClick = props.onClick, onFocus = props.onFocus, onFocusVisible = props.onFocusVisible, onKeyDown = props.onKeyDown, onKeyUp = props.onKeyUp, onMouseDown = props.onMouseDown, onMouseLeave = props.onMouseLeave, onMouseUp = props.onMouseUp, onTouchEnd = props.onTouchEnd, onTouchMove = props.onTouchMove, onTouchStart = props.onTouchStart, onDragLeave = props.onDragLeave, _props$tabIndex = props.tabIndex, tabIndex = _props$tabIndex === void 0 ? 0 : _props$tabIndex, TouchRippleProps = props.TouchRippleProps, _props$type = props.type, type = _props$type === void 0 ? "button" : _props$type, other = _objectWithoutProperties(props, ["action", "buttonRef", "centerRipple", "children", "classes", "className", "component", "disabled", "disableRipple", "disableTouchRipple", "focusRipple", "focusVisibleClassName", "onBlur", "onClick", "onFocus", "onFocusVisible", "onKeyDown", "onKeyUp", "onMouseDown", "onMouseLeave", "onMouseUp", "onTouchEnd", "onTouchMove", "onTouchStart", "onDragLeave", "tabIndex", "TouchRippleProps", "type"]);
-    var buttonRef = React11.useRef(null);
+    var buttonRef = React10.useRef(null);
     function getButtonNode() {
       return ReactDOM2.findDOMNode(buttonRef.current);
     }
-    var rippleRef = React11.useRef(null);
-    var _React$useState = React11.useState(false), focusVisible = _React$useState[0], setFocusVisible = _React$useState[1];
+    var rippleRef = React10.useRef(null);
+    var _React$useState = React10.useState(false), focusVisible = _React$useState[0], setFocusVisible = _React$useState[1];
     if (disabled && focusVisible) {
       setFocusVisible(false);
     }
     var _useIsFocusVisible = useIsFocusVisible(), isFocusVisible2 = _useIsFocusVisible.isFocusVisible, onBlurVisible = _useIsFocusVisible.onBlurVisible, focusVisibleRef = _useIsFocusVisible.ref;
-    React11.useImperativeHandle(action, function() {
+    React10.useImperativeHandle(action, function() {
       return {
         focusVisible: function focusVisible2() {
           setFocusVisible(true);
@@ -35022,7 +35020,7 @@
         }
       };
     }, []);
-    React11.useEffect(function() {
+    React10.useEffect(function() {
       if (focusVisible && focusRipple && !disableRipple) {
         rippleRef.current.pulsate();
       }
@@ -35081,7 +35079,7 @@
       var button = getButtonNode();
       return component && component !== "button" && !(button.tagName === "A" && button.href);
     };
-    var keydownRef = React11.useRef(false);
+    var keydownRef = React10.useRef(false);
     var handleKeyDown2 = useEventCallback(function(event) {
       if (focusRipple && !keydownRef.current && focusVisible && rippleRef.current && event.key === " ") {
         keydownRef.current = true;
@@ -35135,19 +35133,19 @@
     var handleUserRef = useForkRef(buttonRefProp, ref);
     var handleOwnRef = useForkRef(focusVisibleRef, buttonRef);
     var handleRef = useForkRef(handleUserRef, handleOwnRef);
-    var _React$useState2 = React11.useState(false), mountedState = _React$useState2[0], setMountedState = _React$useState2[1];
-    React11.useEffect(function() {
+    var _React$useState2 = React10.useState(false), mountedState = _React$useState2[0], setMountedState = _React$useState2[1];
+    React10.useEffect(function() {
       setMountedState(true);
     }, []);
     var enableTouchRipple = mountedState && !disableRipple && !disabled;
     if (true) {
-      React11.useEffect(function() {
+      React10.useEffect(function() {
         if (enableTouchRipple && !rippleRef.current) {
           console.error(["Material-UI: The `component` prop provided to ButtonBase is invalid.", "Please make sure the children prop is rendered in this custom component."].join("\n"));
         }
       }, [enableTouchRipple]);
     }
-    return /* @__PURE__ */ React11.createElement(ComponentProp, _extends4({
+    return /* @__PURE__ */ React10.createElement(ComponentProp, _extends4({
       className: (0, import_clsx3.default)(classes.root, className, focusVisible && [classes.focusVisible, focusVisibleClassName], disabled && classes.disabled),
       onBlur: handleBlur,
       onClick,
@@ -35163,7 +35161,7 @@
       onTouchStart: handleTouchStart,
       ref: handleRef,
       tabIndex: disabled ? -1 : tabIndex
-    }, buttonProps, other), children, enableTouchRipple ? /* @__PURE__ */ React11.createElement(TouchRipple_default, _extends4({
+    }, buttonProps, other), children, enableTouchRipple ? /* @__PURE__ */ React10.createElement(TouchRipple_default, _extends4({
       ref: rippleRef,
       center: centerRipple
     }, TouchRippleProps)) : null);
@@ -35282,9 +35280,9 @@
       }
     };
   };
-  var IconButton = /* @__PURE__ */ React12.forwardRef(function IconButton2(props, ref) {
+  var IconButton = /* @__PURE__ */ React11.forwardRef(function IconButton2(props, ref) {
     var _props$edge = props.edge, edge = _props$edge === void 0 ? false : _props$edge, children = props.children, classes = props.classes, className = props.className, _props$color = props.color, color = _props$color === void 0 ? "default" : _props$color, _props$disabled = props.disabled, disabled = _props$disabled === void 0 ? false : _props$disabled, _props$disableFocusRi = props.disableFocusRipple, disableFocusRipple = _props$disableFocusRi === void 0 ? false : _props$disableFocusRi, _props$size = props.size, size = _props$size === void 0 ? "medium" : _props$size, other = _objectWithoutProperties(props, ["edge", "children", "classes", "className", "color", "disabled", "disableFocusRipple", "size"]);
-    return /* @__PURE__ */ React12.createElement(ButtonBase_default, _extends4({
+    return /* @__PURE__ */ React11.createElement(ButtonBase_default, _extends4({
       className: (0, import_clsx4.default)(classes.root, className, color !== "default" && classes["color".concat(capitalize(color))], disabled && classes.disabled, size === "small" && classes["size".concat(capitalize(size))], {
         "start": classes.edgeStart,
         "end": classes.edgeEnd
@@ -35293,14 +35291,14 @@
       focusRipple: !disableFocusRipple,
       disabled,
       ref
-    }, other), /* @__PURE__ */ React12.createElement("span", {
+    }, other), /* @__PURE__ */ React11.createElement("span", {
       className: classes.label
     }, children));
   });
   true ? IconButton.propTypes = {
     children: (0, import_utils5.chainPropTypes)(import_prop_types5.default.node, function(props) {
-      var found = React12.Children.toArray(props.children).some(function(child) {
-        return /* @__PURE__ */ React12.isValidElement(child) && child.props.onClick;
+      var found = React11.Children.toArray(props.children).some(function(child) {
+        return /* @__PURE__ */ React11.isValidElement(child) && child.props.onClick;
       });
       if (found) {
         return new Error(["Material-UI: You are providing an onClick event listener to a child of a button element.", "Firefox will never trigger the event.", "You should move the onClick listener to the parent button element.", "https://github.com/mui-org/material-ui/issues/13957"].join("\n"));
@@ -35335,26 +35333,26 @@
   }
 
   // node_modules/@material-ui/core/esm/FormControl/FormControlContext.js
-  var React13 = __toESM(require_react());
-  var FormControlContext = React13.createContext();
+  var React12 = __toESM(require_react());
+  var FormControlContext = React12.createContext();
   if (true) {
     FormControlContext.displayName = "FormControlContext";
   }
   function useFormControl() {
-    return React13.useContext(FormControlContext);
+    return React12.useContext(FormControlContext);
   }
   var FormControlContext_default = FormControlContext;
 
-  // app/javascript/components/NewUser.jsx
+  // app/javascript/components/EditUser.jsx
   var import_Visibility = __toESM(require_Visibility());
 
   // node_modules/@material-ui/core/esm/InputAdornment/InputAdornment.js
-  var React15 = __toESM(require_react());
+  var React14 = __toESM(require_react());
   var import_prop_types7 = __toESM(require_prop_types());
   var import_clsx6 = __toESM(require_clsx());
 
   // node_modules/@material-ui/core/esm/Typography/Typography.js
-  var React14 = __toESM(require_react());
+  var React13 = __toESM(require_react());
   var import_prop_types6 = __toESM(require_prop_types());
   var import_clsx5 = __toESM(require_clsx());
   var styles6 = function styles7(theme) {
@@ -35442,10 +35440,10 @@
     body1: "p",
     body2: "p"
   };
-  var Typography = /* @__PURE__ */ React14.forwardRef(function Typography2(props, ref) {
+  var Typography = /* @__PURE__ */ React13.forwardRef(function Typography2(props, ref) {
     var _props$align = props.align, align = _props$align === void 0 ? "inherit" : _props$align, classes = props.classes, className = props.className, _props$color = props.color, color = _props$color === void 0 ? "initial" : _props$color, component = props.component, _props$display = props.display, display = _props$display === void 0 ? "initial" : _props$display, _props$gutterBottom = props.gutterBottom, gutterBottom = _props$gutterBottom === void 0 ? false : _props$gutterBottom, _props$noWrap = props.noWrap, noWrap = _props$noWrap === void 0 ? false : _props$noWrap, _props$paragraph = props.paragraph, paragraph = _props$paragraph === void 0 ? false : _props$paragraph, _props$variant = props.variant, variant = _props$variant === void 0 ? "body1" : _props$variant, _props$variantMapping = props.variantMapping, variantMapping = _props$variantMapping === void 0 ? defaultVariantMapping : _props$variantMapping, other = _objectWithoutProperties(props, ["align", "classes", "className", "color", "component", "display", "gutterBottom", "noWrap", "paragraph", "variant", "variantMapping"]);
     var Component2 = component || (paragraph ? "p" : variantMapping[variant] || defaultVariantMapping[variant]) || "span";
-    return /* @__PURE__ */ React14.createElement(Component2, _extends4({
+    return /* @__PURE__ */ React13.createElement(Component2, _extends4({
       className: (0, import_clsx5.default)(classes.root, className, variant !== "inherit" && classes[variant], color !== "initial" && classes["color".concat(capitalize(color))], noWrap && classes.noWrap, gutterBottom && classes.gutterBottom, paragraph && classes.paragraph, align !== "inherit" && classes["align".concat(capitalize(align))], display !== "initial" && classes["display".concat(capitalize(display))]),
       ref
     }, other));
@@ -35494,7 +35492,7 @@
     hiddenLabel: {},
     marginDense: {}
   };
-  var InputAdornment = /* @__PURE__ */ React15.forwardRef(function InputAdornment2(props, ref) {
+  var InputAdornment = /* @__PURE__ */ React14.forwardRef(function InputAdornment2(props, ref) {
     var children = props.children, classes = props.classes, className = props.className, _props$component = props.component, Component2 = _props$component === void 0 ? "div" : _props$component, _props$disablePointer = props.disablePointerEvents, disablePointerEvents = _props$disablePointer === void 0 ? false : _props$disablePointer, _props$disableTypogra = props.disableTypography, disableTypography = _props$disableTypogra === void 0 ? false : _props$disableTypogra, position = props.position, variantProp = props.variant, other = _objectWithoutProperties(props, ["children", "classes", "className", "component", "disablePointerEvents", "disableTypography", "position", "variant"]);
     var muiFormControl = useFormControl() || {};
     var variant = variantProp;
@@ -35508,12 +35506,12 @@
     if (muiFormControl && !variant) {
       variant = muiFormControl.variant;
     }
-    return /* @__PURE__ */ React15.createElement(FormControlContext_default.Provider, {
+    return /* @__PURE__ */ React14.createElement(FormControlContext_default.Provider, {
       value: null
-    }, /* @__PURE__ */ React15.createElement(Component2, _extends4({
+    }, /* @__PURE__ */ React14.createElement(Component2, _extends4({
       className: (0, import_clsx6.default)(classes.root, className, position === "end" ? classes.positionEnd : classes.positionStart, disablePointerEvents && classes.disablePointerEvents, muiFormControl.hiddenLabel && classes.hiddenLabel, variant === "filled" && classes.filled, muiFormControl.margin === "dense" && classes.marginDense),
       ref
-    }, other), typeof children === "string" && !disableTypography ? /* @__PURE__ */ React15.createElement(Typography_default, {
+    }, other), typeof children === "string" && !disableTypography ? /* @__PURE__ */ React14.createElement(Typography_default, {
       color: "textSecondary"
     }, children) : children));
   });
@@ -35532,23 +35530,23 @@
     name: "MuiInputAdornment"
   })(InputAdornment);
 
-  // app/javascript/components/NewUser.jsx
+  // app/javascript/components/EditUser.jsx
   var import_VisibilityOff = __toESM(require_VisibilityOff());
 
   // node_modules/@material-ui/core/esm/Input/Input.js
-  var React18 = __toESM(require_react());
+  var React17 = __toESM(require_react());
   var import_prop_types10 = __toESM(require_prop_types());
   var import_clsx8 = __toESM(require_clsx());
   var import_utils8 = __toESM(require_utils());
 
   // node_modules/@material-ui/core/esm/InputBase/InputBase.js
-  var React17 = __toESM(require_react());
+  var React16 = __toESM(require_react());
   var import_prop_types9 = __toESM(require_prop_types());
   var import_clsx7 = __toESM(require_clsx());
   var import_utils6 = __toESM(require_utils());
 
   // node_modules/@material-ui/core/esm/TextareaAutosize/TextareaAutosize.js
-  var React16 = __toESM(require_react());
+  var React15 = __toESM(require_react());
   var import_prop_types8 = __toESM(require_prop_types());
 
   // node_modules/@material-ui/core/esm/utils/debounce.js
@@ -35576,7 +35574,7 @@
   function getStyleValue(computedStyle, property) {
     return parseInt(computedStyle[property], 10) || 0;
   }
-  var useEnhancedEffect3 = typeof window !== "undefined" ? React16.useLayoutEffect : React16.useEffect;
+  var useEnhancedEffect3 = typeof window !== "undefined" ? React15.useLayoutEffect : React15.useEffect;
   var styles9 = {
     shadow: {
       visibility: "hidden",
@@ -35588,17 +35586,17 @@
       transform: "translateZ(0)"
     }
   };
-  var TextareaAutosize = /* @__PURE__ */ React16.forwardRef(function TextareaAutosize2(props, ref) {
+  var TextareaAutosize = /* @__PURE__ */ React15.forwardRef(function TextareaAutosize2(props, ref) {
     var onChange = props.onChange, rows = props.rows, rowsMax = props.rowsMax, rowsMinProp = props.rowsMin, maxRowsProp = props.maxRows, _props$minRows = props.minRows, minRowsProp = _props$minRows === void 0 ? 1 : _props$minRows, style = props.style, value = props.value, other = _objectWithoutProperties(props, ["onChange", "rows", "rowsMax", "rowsMin", "maxRows", "minRows", "style", "value"]);
     var maxRows = maxRowsProp || rowsMax;
     var minRows = rows || rowsMinProp || minRowsProp;
-    var _React$useRef = React16.useRef(value != null), isControlled = _React$useRef.current;
-    var inputRef = React16.useRef(null);
+    var _React$useRef = React15.useRef(value != null), isControlled = _React$useRef.current;
+    var inputRef = React15.useRef(null);
     var handleRef = useForkRef(ref, inputRef);
-    var shadowRef = React16.useRef(null);
-    var renders = React16.useRef(0);
-    var _React$useState = React16.useState({}), state = _React$useState[0], setState = _React$useState[1];
-    var syncHeight = React16.useCallback(function() {
+    var shadowRef = React15.useRef(null);
+    var renders = React15.useRef(0);
+    var _React$useState = React15.useState({}), state = _React$useState[0], setState = _React$useState[1];
+    var syncHeight = React15.useCallback(function() {
       var input = inputRef.current;
       var computedStyle = window.getComputedStyle(input);
       var inputShallow = shadowRef.current;
@@ -35639,7 +35637,7 @@
         return prevState;
       });
     }, [maxRows, minRows, props.placeholder]);
-    React16.useEffect(function() {
+    React15.useEffect(function() {
       var handleResize = debounce(function() {
         renders.current = 0;
         syncHeight();
@@ -35653,7 +35651,7 @@
     useEnhancedEffect3(function() {
       syncHeight();
     });
-    React16.useEffect(function() {
+    React15.useEffect(function() {
       renders.current = 0;
     }, [value]);
     var handleChange = function handleChange2(event) {
@@ -35665,7 +35663,7 @@
         onChange(event);
       }
     };
-    return /* @__PURE__ */ React16.createElement(React16.Fragment, null, /* @__PURE__ */ React16.createElement("textarea", _extends4({
+    return /* @__PURE__ */ React15.createElement(React15.Fragment, null, /* @__PURE__ */ React15.createElement("textarea", _extends4({
       value,
       onChange: handleChange,
       ref: handleRef,
@@ -35674,7 +35672,7 @@
         height: state.outerHeightStyle,
         overflow: state.overflow ? "hidden" : null
       }, style)
-    }, other)), /* @__PURE__ */ React16.createElement("textarea", {
+    }, other)), /* @__PURE__ */ React15.createElement("textarea", {
       "aria-hidden": true,
       className: props.className,
       readOnly: true,
@@ -35821,13 +35819,13 @@
       inputHiddenLabel: {}
     };
   };
-  var useEnhancedEffect4 = typeof window === "undefined" ? React17.useEffect : React17.useLayoutEffect;
-  var InputBase = /* @__PURE__ */ React17.forwardRef(function InputBase2(props, ref) {
+  var useEnhancedEffect4 = typeof window === "undefined" ? React16.useEffect : React16.useLayoutEffect;
+  var InputBase = /* @__PURE__ */ React16.forwardRef(function InputBase2(props, ref) {
     var ariaDescribedby = props["aria-describedby"], autoComplete = props.autoComplete, autoFocus = props.autoFocus, classes = props.classes, className = props.className, color = props.color, defaultValue = props.defaultValue, disabled = props.disabled, endAdornment = props.endAdornment, error = props.error, _props$fullWidth = props.fullWidth, fullWidth = _props$fullWidth === void 0 ? false : _props$fullWidth, id = props.id, _props$inputComponent = props.inputComponent, inputComponent = _props$inputComponent === void 0 ? "input" : _props$inputComponent, _props$inputProps = props.inputProps, inputPropsProp = _props$inputProps === void 0 ? {} : _props$inputProps, inputRefProp = props.inputRef, margin = props.margin, _props$multiline = props.multiline, multiline = _props$multiline === void 0 ? false : _props$multiline, name = props.name, onBlur = props.onBlur, onChange = props.onChange, onClick = props.onClick, onFocus = props.onFocus, onKeyDown = props.onKeyDown, onKeyUp = props.onKeyUp, placeholder = props.placeholder, readOnly = props.readOnly, renderSuffix = props.renderSuffix, rows = props.rows, rowsMax = props.rowsMax, rowsMin = props.rowsMin, maxRows = props.maxRows, minRows = props.minRows, startAdornment = props.startAdornment, _props$type = props.type, type = _props$type === void 0 ? "text" : _props$type, valueProp = props.value, other = _objectWithoutProperties(props, ["aria-describedby", "autoComplete", "autoFocus", "classes", "className", "color", "defaultValue", "disabled", "endAdornment", "error", "fullWidth", "id", "inputComponent", "inputProps", "inputRef", "margin", "multiline", "name", "onBlur", "onChange", "onClick", "onFocus", "onKeyDown", "onKeyUp", "placeholder", "readOnly", "renderSuffix", "rows", "rowsMax", "rowsMin", "maxRows", "minRows", "startAdornment", "type", "value"]);
     var value = inputPropsProp.value != null ? inputPropsProp.value : valueProp;
-    var _React$useRef = React17.useRef(value != null), isControlled = _React$useRef.current;
-    var inputRef = React17.useRef();
-    var handleInputRefWarning = React17.useCallback(function(instance) {
+    var _React$useRef = React16.useRef(value != null), isControlled = _React$useRef.current;
+    var inputRef = React16.useRef();
+    var handleInputRefWarning = React16.useCallback(function(instance) {
       if (true) {
         if (instance && instance.nodeName !== "INPUT" && !instance.focus) {
           console.error(["Material-UI: You have provided a `inputComponent` to the input component", "that does not correctly handle the `inputRef` prop.", "Make sure the `inputRef` prop is called with a HTMLInputElement."].join("\n"));
@@ -35837,10 +35835,10 @@
     var handleInputPropsRefProp = useForkRef(inputPropsProp.ref, handleInputRefWarning);
     var handleInputRefProp = useForkRef(inputRefProp, handleInputPropsRefProp);
     var handleInputRef = useForkRef(inputRef, handleInputRefProp);
-    var _React$useState = React17.useState(false), focused = _React$useState[0], setFocused = _React$useState[1];
+    var _React$useState = React16.useState(false), focused = _React$useState[0], setFocused = _React$useState[1];
     var muiFormControl = useFormControl();
     if (true) {
-      React17.useEffect(function() {
+      React16.useEffect(function() {
         if (muiFormControl) {
           return muiFormControl.registerEffect();
         }
@@ -35853,7 +35851,7 @@
       states: ["color", "disabled", "error", "hiddenLabel", "margin", "required", "filled"]
     });
     fcs.focused = muiFormControl ? muiFormControl.focused : focused;
-    React17.useEffect(function() {
+    React16.useEffect(function() {
       if (!muiFormControl && disabled && focused) {
         setFocused(false);
         if (onBlur) {
@@ -35863,7 +35861,7 @@
     }, [muiFormControl, disabled, focused, onBlur]);
     var onFilled = muiFormControl && muiFormControl.onFilled;
     var onEmpty = muiFormControl && muiFormControl.onEmpty;
-    var checkDirty = React17.useCallback(function(obj) {
+    var checkDirty = React16.useCallback(function(obj) {
       if (isFilled(obj)) {
         if (onFilled) {
           onFilled();
@@ -35929,7 +35927,7 @@
         onChange.apply(void 0, [event].concat(args));
       }
     };
-    React17.useEffect(function() {
+    React16.useEffect(function() {
       checkDirty(inputRef.current);
     }, []);
     var handleClick = function handleClick2(event) {
@@ -35972,18 +35970,18 @@
         value: "x"
       });
     };
-    React17.useEffect(function() {
+    React16.useEffect(function() {
       if (muiFormControl) {
         muiFormControl.setAdornedStart(Boolean(startAdornment));
       }
     }, [muiFormControl, startAdornment]);
-    return /* @__PURE__ */ React17.createElement("div", _extends4({
+    return /* @__PURE__ */ React16.createElement("div", _extends4({
       className: (0, import_clsx7.default)(classes.root, classes["color".concat(capitalize(fcs.color || "primary"))], className, fcs.disabled && classes.disabled, fcs.error && classes.error, fullWidth && classes.fullWidth, fcs.focused && classes.focused, muiFormControl && classes.formControl, multiline && classes.multiline, startAdornment && classes.adornedStart, endAdornment && classes.adornedEnd, fcs.margin === "dense" && classes.marginDense),
       onClick: handleClick,
       ref
-    }, other), startAdornment, /* @__PURE__ */ React17.createElement(FormControlContext_default.Provider, {
+    }, other), startAdornment, /* @__PURE__ */ React16.createElement(FormControlContext_default.Provider, {
       value: null
-    }, /* @__PURE__ */ React17.createElement(InputComponent, _extends4({
+    }, /* @__PURE__ */ React16.createElement(InputComponent, _extends4({
       "aria-invalid": fcs.error,
       "aria-describedby": ariaDescribedby,
       autoComplete,
@@ -36125,9 +36123,9 @@
       inputTypeSearch: {}
     };
   };
-  var Input = /* @__PURE__ */ React18.forwardRef(function Input2(props, ref) {
+  var Input = /* @__PURE__ */ React17.forwardRef(function Input2(props, ref) {
     var disableUnderline = props.disableUnderline, classes = props.classes, _props$fullWidth = props.fullWidth, fullWidth = _props$fullWidth === void 0 ? false : _props$fullWidth, _props$inputComponent = props.inputComponent, inputComponent = _props$inputComponent === void 0 ? "input" : _props$inputComponent, _props$multiline = props.multiline, multiline = _props$multiline === void 0 ? false : _props$multiline, _props$type = props.type, type = _props$type === void 0 ? "text" : _props$type, other = _objectWithoutProperties(props, ["disableUnderline", "classes", "fullWidth", "inputComponent", "multiline", "type"]);
-    return /* @__PURE__ */ React18.createElement(InputBase_default, _extends4({
+    return /* @__PURE__ */ React17.createElement(InputBase_default, _extends4({
       classes: _extends4({}, classes, {
         root: (0, import_clsx8.default)(classes.root, !disableUnderline && classes.underline),
         underline: null
@@ -36172,9 +36170,11 @@
     name: "MuiInput"
   })(Input);
 
-  // app/javascript/components/NewUser.jsx
-  function NewUser() {
-    const [values2, setValues] = (0, import_react5.useState)({
+  // app/javascript/components/EditUser.jsx
+  function EditUser() {
+    const [userData, setUserData] = (0, import_react4.useState)("");
+    const navigate = useNavigate();
+    const [values2, setValues] = (0, import_react4.useState)({
       firstName: "",
       lastName: "",
       email: "",
@@ -36184,6 +36184,59 @@
       company: "",
       package: ""
     });
+    const params = useParams();
+    (0, import_react4.useEffect)(() => {
+      const fetchUser = async () => {
+        const apiEndpointGetUserData = `/api/edit-user/${params.id}`;
+        try {
+          const response = await fetch(apiEndpointGetUserData);
+          const data = await response.json();
+          const dataObject = data["user"];
+          console.log(dataObject);
+          console.log(data);
+          setValues({
+            showPassword: true,
+            firstName: dataObject.first_name,
+            lastName: dataObject.last_name,
+            email: dataObject.email,
+            password: dataObject.password,
+            role: dataObject.role,
+            company: dataObject.company_name,
+            package: dataObject.package
+          });
+        } catch (err) {
+          console.log(err);
+        }
+      };
+      fetchUser();
+    }, []);
+    const updateUser = async () => {
+      const apiEndpointUpdate = `/api/update-user/${params.id}`;
+      const data = {
+        "first_name": values2.firstName,
+        "last_name": values2.lastName,
+        "email": values2.email,
+        "password": values2.password,
+        "role": values2.role,
+        "company": values2.company,
+        "package": values2.package
+      };
+      try {
+        const response = await fetch(apiEndpointUpdate, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(data)
+        });
+        if (response.ok) {
+          navigate("/users");
+          navigate(0);
+        }
+      } catch (err) {
+        console.log(err.message);
+      }
+    };
     const handleClickShowPassword = () => {
       setValues({ ...values2, showPassword: !values2.showPassword });
     };
@@ -36212,152 +36265,458 @@
       "Contractor-Leadman",
       "Vendor/Supplier"
     ];
-    const companies = ["Comp1", "Comp2", "Comp3", "Comp4", "Comp5"];
+    const companies = ["Company A", "Company B", "Company C", "Company D", "Company E"];
     const packages = ["BA101", "BB102", "BA412", "BT101", "BC222"];
-    return /* @__PURE__ */ import_react5.default.createElement("div", {
+    return /* @__PURE__ */ import_react4.default.createElement("div", {
       className: "bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col my-2"
-    }, /* @__PURE__ */ import_react5.default.createElement("h1", {
+    }, /* @__PURE__ */ import_react4.default.createElement("h1", {
       className: "font-bold text-3xl mb-6"
-    }, "Create New User"), /* @__PURE__ */ import_react5.default.createElement("div", {
+    }, "Edit User"), /* @__PURE__ */ import_react4.default.createElement("div", {
       className: "-mx-3 md:flex mb-6"
-    }, /* @__PURE__ */ import_react5.default.createElement("div", {
+    }, /* @__PURE__ */ import_react4.default.createElement("div", {
       className: "md:w-1/2 px-3 mb-6 md:mb-0"
-    }, /* @__PURE__ */ import_react5.default.createElement("label", {
+    }, /* @__PURE__ */ import_react4.default.createElement("label", {
       className: "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
       htmlFor: "grid-first-name"
-    }, "First Name"), /* @__PURE__ */ import_react5.default.createElement("input", {
+    }, "First Name"), /* @__PURE__ */ import_react4.default.createElement("input", {
       className: "appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3",
       id: "grid-first-name",
       type: "text",
-      placeholder: "Jon"
-    })), /* @__PURE__ */ import_react5.default.createElement("div", {
+      placeholder: "Jon",
+      onChange: (e) => {
+        return setValues({ ...values2, firstName: e.target.value });
+      },
+      value: values2.firstName
+    })), /* @__PURE__ */ import_react4.default.createElement("div", {
       className: "md:w-1/2 px-3"
-    }, /* @__PURE__ */ import_react5.default.createElement("label", {
+    }, /* @__PURE__ */ import_react4.default.createElement("label", {
       className: "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
       htmlFor: "grid-last-name"
-    }, "Last Name"), /* @__PURE__ */ import_react5.default.createElement("input", {
+    }, "Last Name"), /* @__PURE__ */ import_react4.default.createElement("input", {
       className: "appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4",
       id: "grid-last-name",
       type: "text",
-      placeholder: "Snow"
-    })), /* @__PURE__ */ import_react5.default.createElement("div", {
+      placeholder: "Snow",
+      onChange: (e) => {
+        return setValues({ ...values2, lastName: e.target.value });
+      },
+      value: values2.lastName
+    })), /* @__PURE__ */ import_react4.default.createElement("div", {
       className: "md:w-1/2 px-3"
-    }, /* @__PURE__ */ import_react5.default.createElement("label", {
+    }, /* @__PURE__ */ import_react4.default.createElement("label", {
       className: "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
       htmlFor: "grid-last-name"
-    }, "Email"), /* @__PURE__ */ import_react5.default.createElement("input", {
+    }, "Email"), /* @__PURE__ */ import_react4.default.createElement("input", {
       className: "appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4",
       id: "grid-last-name",
       type: "text",
-      placeholder: "name@project.com"
-    }))), /* @__PURE__ */ import_react5.default.createElement("div", {
+      placeholder: "name@project.com",
+      onChange: (e) => {
+        return setValues({ ...values2, email: e.target.value });
+      },
+      value: values2.email
+    }))), /* @__PURE__ */ import_react4.default.createElement("div", {
       className: "-mx-3 md:flex mb-6"
-    }, /* @__PURE__ */ import_react5.default.createElement("div", {
+    }, /* @__PURE__ */ import_react4.default.createElement("div", {
       className: "md:w-full px-3"
-    }, /* @__PURE__ */ import_react5.default.createElement("label", {
+    }, /* @__PURE__ */ import_react4.default.createElement("label", {
       htmlFor: "standard-adornment-password",
       className: "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"
-    }, "PASSWORD"), /* @__PURE__ */ import_react5.default.createElement(Input_default, {
+    }, "PASSWORD"), /* @__PURE__ */ import_react4.default.createElement(Input_default, {
       placeholder: "******************",
       className: "appearance-none block bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3 w-[350px]",
       type: values2.showPassword ? "text" : "password",
       onChange: handlePasswordChange("password"),
       value: values2.password,
-      endAdornment: /* @__PURE__ */ import_react5.default.createElement(InputAdornment_default, {
+      endAdornment: /* @__PURE__ */ import_react4.default.createElement(InputAdornment_default, {
         position: "end"
-      }, /* @__PURE__ */ import_react5.default.createElement(IconButton_default, {
+      }, /* @__PURE__ */ import_react4.default.createElement(IconButton_default, {
         onClick: handleClickShowPassword,
         onMouseDown: handleMouseDownPassword
-      }, values2.showPassword ? /* @__PURE__ */ import_react5.default.createElement(import_Visibility.default, null) : /* @__PURE__ */ import_react5.default.createElement(import_VisibilityOff.default, null)))
-    }))), /* @__PURE__ */ import_react5.default.createElement("div", {
+      }, values2.showPassword ? /* @__PURE__ */ import_react4.default.createElement(import_Visibility.default, null) : /* @__PURE__ */ import_react4.default.createElement(import_VisibilityOff.default, null)))
+    }))), /* @__PURE__ */ import_react4.default.createElement("div", {
       className: "-mx-3 md:flex mb-2"
-    }, /* @__PURE__ */ import_react5.default.createElement("div", {
+    }, /* @__PURE__ */ import_react4.default.createElement("div", {
       className: "md:w-1/2 px-3"
-    }, /* @__PURE__ */ import_react5.default.createElement("label", {
+    }, /* @__PURE__ */ import_react4.default.createElement("label", {
       className: "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
       htmlFor: "grid-state"
-    }, "Role"), /* @__PURE__ */ import_react5.default.createElement("div", {
+    }, "Role"), /* @__PURE__ */ import_react4.default.createElement("div", {
       className: "relative"
-    }, /* @__PURE__ */ import_react5.default.createElement("select", {
+    }, /* @__PURE__ */ import_react4.default.createElement("select", {
       className: "block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded",
       id: "grid-state",
       onChange: (e) => {
         return setValues({ ...values2, role: e.target.value });
       },
       value: values2.role
-    }, roles.map((role) => /* @__PURE__ */ import_react5.default.createElement("option", {
+    }, roles.map((role) => /* @__PURE__ */ import_react4.default.createElement("option", {
       key: role,
       value: role
-    }, role))), /* @__PURE__ */ import_react5.default.createElement("div", {
+    }, role))), /* @__PURE__ */ import_react4.default.createElement("div", {
       className: "pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey-darker right-0 bottom-3"
-    }, /* @__PURE__ */ import_react5.default.createElement("svg", {
+    }, /* @__PURE__ */ import_react4.default.createElement("svg", {
       className: "h-4 w-4",
       xmlns: "http://www.w3.org/2000/svg",
       viewBox: "0 0 20 20"
-    }, /* @__PURE__ */ import_react5.default.createElement("path", {
+    }, /* @__PURE__ */ import_react4.default.createElement("path", {
       d: "M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
-    }))))), /* @__PURE__ */ import_react5.default.createElement("div", {
+    }))))), /* @__PURE__ */ import_react4.default.createElement("div", {
       className: "md:w-1/2 px-3"
-    }, /* @__PURE__ */ import_react5.default.createElement("label", {
+    }, /* @__PURE__ */ import_react4.default.createElement("label", {
       className: "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
       htmlFor: "grid-state"
-    }, "Company"), /* @__PURE__ */ import_react5.default.createElement("div", {
+    }, "Company"), /* @__PURE__ */ import_react4.default.createElement("div", {
       className: "relative"
-    }, /* @__PURE__ */ import_react5.default.createElement("select", {
+    }, /* @__PURE__ */ import_react4.default.createElement("select", {
       className: "block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded",
       id: "grid-state",
       onChange: (e) => {
         return setValues({ ...values2, company: e.target.value });
       },
       value: values2.company
-    }, companies.map((company) => /* @__PURE__ */ import_react5.default.createElement("option", {
+    }, companies.map((company) => /* @__PURE__ */ import_react4.default.createElement("option", {
       key: company,
       value: company
-    }, company))), /* @__PURE__ */ import_react5.default.createElement("div", {
+    }, company))), /* @__PURE__ */ import_react4.default.createElement("div", {
       className: "pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey-darker right-0 bottom-3"
-    }, /* @__PURE__ */ import_react5.default.createElement("svg", {
+    }, /* @__PURE__ */ import_react4.default.createElement("svg", {
       className: "h-4 w-4",
       xmlns: "http://www.w3.org/2000/svg",
       viewBox: "0 0 20 20"
-    }, /* @__PURE__ */ import_react5.default.createElement("path", {
+    }, /* @__PURE__ */ import_react4.default.createElement("path", {
       d: "M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
-    }))))), /* @__PURE__ */ import_react5.default.createElement("div", {
+    }))))), /* @__PURE__ */ import_react4.default.createElement("div", {
       className: "md:w-1/2 px-3"
-    }, /* @__PURE__ */ import_react5.default.createElement("label", {
+    }, /* @__PURE__ */ import_react4.default.createElement("label", {
       className: "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
       htmlFor: "grid-state"
-    }, "Package"), /* @__PURE__ */ import_react5.default.createElement("div", {
+    }, "Package"), /* @__PURE__ */ import_react4.default.createElement("div", {
       className: "relative"
-    }, /* @__PURE__ */ import_react5.default.createElement("select", {
+    }, /* @__PURE__ */ import_react4.default.createElement("select", {
       className: "block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded",
       id: "grid-state",
       onChange: (e) => {
         return setValues({ ...values2, package: e.target.value });
       },
       value: values2.package
-    }, packages.map((item) => /* @__PURE__ */ import_react5.default.createElement("option", {
+    }, packages.map((item) => /* @__PURE__ */ import_react4.default.createElement("option", {
       key: item,
       value: item
-    }, item))), /* @__PURE__ */ import_react5.default.createElement("div", {
+    }, item))), /* @__PURE__ */ import_react4.default.createElement("div", {
       className: "pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey-darker right-0 bottom-3"
-    }, /* @__PURE__ */ import_react5.default.createElement("svg", {
+    }, /* @__PURE__ */ import_react4.default.createElement("svg", {
       className: "h-4 w-4",
       xmlns: "http://www.w3.org/2000/svg",
       viewBox: "0 0 20 20"
-    }, /* @__PURE__ */ import_react5.default.createElement("path", {
+    }, /* @__PURE__ */ import_react4.default.createElement("path", {
       d: "M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
-    })))))));
+    })))))), /* @__PURE__ */ import_react4.default.createElement("button", {
+      onClick: () => updateUser(),
+      type: "submit",
+      className: "text-white bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mx-auto mb-2 mt-4 w-[150px]"
+    }, "Submit"));
+  }
+  var EditUser_default = EditUser;
+
+  // app/javascript/components/Home.jsx
+  var import_react5 = __toESM(require_react());
+  function Home() {
+    return /* @__PURE__ */ import_react5.default.createElement("div", {
+      className: "bg-slate-400 w-full h-full"
+    }, "Home");
+  }
+  var Home_default = Home;
+
+  // app/javascript/components/NewUser.jsx
+  var import_react6 = __toESM(require_react());
+  var import_Visibility2 = __toESM(require_Visibility());
+  var import_VisibilityOff2 = __toESM(require_VisibilityOff());
+  function NewUser() {
+    const [values2, setValues] = (0, import_react6.useState)({
+      firstName: "",
+      lastName: "",
+      email: "",
+      password: "",
+      showPassword: true,
+      role: "",
+      company: "",
+      package: ""
+    });
+    const navigate = useNavigate();
+    const createUser = async () => {
+      const apiEndpoint = "/api/new-user-create";
+      const data = {
+        "first_name": values2.firstName,
+        "last_name": values2.lastName,
+        "email": values2.email,
+        "password": values2.password,
+        "role": values2.role,
+        "company": values2.company,
+        "package": values2.package
+      };
+      try {
+        const response = await fetch(apiEndpoint, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(data)
+        });
+        if (response.ok) {
+          navigate("/users");
+        }
+      } catch (err) {
+        console.log(err.message);
+      }
+    };
+    const handleClickShowPassword = () => {
+      setValues({ ...values2, showPassword: !values2.showPassword });
+    };
+    const handleMouseDownPassword = (event) => {
+      event.preventDefault();
+    };
+    const handlePasswordChange = (prop) => (event) => {
+      setValues({ ...values2, [prop]: event.target.value });
+    };
+    const roles = [
+      "Admin",
+      "Document Controller",
+      "Vice President",
+      "Project Manager",
+      "Construction Manager",
+      "MEP Manager",
+      "Consultant",
+      "Site Engineer",
+      "Site Architect",
+      "QA/QC Engineer",
+      "Contractor-Engineer",
+      "Contractor-Architect",
+      "Contractor-Manager",
+      "Contractor-Doc-Controller",
+      "Contractor-Foreman",
+      "Contractor-Leadman",
+      "Vendor/Supplier"
+    ];
+    const companies = ["Company A", "Company B", "Company C", "Company D", "Company E"];
+    const packages = ["BA101", "BB102", "BA412", "BT101", "BC222"];
+    return /* @__PURE__ */ import_react6.default.createElement("div", {
+      className: "bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col my-2"
+    }, /* @__PURE__ */ import_react6.default.createElement("h1", {
+      className: "font-bold text-3xl mb-6"
+    }, "New User"), /* @__PURE__ */ import_react6.default.createElement("div", {
+      className: "-mx-3 md:flex mb-6"
+    }, /* @__PURE__ */ import_react6.default.createElement("div", {
+      className: "md:w-1/2 px-3 mb-6 md:mb-0"
+    }, /* @__PURE__ */ import_react6.default.createElement("label", {
+      className: "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
+      htmlFor: "grid-first-name"
+    }, "First Name"), /* @__PURE__ */ import_react6.default.createElement("input", {
+      className: "appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3",
+      id: "grid-first-name",
+      type: "text",
+      placeholder: "Jon",
+      onChange: (e) => {
+        return setValues({ ...values2, firstName: e.target.value });
+      },
+      value: values2.firstName
+    })), /* @__PURE__ */ import_react6.default.createElement("div", {
+      className: "md:w-1/2 px-3"
+    }, /* @__PURE__ */ import_react6.default.createElement("label", {
+      className: "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
+      htmlFor: "grid-last-name"
+    }, "Last Name"), /* @__PURE__ */ import_react6.default.createElement("input", {
+      className: "appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4",
+      id: "grid-last-name",
+      type: "text",
+      placeholder: "Snow",
+      onChange: (e) => {
+        return setValues({ ...values2, lastName: e.target.value });
+      },
+      value: values2.lastName
+    })), /* @__PURE__ */ import_react6.default.createElement("div", {
+      className: "md:w-1/2 px-3"
+    }, /* @__PURE__ */ import_react6.default.createElement("label", {
+      className: "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
+      htmlFor: "grid-last-name"
+    }, "Email"), /* @__PURE__ */ import_react6.default.createElement("input", {
+      className: "appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4",
+      id: "grid-last-name",
+      type: "text",
+      placeholder: "name@project.com",
+      onChange: (e) => {
+        return setValues({ ...values2, email: e.target.value });
+      },
+      value: values2.email
+    }))), /* @__PURE__ */ import_react6.default.createElement("div", {
+      className: "-mx-3 md:flex mb-6"
+    }, /* @__PURE__ */ import_react6.default.createElement("div", {
+      className: "md:w-full px-3"
+    }, /* @__PURE__ */ import_react6.default.createElement("label", {
+      htmlFor: "standard-adornment-password",
+      className: "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"
+    }, "PASSWORD"), /* @__PURE__ */ import_react6.default.createElement(Input_default, {
+      placeholder: "******************",
+      className: "appearance-none block bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3 w-[350px]",
+      type: values2.showPassword ? "text" : "password",
+      onChange: handlePasswordChange("password"),
+      value: values2.password,
+      endAdornment: /* @__PURE__ */ import_react6.default.createElement(InputAdornment_default, {
+        position: "end"
+      }, /* @__PURE__ */ import_react6.default.createElement(IconButton_default, {
+        onClick: handleClickShowPassword,
+        onMouseDown: handleMouseDownPassword
+      }, values2.showPassword ? /* @__PURE__ */ import_react6.default.createElement(import_Visibility2.default, null) : /* @__PURE__ */ import_react6.default.createElement(import_VisibilityOff2.default, null)))
+    }))), /* @__PURE__ */ import_react6.default.createElement("div", {
+      className: "-mx-3 md:flex mb-2"
+    }, /* @__PURE__ */ import_react6.default.createElement("div", {
+      className: "md:w-1/2 px-3"
+    }, /* @__PURE__ */ import_react6.default.createElement("label", {
+      className: "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
+      htmlFor: "grid-state"
+    }, "Role"), /* @__PURE__ */ import_react6.default.createElement("div", {
+      className: "relative"
+    }, /* @__PURE__ */ import_react6.default.createElement("select", {
+      className: "block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded",
+      id: "grid-state",
+      onChange: (e) => {
+        return setValues({ ...values2, role: e.target.value });
+      },
+      value: values2.role
+    }, roles.map((role) => /* @__PURE__ */ import_react6.default.createElement("option", {
+      key: role,
+      value: role
+    }, role))), /* @__PURE__ */ import_react6.default.createElement("div", {
+      className: "pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey-darker right-0 bottom-3"
+    }, /* @__PURE__ */ import_react6.default.createElement("svg", {
+      className: "h-4 w-4",
+      xmlns: "http://www.w3.org/2000/svg",
+      viewBox: "0 0 20 20"
+    }, /* @__PURE__ */ import_react6.default.createElement("path", {
+      d: "M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+    }))))), /* @__PURE__ */ import_react6.default.createElement("div", {
+      className: "md:w-1/2 px-3"
+    }, /* @__PURE__ */ import_react6.default.createElement("label", {
+      className: "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
+      htmlFor: "grid-state"
+    }, "Company"), /* @__PURE__ */ import_react6.default.createElement("div", {
+      className: "relative"
+    }, /* @__PURE__ */ import_react6.default.createElement("select", {
+      className: "block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded",
+      id: "grid-state",
+      onChange: (e) => {
+        return setValues({ ...values2, company: e.target.value });
+      },
+      value: values2.company
+    }, companies.map((company) => /* @__PURE__ */ import_react6.default.createElement("option", {
+      key: company,
+      value: company
+    }, company))), /* @__PURE__ */ import_react6.default.createElement("div", {
+      className: "pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey-darker right-0 bottom-3"
+    }, /* @__PURE__ */ import_react6.default.createElement("svg", {
+      className: "h-4 w-4",
+      xmlns: "http://www.w3.org/2000/svg",
+      viewBox: "0 0 20 20"
+    }, /* @__PURE__ */ import_react6.default.createElement("path", {
+      d: "M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+    }))))), /* @__PURE__ */ import_react6.default.createElement("div", {
+      className: "md:w-1/2 px-3"
+    }, /* @__PURE__ */ import_react6.default.createElement("label", {
+      className: "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
+      htmlFor: "grid-state"
+    }, "Package"), /* @__PURE__ */ import_react6.default.createElement("div", {
+      className: "relative"
+    }, /* @__PURE__ */ import_react6.default.createElement("select", {
+      className: "block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded",
+      id: "grid-state",
+      onChange: (e) => {
+        return setValues({ ...values2, package: e.target.value });
+      },
+      value: values2.package
+    }, packages.map((item) => /* @__PURE__ */ import_react6.default.createElement("option", {
+      key: item,
+      value: item
+    }, item))), /* @__PURE__ */ import_react6.default.createElement("div", {
+      className: "pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey-darker right-0 bottom-3"
+    }, /* @__PURE__ */ import_react6.default.createElement("svg", {
+      className: "h-4 w-4",
+      xmlns: "http://www.w3.org/2000/svg",
+      viewBox: "0 0 20 20"
+    }, /* @__PURE__ */ import_react6.default.createElement("path", {
+      d: "M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+    })))))), /* @__PURE__ */ import_react6.default.createElement("button", {
+      onClick: () => createUser(),
+      type: "submit",
+      className: "text-white bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mx-auto mb-2 mt-4 w-[150px]"
+    }, "Submit"));
   }
   var NewUser_default = NewUser;
 
   // app/javascript/components/Users.jsx
-  var import_react6 = __toESM(require_react());
+  var import_react8 = __toESM(require_react());
+
+  // app/javascript/components/ConfirmationModal.jsx
+  var import_react7 = __toESM(require_react());
+  function ConfirmationModal({ setShowModal, deleteUser, userId, userData }) {
+    return /* @__PURE__ */ import_react7.default.createElement(import_react7.default.Fragment, null, /* @__PURE__ */ import_react7.default.createElement("div", {
+      className: "fixed inset-0 z-10 overflow-y-auto"
+    }, /* @__PURE__ */ import_react7.default.createElement("div", {
+      className: "fixed inset-0 w-full h-full bg-black opacity-40",
+      onClick: () => setShowModal(false)
+    }), /* @__PURE__ */ import_react7.default.createElement("div", {
+      className: "flex items-center min-h-screen px-4 py-8"
+    }, /* @__PURE__ */ import_react7.default.createElement("div", {
+      className: "relative w-full max-w-lg p-4 mx-auto bg-white rounded-md shadow-lg"
+    }, /* @__PURE__ */ import_react7.default.createElement("div", {
+      className: "mt-3 sm:flex"
+    }, /* @__PURE__ */ import_react7.default.createElement("div", {
+      className: "flex items-center justify-center flex-none w-12 h-12 mx-auto bg-red-100 rounded-full"
+    }, /* @__PURE__ */ import_react7.default.createElement("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      className: "w-6 h-6 text-red-600",
+      viewBox: "0 0 20 20",
+      fill: "currentColor"
+    }, /* @__PURE__ */ import_react7.default.createElement("path", {
+      fillRule: "evenodd",
+      d: "M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z",
+      clipRule: "evenodd"
+    }))), /* @__PURE__ */ import_react7.default.createElement("div", {
+      className: "mt-2 text-center sm:ml-4 sm:text-left"
+    }, /* @__PURE__ */ import_react7.default.createElement("h4", {
+      className: "text-lg font-medium text-gray-800"
+    }, "Delete account ?"), /* @__PURE__ */ import_react7.default.createElement("p", {
+      className: "mt-2 text-[15px] leading-relaxed text-gray-500"
+    }, "All data will be erased. Are you sure to delete ", userData.firstName, " ", userData.lastName, "'s account?"), /* @__PURE__ */ import_react7.default.createElement("div", {
+      className: "items-center gap-2 mt-3 sm:flex"
+    }, /* @__PURE__ */ import_react7.default.createElement("button", {
+      className: "w-full mt-2 p-2.5 flex-1 text-white bg-red-600 rounded-md outline-none ring-offset-2 ring-red-600 focus:ring-2",
+      onClick: () => {
+        setShowModal(false);
+        deleteUser(userId);
+        console.log(userId);
+      }
+    }, "Delete"), /* @__PURE__ */ import_react7.default.createElement("button", {
+      className: "w-full mt-2 p-2.5 flex-1 text-gray-800 rounded-md outline-none border ring-offset-2 ring-indigo-600 focus:ring-2",
+      onClick: () => setShowModal(false)
+    }, "Cancel"))))))));
+  }
+  var ConfirmationModal_default = ConfirmationModal;
+
+  // app/javascript/components/Users.jsx
   function Users() {
-    const [users, setUsers] = (0, import_react6.useState)([]);
-    const [searchTerm, setSearchTerm] = (0, import_react6.useState)("");
-    const [loading, setLoading] = (0, import_react6.useState)(true);
+    const [users, setUsers] = (0, import_react8.useState)([]);
+    const [searchTerm, setSearchTerm] = (0, import_react8.useState)("");
+    const [selectedUser, setSelectedUser] = (0, import_react8.useState)("");
+    const [loading, setLoading] = (0, import_react8.useState)(true);
+    const [showModal, setShowModal] = (0, import_react8.useState)(false);
+    const [userId, setUserId] = (0, import_react8.useState)("");
     const navigate = useNavigate();
-    (0, import_react6.useEffect)(() => {
+    const [userData, setUserData] = (0, import_react8.useState)({
+      first_name: "",
+      last_name: "",
+      email: ""
+    });
+    (0, import_react8.useEffect)(() => {
       fetchUsers();
     }, []);
     const fetchUsers = async () => {
@@ -36371,117 +36730,168 @@
         console.log(err.message);
       }
     };
+    const fetchUserEmail = async (userId2) => {
+      const apiEndpointGetUserData = `/api/get-user/${userId2}`;
+      try {
+        const response = await fetch(apiEndpointGetUserData);
+        const data = await response.json();
+        const dataObject = data["user"];
+        console.log(dataObject);
+        console.log(data);
+        setUserData({
+          firstName: dataObject.first_name,
+          lastName: dataObject.last_name,
+          email: dataObject.email
+        });
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    const deleteUser = async (userId2) => {
+      const apiEndpointDelete = `/api/delete-user/${userId2}`;
+      try {
+        const response = await fetch(apiEndpointDelete, {
+          method: "DELETE"
+        });
+        if (response.ok) {
+          navigate("/users");
+          navigate(0);
+        }
+      } catch (err) {
+        console.log(err.message);
+      }
+    };
     const onSearchTextChange = (e) => {
       setLoading(true);
       setSearchTerm(e.target.value);
     };
     const loadUsers = users.map(
       (user) => {
-        return /* @__PURE__ */ import_react6.default.createElement("tr", {
+        return /* @__PURE__ */ import_react8.default.createElement("tr", {
           key: user.email,
           className: "text-center"
-        }, /* @__PURE__ */ import_react6.default.createElement("th", {
+        }, /* @__PURE__ */ import_react8.default.createElement("th", {
           className: "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center"
-        }, /* @__PURE__ */ import_react6.default.createElement("img", {
+        }, /* @__PURE__ */ import_react8.default.createElement("img", {
           src: "https://www.linkedin.com/in/jose-robelle-pajarin-861a5696/overlay/photo/",
           className: "h-12 w-12 bg-white rounded-full border",
           alt: "..."
-        }), /* @__PURE__ */ import_react6.default.createElement("span", {
+        }), /* @__PURE__ */ import_react8.default.createElement("span", {
           className: "ml-3 font-bold text-white"
-        }, user.first_name, " ", user.last_name, " ")), /* @__PURE__ */ import_react6.default.createElement("td", {
+        }, user.first_name, " ", user.last_name, " ")), /* @__PURE__ */ import_react8.default.createElement("td", {
           className: "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-        }, user.email), /* @__PURE__ */ import_react6.default.createElement("td", {
+        }, user.email), /* @__PURE__ */ import_react8.default.createElement("td", {
           className: "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-        }, /* @__PURE__ */ import_react6.default.createElement("i", {
+        }, /* @__PURE__ */ import_react8.default.createElement("i", {
           className: "fas fa-circle text-orange-500 mr-2"
-        }), user.role), /* @__PURE__ */ import_react6.default.createElement("td", {
+        }, user.role)), /* @__PURE__ */ import_react8.default.createElement("td", {
           className: "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-        }, user.company), /* @__PURE__ */ import_react6.default.createElement("td", {
+        }, user.company), /* @__PURE__ */ import_react8.default.createElement("td", {
           className: "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-        }, user?.package), /* @__PURE__ */ import_react6.default.createElement("td", {
+        }, user.package), /* @__PURE__ */ import_react8.default.createElement("td", {
           className: "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right"
-        }), /* @__PURE__ */ import_react6.default.createElement("td", {
+        }, /* @__PURE__ */ import_react8.default.createElement("button", {
+          className: "shadow bg-indigo-800 hover:bg-indigo-700 focus:shadow-outline focus:outline-none text-white text-xs py-2 px-4 rounded ml-5",
+          onClick: () => {
+            navigate(`/users/edit-user/${user.id}`);
+          }
+        }, "Edit"), /* @__PURE__ */ import_react8.default.createElement("button", {
+          className: "shadow bg-indigo-800 hover:bg-indigo-700 focus:shadow-outline focus:outline-none text-white text-xs py-2 px-4 rounded ml-5",
+          onClick: () => {
+            setUserId(user.id);
+            fetchUserEmail(user.id);
+            setShowModal(true);
+          }
+        }, "Delete")), /* @__PURE__ */ import_react8.default.createElement("td", {
           className: "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right"
-        }, user.created), /* @__PURE__ */ import_react6.default.createElement("td", {
+        }, user.created), /* @__PURE__ */ import_react8.default.createElement("td", {
           className: "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right"
         }, user.last_updated));
       }
     );
-    return /* @__PURE__ */ import_react6.default.createElement("div", null, /* @__PURE__ */ import_react6.default.createElement("section", {
+    return /* @__PURE__ */ import_react8.default.createElement("div", null, /* @__PURE__ */ import_react8.default.createElement(Routes, null, /* @__PURE__ */ import_react8.default.createElement(Route, {
+      path: "/edit-user/:id",
+      element: /* @__PURE__ */ import_react8.default.createElement(EditUser_default, null)
+    })), /* @__PURE__ */ import_react8.default.createElement("section", {
       className: "relative py-16 bg-blueGray-50"
-    }, /* @__PURE__ */ import_react6.default.createElement("div", {
+    }, /* @__PURE__ */ import_react8.default.createElement("div", {
       className: "w-full mb-12 px-4"
-    }, /* @__PURE__ */ import_react6.default.createElement("div", {
+    }, /* @__PURE__ */ import_react8.default.createElement("div", {
       className: "relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded bg-sky-700 text-white"
-    }, /* @__PURE__ */ import_react6.default.createElement("div", {
+    }, /* @__PURE__ */ import_react8.default.createElement("div", {
       className: "rounded-t mb-0 px-4 py-3 border-0"
-    }, /* @__PURE__ */ import_react6.default.createElement("div", {
+    }, /* @__PURE__ */ import_react8.default.createElement("div", {
       className: "flex justify-between items-center"
-    }, /* @__PURE__ */ import_react6.default.createElement("h3", {
+    }, /* @__PURE__ */ import_react8.default.createElement("h3", {
       className: "font-semibold text-lg text-white"
-    }, "Users"), /* @__PURE__ */ import_react6.default.createElement("div", {
+    }, "Users"), /* @__PURE__ */ import_react8.default.createElement("div", {
       className: "flex justify-between"
-    }, /* @__PURE__ */ import_react6.default.createElement("div", null, /* @__PURE__ */ import_react6.default.createElement("div", {
+    }, /* @__PURE__ */ import_react8.default.createElement("div", null, /* @__PURE__ */ import_react8.default.createElement("div", {
       className: "flex bg-gray-50 items-center p-2 rounded-md"
-    }, /* @__PURE__ */ import_react6.default.createElement("svg", {
+    }, /* @__PURE__ */ import_react8.default.createElement("svg", {
       xmlns: "http://www.w3.org/2000/svg",
       className: "h-5 w-5 text-gray-400",
       viewBox: "0 0 20 20",
       fill: "currentColor"
-    }, /* @__PURE__ */ import_react6.default.createElement("path", {
+    }, /* @__PURE__ */ import_react8.default.createElement("path", {
       d: "M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-    })), /* @__PURE__ */ import_react6.default.createElement("input", {
+    })), /* @__PURE__ */ import_react8.default.createElement("input", {
       className: "bg-gray-50 outline-none ml-1 block text-black",
       type: "text",
       name: "",
       id: "",
       placeholder: "search...",
       onChange: onSearchTextChange
-    }))), /* @__PURE__ */ import_react6.default.createElement(Link, {
+    }))), /* @__PURE__ */ import_react8.default.createElement(Link, {
       to: "/new-user"
-    }, /* @__PURE__ */ import_react6.default.createElement("button", {
+    }, /* @__PURE__ */ import_react8.default.createElement("button", {
       className: "shadow bg-indigo-800 hover:bg-indigo-700 focus:shadow-outline focus:outline-none text-white text-xs py-3 px-10 rounded ml-5"
-    }, "New"))))), /* @__PURE__ */ import_react6.default.createElement("div", {
+    }, "New"))))), /* @__PURE__ */ import_react8.default.createElement("div", {
       className: "block w-full overflow-x-auto "
-    }, /* @__PURE__ */ import_react6.default.createElement("table", {
+    }, /* @__PURE__ */ import_react8.default.createElement("table", {
       className: "items-center w-full bg-transparent border-collapse"
-    }, /* @__PURE__ */ import_react6.default.createElement("thead", {
+    }, /* @__PURE__ */ import_react8.default.createElement("thead", {
       className: "bg-sky-600 "
-    }, /* @__PURE__ */ import_react6.default.createElement("tr", null, /* @__PURE__ */ import_react6.default.createElement("th", {
+    }, /* @__PURE__ */ import_react8.default.createElement("tr", null, /* @__PURE__ */ import_react8.default.createElement("th", {
       className: "text-center px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-white"
-    }, "Full Name"), /* @__PURE__ */ import_react6.default.createElement("th", {
+    }, "Full Name"), /* @__PURE__ */ import_react8.default.createElement("th", {
       className: "text-center px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-white"
-    }, "Email"), /* @__PURE__ */ import_react6.default.createElement("th", {
+    }, "Email"), /* @__PURE__ */ import_react8.default.createElement("th", {
       className: "text-center px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-white"
-    }, "Role"), /* @__PURE__ */ import_react6.default.createElement("th", {
+    }, "Role"), /* @__PURE__ */ import_react8.default.createElement("th", {
       className: "text-center px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-white"
-    }, "Company"), /* @__PURE__ */ import_react6.default.createElement("th", {
+    }, "Company"), /* @__PURE__ */ import_react8.default.createElement("th", {
       className: "text-center px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-white"
-    }, "Package"), /* @__PURE__ */ import_react6.default.createElement("th", {
+    }, "Package"), /* @__PURE__ */ import_react8.default.createElement("th", {
       className: "text-center px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-white"
-    }, "Actions"), /* @__PURE__ */ import_react6.default.createElement("th", {
+    }, "Actions"), /* @__PURE__ */ import_react8.default.createElement("th", {
       className: "text-center px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-white"
-    }, "Created at"), /* @__PURE__ */ import_react6.default.createElement("th", {
+    }, "Created at"), /* @__PURE__ */ import_react8.default.createElement("th", {
       className: "text-center px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-white"
-    }, "Last updated"))), /* @__PURE__ */ import_react6.default.createElement("tbody", null, loading && /* @__PURE__ */ import_react6.default.createElement("tr", null, /* @__PURE__ */ import_react6.default.createElement("td", null, "Loading....")), loadUsers)))))));
+    }, "Last updated"))), /* @__PURE__ */ import_react8.default.createElement("tbody", null, loading && /* @__PURE__ */ import_react8.default.createElement("tr", null, /* @__PURE__ */ import_react8.default.createElement("td", null, "Loading....")), loadUsers)))))), showModal && /* @__PURE__ */ import_react8.default.createElement(ConfirmationModal_default, {
+      setShowModal,
+      deleteUser: () => deleteUser(userId),
+      userData,
+      userId
+    }));
   }
   var Users_default = Users;
 
   // app/javascript/components/App.jsx
   function App() {
-    return /* @__PURE__ */ import_react7.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react7.default.createElement(Routes, null, /* @__PURE__ */ import_react7.default.createElement(Route, {
-      path: "*",
-      element: /* @__PURE__ */ import_react7.default.createElement(Home_default, null)
-    }), /* @__PURE__ */ import_react7.default.createElement(Route, {
-      path: "/users",
-      element: /* @__PURE__ */ import_react7.default.createElement(Users_default, null)
-    }), /* @__PURE__ */ import_react7.default.createElement(Route, {
+    return /* @__PURE__ */ import_react9.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react9.default.createElement(Routes, null, /* @__PURE__ */ import_react9.default.createElement(Route, {
+      path: "/",
+      element: /* @__PURE__ */ import_react9.default.createElement(Home_default, null)
+    }), /* @__PURE__ */ import_react9.default.createElement(Route, {
+      path: "/users/*",
+      element: /* @__PURE__ */ import_react9.default.createElement(Users_default, null)
+    }), /* @__PURE__ */ import_react9.default.createElement(Route, {
       path: "/new-user",
-      element: /* @__PURE__ */ import_react7.default.createElement(NewUser_default, null)
+      element: /* @__PURE__ */ import_react9.default.createElement(NewUser_default, null)
     })));
   }
   var root = import_client.default.createRoot(document.getElementById("app"));
-  root.render(/* @__PURE__ */ import_react7.default.createElement(App, null));
+  root.render(/* @__PURE__ */ import_react9.default.createElement(App, null));
 })();
 /*
 object-assign

@@ -1,9 +1,17 @@
 Rails.application.routes.draw do
-  devise_for :users 
-  # do
-  #   get "/users/sign_out" => "devise/sessions#destroy", :as => :destroy_user_session
-  # end
+  devise_for :users do
+    get "/users/sign_out" => "devise/sessions#destroy", :as => :destroy_user_session
+  end
   get "/api/users", to: "api/users#index"
+  get "/api/edit-user/:id", to: "api/users#edit"
+  get "/api/get-user/:id", to: "api/users#get_user"
+  patch "/api/update-user/:id", to: "api/users#update"
+  delete "/api/delete-user/:id", to: "api/users#destroy"
+
+
+  post "/api/new-user-create", to: "api/users#create"
+  
+
   get "*path", to: "react#home"
   root 'react#home'
 end

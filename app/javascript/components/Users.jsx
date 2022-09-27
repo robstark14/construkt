@@ -1,11 +1,23 @@
 import React, { useEffect, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, Route, Routes, useNavigate } from 'react-router-dom';
+import Button from "@material-ui/core/Button";
+import EditUser from './EditUser';
+import ConfirmationModal from './ConfirmationModal';
+
 
 function Users() {
   const [users, setUsers] = useState([]);
   const [searchTerm, setSearchTerm] = useState("")
+  const [selectedUser, setSelectedUser] = useState("")
   const [loading, setLoading] = useState(true)
+  const [showModal, setShowModal] = useState(false);
+  const [userId, setUserId]= useState("")
   const navigate = useNavigate()
+  const [userData, setUserData] = useState({
+    first_name: "",
+    last_name: "",
+    email: ""
+  })
   useEffect(() => {
       fetchUsers()
   }, [])
@@ -22,11 +34,48 @@ function Users() {
       }
   
     }
+    const fetchUserEmail= async (userId) =>{
+      const apiEndpointGetUserData = `/api/get-user/${userId}`
+        try{
+          
+            const response = await fetch(apiEndpointGetUserData)
+            const data = await response.json()
+            const dataObject = data['user']
+            console.log(dataObject);
+            console.log(data);
+    
+            setUserData({
+              firstName: dataObject.first_name,
+              lastName: dataObject.last_name,
+              email:dataObject.email,
+             })
+            
+        } catch (err) {
+            console.log(err);
+        }
+    }
+    const deleteUser= async (userId) =>{
 
-    const onSearchTextChange = (e) =>  {
-        setLoading(true);
-        setSearchTerm(e.target.value);
-      }  
+      const apiEndpointDelete =`/api/delete-user/${userId}`
+    
+          try{
+              const response = await fetch(apiEndpointDelete, {
+                method: 'DELETE',
+              })
+    
+              if (response.ok) {
+                navigate("/users")
+                navigate(0)
+              } 
+          } catch (err) {
+              console.log(err.message);
+          }
+    }
+    
+  const onSearchTextChange = (e) =>  {
+      setLoading(true);
+      setSearchTerm(e.target.value);
+    }  
   const loadUsers = users.map((user)=>{
     return(     
         <tr key={user.email} className ="text-center">
@@ -35,14 +84,28 @@ function Users() {
           <span className="ml-3 font-bold text-white">{user.first_name} {user.last_name} </span></th>
         <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">{user.email}</td>
         <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-          <i className="fas fa-circle text-orange-500 mr-2"></i>{user.role}</td>
+          <i className="fas fa-circle text-orange-500 mr-2">{user.role}</i></td>
         <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
         {user.company}
         </td>
         <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-            {user?.package}
+            {user.package}
         </td>
-        <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right"></td>
+        <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right">
+          <button className="shadow bg-indigo-800 hover:bg-indigo-700 focus:shadow-outline focus:outline-none text-white text-xs py-2 px-4 rounded ml-5"
+           onClick={()=>{
+            navigate(`/users/edit-user/${user.id}`);
+           }}
+          >Edit</button>
+          <button className="shadow bg-indigo-800 hover:bg-indigo-700 focus:shadow-outline focus:outline-none text-white text-xs py-2 px-4 rounded ml-5"
+            onClick={()=> {
+              setUserId(user.id)
+              fetchUserEmail(user.id)
+              setShowModal(true)
+            }}
+          >Delete
+          </button>
+        </td>
         <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right">{user.created}</td>
         <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right">{user.last_updated}</td>
 
@@ -55,7 +118,10 @@ function Users() {
 
   return (
     <div>
-      
+      <Routes>
+        <Route path="/edit-user/:id" element={<EditUser />}/>
+      </Routes>
+    
     <section className="relative py-16 bg-blueGray-50">
         <div className="w-full mb-12 px-4">
             <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded bg-sky-700 text-white">
@@ -113,8 +179,9 @@ function Users() {
         </div>
         </div>
     </div>
-  </section>      
-      </div>  
+  </section>
+  {showModal && <ConfirmationModal setShowModal={setShowModal} deleteUser={()=>deleteUser(userId)} userData={userData} userId={userId}/>}      
+  </div>  
       )
 }
 
