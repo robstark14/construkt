@@ -9,7 +9,7 @@ function Users() {
   const [users, setUsers] = useState([]);
   const [searchTerm, setSearchTerm] = useState("")
   const [selectedUser, setSelectedUser] = useState("")
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
   const [showModal, setShowModal] = useState(false);
   const [userId, setUserId]= useState("")
   const navigate = useNavigate()
@@ -19,21 +19,28 @@ function Users() {
     email: ""
   })
   useEffect(() => {
-      fetchUsers()
-  }, [])
-
-  const fetchUsers= async () =>{
-    const apiEndpoint =`/api/users?search_term=${searchTerm}`
-      try{
-          const response = await fetch(apiEndpoint)
-          const data = await response.json()
-          setUsers(data["users"])
-          setLoading(false)
-      } catch (err) {
-          console.log(err.message);
+    const fetchUsers= async () =>{
+      const apiEndpoint =`/api/users?search_term=${searchTerm}`
+        try{
+            const response = await fetch(apiEndpoint)
+            const data = await response.json()
+            setUsers(data["users"])
+            setLoading(false)
+        } catch (err) {
+            console.log(err.message);
+        }
+    
       }
+      fetchUsers()
+  }, [searchTerm])
+
+  const onSearchTextChange = (e) =>  {
+    setLoading(true);
+    setSearchTerm(e.target.value);
   
-    }
+    
+  }    
+
     const fetchUserEmail= async (userId) =>{
       const apiEndpointGetUserData = `/api/get-user/${userId}`
         try{
@@ -72,15 +79,12 @@ function Users() {
           }
     }
     
-  const onSearchTextChange = (e) =>  {
-      setLoading(true);
-      setSearchTerm(e.target.value);
-    }  
+
   const loadUsers = users.map((user)=>{
     return(     
         <tr key={user.email} className ="text-center">
         <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center">
-          <img src="https://www.linkedin.com/in/jose-robelle-pajarin-861a5696/overlay/photo/" className="h-12 w-12 bg-white rounded-full border" alt="..."/>
+          <img src="" className="h-12 w-12 bg-white rounded-full border" alt="..."/>
           <span className="ml-3 font-bold text-white">{user.first_name} {user.last_name} </span></th>
         <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">{user.email}</td>
         <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
@@ -94,7 +98,7 @@ function Users() {
         <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right">
           <button className="shadow bg-indigo-800 hover:bg-indigo-700 focus:shadow-outline focus:outline-none text-white text-xs py-2 px-4 rounded ml-5"
            onClick={()=>{
-            navigate(`/users/edit-user/${user.id}`);
+            navigate(`/edit-user/${user.id}`);
            }}
           >Edit</button>
           <button className="shadow bg-indigo-800 hover:bg-indigo-700 focus:shadow-outline focus:outline-none text-white text-xs py-2 px-4 rounded ml-5"
@@ -140,8 +144,7 @@ function Users() {
                           <input
                           className="bg-gray-50 outline-none ml-1 block text-black"
                           type="text"
-                          name=""
-                          id=""
+                          value={searchTerm}
                           placeholder="search..."
                           onChange={onSearchTextChange}
                           />
@@ -172,7 +175,7 @@ function Users() {
             </thead>
 
             <tbody>
-            {loading && <tr><td>Loading....</td></tr>}
+            {loading && <tr><td>Loadingssss....</td></tr>}
             {loadUsers}
             </tbody>
             </table>

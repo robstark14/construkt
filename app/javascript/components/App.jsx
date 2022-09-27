@@ -1,44 +1,63 @@
-import React, { StrictMode, useState } from 'react'
-import ReactDOM, { createRoot } from "react-dom/client";
-
+import React, { StrictMode, useState, useEffect } from 'react'
+import ReactDOM from "react-dom/client";
 import {
   BrowserRouter as Router,
   Routes,
   Route
 } from "react-router-dom";
-import EditUser from './EditUser';
-
+import Users from "./Users";
 import Home from "./Home";
 import NewUser from './NewUser';
-import Users from './Users';
+// import reportWebVitals from "./reportWebVitals";
 
 function App() {
+  const [userRole, setUserRole] = useState("")
+
+  useEffect(() => {
+    checkUserRole()
+  
+   
+  }, [])
+  
+ const checkUserRole= async () => {
+  const apiEndpoint =`/api/user-role`
+  try{
+      const response = await fetch(apiEndpoint)
+      const data = await response.json()
+      setUserRole(data["user_role"])
+     
+  } catch (err) {
+      console.log(err.message);
+  }
+
+}
+
  
   return (
+    <div className='w-full h-screen'>
+
     <Router>
       <Routes>
-        
-        <Route path="/" element={<Home />} />
-        <Route path="/users/*" element={<Users />} />
-        
-        <Route path="/new-user" element={<NewUser />} />
-
-        
-        
+        <Route path="*" element={userRole === 'Admin'? <Users />:<Home />} /> 
+        {/* <Route path="/users/*" element={} /> */}
+        <Route path="/new-user" element={<NewUser />} />  
       </Routes>
     </Router>
+    </div>
+
   );
 }
 
 // Set up some code that would render react into the DOM
 const root = ReactDOM.createRoot(document.getElementById("app"));
-root.render(<App />);
+// root.render(<App />);
 
 // const rootElement = document.getElementById('app');
 // const root = ReactDOM.createRoot(rootElement);
 
-// root.render(
-//   <StrictMode>
-//     <App />
-//   </StrictMode>,
-// );
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+// reportWebVitals();

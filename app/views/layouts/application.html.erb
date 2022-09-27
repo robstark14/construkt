@@ -10,12 +10,12 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body style= "margin:0;, padding:0;">
-    <nav class="w-full h-[50px] text-white p-2 bg-sky-700 border-b flex justify-between">
+  <body class="w-full h-screen">
+    <nav class="w-full h-[50px] text-white p-2 dark:bg-gray-800 flex justify-between border-b border-gray-900">
       <h1 class = "text-xl font-bold text-shadow text-yellow">Construkt</h1>
       <% if current_user %>
-      <h1 class = "text-xl font-bold text-shadow text-yellow"><%=current_user.first_name%> <%=current_user.last_name%></h1>
-      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+        <p class = "text-xl font-bold text-shadow text-yellow"><%=current_user.first_name%> <%=current_user.last_name%></p>
+        <%= link_to "Logout", destroy_user_session_path, method: :delete %>
       <%end%>
     </nav>
 

@@ -1,0 +1,2 @@
+class ConstructionDrawing < ApplicationRecord
+end

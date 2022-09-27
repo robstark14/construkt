@@ -1000,7 +1000,7 @@
             }
             return dispatcher.useContext(Context);
           }
-          function useState13(initialState) {
+          function useState14(initialState) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useState(initialState);
           }
@@ -1012,7 +1012,7 @@
             var dispatcher = resolveDispatcher();
             return dispatcher.useRef(initialValue);
           }
-          function useEffect14(create2, deps) {
+          function useEffect15(create2, deps) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useEffect(create2, deps);
           }
@@ -1792,7 +1792,7 @@
           exports.useContext = useContext4;
           exports.useDebugValue = useDebugValue3;
           exports.useDeferredValue = useDeferredValue;
-          exports.useEffect = useEffect14;
+          exports.useEffect = useEffect15;
           exports.useId = useId;
           exports.useImperativeHandle = useImperativeHandle3;
           exports.useInsertionEffect = useInsertionEffect;
@@ -1800,7 +1800,7 @@
           exports.useMemo = useMemo4;
           exports.useReducer = useReducer;
           exports.useRef = useRef8;
-          exports.useState = useState13;
+          exports.useState = useState14;
           exports.useSyncExternalStore = useSyncExternalStore2;
           exports.useTransition = useTransition;
           exports.version = ReactVersion;
@@ -2296,9 +2296,9 @@
           if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") {
             __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
           }
-          var React24 = require_react();
+          var React26 = require_react();
           var Scheduler = require_scheduler();
-          var ReactSharedInternals = React24.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          var ReactSharedInternals = React26.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
           var suppressWarning = false;
           function setSuppressWarning(newSuppressWarning) {
             {
@@ -3819,7 +3819,7 @@
             {
               if (props.value == null) {
                 if (typeof props.children === "object" && props.children !== null) {
-                  React24.Children.forEach(props.children, function(child) {
+                  React26.Children.forEach(props.children, function(child) {
                     if (child == null) {
                       return;
                     }
@@ -11980,7 +11980,7 @@
             }
           }
           var fakeInternalInstance = {};
-          var emptyRefsObject = new React24.Component().refs;
+          var emptyRefsObject = new React26.Component().refs;
           var didWarnAboutStateAssignmentForComponent;
           var didWarnAboutUninitializedState;
           var didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate;
@@ -22439,7 +22439,7 @@
               unmarkContainerAsRoot(container);
             }
           };
-          function createRoot2(container, options2) {
+          function createRoot(container, options2) {
             if (!isValidContainer(container)) {
               throw new Error("createRoot(...): Target container is not a DOM element.");
             }
@@ -22798,7 +22798,7 @@
                 error('You are importing createRoot from "react-dom" which is not supported. You should instead import it from "react-dom/client".');
               }
             }
-            return createRoot2(container, options2);
+            return createRoot(container, options2);
           }
           function hydrateRoot$1(container, initialChildren, options2) {
             {
@@ -23696,6 +23696,69 @@
     }
   });
 
+  // node_modules/@babel/runtime/helpers/typeof.js
+  var require_typeof = __commonJS({
+    "node_modules/@babel/runtime/helpers/typeof.js"(exports, module) {
+      function _typeof(obj) {
+        "@babel/helpers - typeof";
+        return module.exports = _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(obj2) {
+          return typeof obj2;
+        } : function(obj2) {
+          return obj2 && "function" == typeof Symbol && obj2.constructor === Symbol && obj2 !== Symbol.prototype ? "symbol" : typeof obj2;
+        }, module.exports.__esModule = true, module.exports["default"] = module.exports, _typeof(obj);
+      }
+      module.exports = _typeof, module.exports.__esModule = true, module.exports["default"] = module.exports;
+    }
+  });
+
+  // node_modules/@babel/runtime/helpers/interopRequireWildcard.js
+  var require_interopRequireWildcard = __commonJS({
+    "node_modules/@babel/runtime/helpers/interopRequireWildcard.js"(exports, module) {
+      var _typeof = require_typeof()["default"];
+      function _getRequireWildcardCache(nodeInterop) {
+        if (typeof WeakMap !== "function")
+          return null;
+        var cacheBabelInterop = /* @__PURE__ */ new WeakMap();
+        var cacheNodeInterop = /* @__PURE__ */ new WeakMap();
+        return (_getRequireWildcardCache = function _getRequireWildcardCache2(nodeInterop2) {
+          return nodeInterop2 ? cacheNodeInterop : cacheBabelInterop;
+        })(nodeInterop);
+      }
+      function _interopRequireWildcard(obj, nodeInterop) {
+        if (!nodeInterop && obj && obj.__esModule) {
+          return obj;
+        }
+        if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") {
+          return {
+            "default": obj
+          };
+        }
+        var cache = _getRequireWildcardCache(nodeInterop);
+        if (cache && cache.has(obj)) {
+          return cache.get(obj);
+        }
+        var newObj = {};
+        var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+        for (var key in obj) {
+          if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
+            var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+            if (desc && (desc.get || desc.set)) {
+              Object.defineProperty(newObj, key, desc);
+            } else {
+              newObj[key] = obj[key];
+            }
+          }
+        }
+        newObj["default"] = obj;
+        if (cache) {
+          cache.set(obj, newObj);
+        }
+        return newObj;
+      }
+      module.exports = _interopRequireWildcard, module.exports.__esModule = true, module.exports["default"] = module.exports;
+    }
+  });
+
   // node_modules/@babel/runtime/helpers/interopRequireDefault.js
   var require_interopRequireDefault = __commonJS({
     "node_modules/@babel/runtime/helpers/interopRequireDefault.js"(exports, module) {
@@ -23747,21 +23810,6 @@
         return _extends5.apply(this, arguments);
       }
       module.exports = _extends5, module.exports.__esModule = true, module.exports["default"] = module.exports;
-    }
-  });
-
-  // node_modules/@babel/runtime/helpers/typeof.js
-  var require_typeof = __commonJS({
-    "node_modules/@babel/runtime/helpers/typeof.js"(exports, module) {
-      function _typeof(obj) {
-        "@babel/helpers - typeof";
-        return module.exports = _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(obj2) {
-          return typeof obj2;
-        } : function(obj2) {
-          return obj2 && "function" == typeof Symbol && obj2.constructor === Symbol && obj2 !== Symbol.prototype ? "symbol" : typeof obj2;
-        }, module.exports.__esModule = true, module.exports["default"] = module.exports, _typeof(obj);
-      }
-      module.exports = _typeof, module.exports.__esModule = true, module.exports["default"] = module.exports;
     }
   });
 
@@ -23837,54 +23885,6 @@
       elementAcceptingRef.isRequired = (0, _chainPropTypes.default)(_propTypes.default.element.isRequired, acceptingRef);
       var _default = elementAcceptingRef;
       exports.default = _default;
-    }
-  });
-
-  // node_modules/@babel/runtime/helpers/interopRequireWildcard.js
-  var require_interopRequireWildcard = __commonJS({
-    "node_modules/@babel/runtime/helpers/interopRequireWildcard.js"(exports, module) {
-      var _typeof = require_typeof()["default"];
-      function _getRequireWildcardCache(nodeInterop) {
-        if (typeof WeakMap !== "function")
-          return null;
-        var cacheBabelInterop = /* @__PURE__ */ new WeakMap();
-        var cacheNodeInterop = /* @__PURE__ */ new WeakMap();
-        return (_getRequireWildcardCache = function _getRequireWildcardCache2(nodeInterop2) {
-          return nodeInterop2 ? cacheNodeInterop : cacheBabelInterop;
-        })(nodeInterop);
-      }
-      function _interopRequireWildcard(obj, nodeInterop) {
-        if (!nodeInterop && obj && obj.__esModule) {
-          return obj;
-        }
-        if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") {
-          return {
-            "default": obj
-          };
-        }
-        var cache = _getRequireWildcardCache(nodeInterop);
-        if (cache && cache.has(obj)) {
-          return cache.get(obj);
-        }
-        var newObj = {};
-        var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
-        for (var key in obj) {
-          if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
-            var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
-            if (desc && (desc.get || desc.set)) {
-              Object.defineProperty(newObj, key, desc);
-            } else {
-              newObj[key] = obj[key];
-            }
-          }
-        }
-        newObj["default"] = obj;
-        if (cache) {
-          cache.set(obj, newObj);
-        }
-        return newObj;
-      }
-      module.exports = _interopRequireWildcard, module.exports.__esModule = true, module.exports["default"] = module.exports;
     }
   });
 
@@ -31173,7 +31173,7 @@
       exports.default = exports.styles = void 0;
       var _extends22 = _interopRequireDefault(require_extends());
       var _objectWithoutProperties2 = _interopRequireDefault(require_objectWithoutProperties());
-      var React24 = _interopRequireWildcard(require_react());
+      var React26 = _interopRequireWildcard(require_react());
       var _propTypes = _interopRequireDefault(require_prop_types());
       var _clsx = _interopRequireDefault(require_clsx());
       var _utils = require_utils();
@@ -31220,9 +31220,9 @@
         };
       };
       exports.styles = styles14;
-      var SvgIcon = /* @__PURE__ */ React24.forwardRef(function SvgIcon2(props, ref) {
+      var SvgIcon = /* @__PURE__ */ React26.forwardRef(function SvgIcon2(props, ref) {
         var children = props.children, classes = props.classes, className = props.className, _props$color = props.color, color = _props$color === void 0 ? "inherit" : _props$color, _props$component = props.component, Component2 = _props$component === void 0 ? "svg" : _props$component, _props$fontSize = props.fontSize, fontSize = _props$fontSize === void 0 ? "medium" : _props$fontSize, htmlColor = props.htmlColor, titleAccess = props.titleAccess, _props$viewBox = props.viewBox, viewBox = _props$viewBox === void 0 ? "0 0 24 24" : _props$viewBox, other = (0, _objectWithoutProperties2.default)(props, ["children", "classes", "className", "color", "component", "fontSize", "htmlColor", "titleAccess", "viewBox"]);
-        return /* @__PURE__ */ React24.createElement(Component2, (0, _extends22.default)({
+        return /* @__PURE__ */ React26.createElement(Component2, (0, _extends22.default)({
           className: (0, _clsx.default)(classes.root, className, color !== "inherit" && classes["color".concat((0, _capitalize.default)(color))], fontSize !== "default" && fontSize !== "medium" && classes["fontSize".concat((0, _capitalize.default)(fontSize))]),
           focusable: "false",
           viewBox,
@@ -31230,7 +31230,7 @@
           "aria-hidden": titleAccess ? void 0 : true,
           role: titleAccess ? "img" : void 0,
           ref
-        }, other), children, titleAccess ? /* @__PURE__ */ React24.createElement("title", null, titleAccess) : null);
+        }, other), children, titleAccess ? /* @__PURE__ */ React26.createElement("title", null, titleAccess) : null);
       });
       true ? SvgIcon.propTypes = {
         children: _propTypes.default.node,
@@ -31368,9 +31368,9 @@
         value: true
       });
       exports.default = isMuiElement;
-      var React24 = _interopRequireWildcard(require_react());
+      var React26 = _interopRequireWildcard(require_react());
       function isMuiElement(element, muiNames) {
-        return /* @__PURE__ */ React24.isValidElement(element) && muiNames.indexOf(element.type.muiName) !== -1;
+        return /* @__PURE__ */ React26.isValidElement(element) && muiNames.indexOf(element.type.muiName) !== -1;
       }
     }
   });
@@ -31482,26 +31482,26 @@
         value: true
       });
       exports.default = useControlled;
-      var React24 = _interopRequireWildcard(require_react());
+      var React26 = _interopRequireWildcard(require_react());
       function useControlled(_ref) {
         var controlled = _ref.controlled, defaultProp = _ref.default, name = _ref.name, _ref$state = _ref.state, state = _ref$state === void 0 ? "value" : _ref$state;
-        var _React$useRef = React24.useRef(controlled !== void 0), isControlled = _React$useRef.current;
-        var _React$useState = React24.useState(defaultProp), valueState = _React$useState[0], setValue = _React$useState[1];
+        var _React$useRef = React26.useRef(controlled !== void 0), isControlled = _React$useRef.current;
+        var _React$useState = React26.useState(defaultProp), valueState = _React$useState[0], setValue = _React$useState[1];
         var value = isControlled ? controlled : valueState;
         if (true) {
-          React24.useEffect(function() {
+          React26.useEffect(function() {
             if (isControlled !== (controlled !== void 0)) {
               console.error(["Material-UI: A component is changing the ".concat(isControlled ? "" : "un", "controlled ").concat(state, " state of ").concat(name, " to be ").concat(isControlled ? "un" : "", "controlled."), "Elements should not switch from uncontrolled to controlled (or vice versa).", "Decide between using a controlled or uncontrolled ".concat(name, " ") + "element for the lifetime of the component.", "The nature of the state is determined during the first render, it's considered controlled if the value is not `undefined`.", "More info: https://fb.me/react-controlled-components"].join("\n"));
             }
           }, [controlled]);
-          var _React$useRef2 = React24.useRef(defaultProp), defaultValue = _React$useRef2.current;
-          React24.useEffect(function() {
+          var _React$useRef2 = React26.useRef(defaultProp), defaultValue = _React$useRef2.current;
+          React26.useEffect(function() {
             if (!isControlled && defaultValue !== defaultProp) {
               console.error(["Material-UI: A component is changing the default ".concat(state, " state of an uncontrolled ").concat(name, " after being initialized. ") + "To suppress this warning opt to use a controlled ".concat(name, ".")].join("\n"));
             }
           }, [JSON.stringify(defaultProp)]);
         }
-        var setValueIfUncontrolled = React24.useCallback(function(newValue) {
+        var setValueIfUncontrolled = React26.useCallback(function(newValue) {
           if (!isControlled) {
             setValue(newValue);
           }
@@ -31520,14 +31520,14 @@
         value: true
       });
       exports.default = useEventCallback2;
-      var React24 = _interopRequireWildcard(require_react());
-      var useEnhancedEffect5 = typeof window !== "undefined" ? React24.useLayoutEffect : React24.useEffect;
+      var React26 = _interopRequireWildcard(require_react());
+      var useEnhancedEffect5 = typeof window !== "undefined" ? React26.useLayoutEffect : React26.useEffect;
       function useEventCallback2(fn) {
-        var ref = React24.useRef(fn);
+        var ref = React26.useRef(fn);
         useEnhancedEffect5(function() {
           ref.current = fn;
         });
-        return React24.useCallback(function() {
+        return React26.useCallback(function() {
           return (0, ref.current).apply(void 0, arguments);
         }, []);
       }
@@ -31544,10 +31544,10 @@
         value: true
       });
       exports.default = useForkRef2;
-      var React24 = _interopRequireWildcard(require_react());
+      var React26 = _interopRequireWildcard(require_react());
       var _setRef = _interopRequireDefault(require_setRef());
       function useForkRef2(refA, refB) {
-        return React24.useMemo(function() {
+        return React26.useMemo(function() {
           if (refA == null && refB == null) {
             return null;
           }
@@ -31569,11 +31569,11 @@
         value: true
       });
       exports.default = useId;
-      var React24 = _interopRequireWildcard(require_react());
+      var React26 = _interopRequireWildcard(require_react());
       function useId(idOverride) {
-        var _React$useState = React24.useState(idOverride), defaultId = _React$useState[0], setDefaultId = _React$useState[1];
+        var _React$useState = React26.useState(idOverride), defaultId = _React$useState[0], setDefaultId = _React$useState[1];
         var id = idOverride || defaultId;
-        React24.useEffect(function() {
+        React26.useEffect(function() {
           if (defaultId == null) {
             setDefaultId("mui-".concat(Math.round(Math.random() * 1e5)));
           }
@@ -31593,7 +31593,7 @@
       });
       exports.teardown = teardown;
       exports.default = useIsFocusVisible2;
-      var React24 = _interopRequireWildcard(require_react());
+      var React26 = _interopRequireWildcard(require_react());
       var ReactDOM4 = _interopRequireWildcard(require_react_dom());
       var hadKeyboardEvent2 = true;
       var hadFocusVisibleRecently2 = false;
@@ -31672,14 +31672,14 @@
         }, 100);
       }
       function useIsFocusVisible2() {
-        var ref = React24.useCallback(function(instance) {
+        var ref = React26.useCallback(function(instance) {
           var node = ReactDOM4.findDOMNode(instance);
           if (node != null) {
             prepare2(node.ownerDocument);
           }
         }, []);
         if (true) {
-          React24.useDebugValue(isFocusVisible2);
+          React26.useDebugValue(isFocusVisible2);
         }
         return {
           isFocusVisible: isFocusVisible2,
@@ -31840,9 +31840,9 @@
         value: true
       });
       exports.default = void 0;
-      var React24 = _interopRequireWildcard(require_react());
+      var React26 = _interopRequireWildcard(require_react());
       var _createSvgIcon = _interopRequireDefault(require_createSvgIcon2());
-      var _default = (0, _createSvgIcon.default)(/* @__PURE__ */ React24.createElement("path", {
+      var _default = (0, _createSvgIcon.default)(/* @__PURE__ */ React26.createElement("path", {
         d: "M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"
       }), "Visibility");
       exports.default = _default;
@@ -31859,9 +31859,9 @@
         value: true
       });
       exports.default = void 0;
-      var React24 = _interopRequireWildcard(require_react());
+      var React26 = _interopRequireWildcard(require_react());
       var _createSvgIcon = _interopRequireDefault(require_createSvgIcon2());
-      var _default = (0, _createSvgIcon.default)(/* @__PURE__ */ React24.createElement("path", {
+      var _default = (0, _createSvgIcon.default)(/* @__PURE__ */ React26.createElement("path", {
         d: "M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46C3.08 8.3 1.78 10.02 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.53-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.53.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"
       }), "VisibilityOff");
       exports.default = _default;
@@ -31869,7 +31869,7 @@
   });
 
   // app/javascript/components/App.jsx
-  var import_react9 = __toESM(require_react());
+  var import_react11 = __toESM(require_react());
   var import_client = __toESM(require_client());
 
   // node_modules/react-router-dom/dist/index.js
@@ -33400,24 +33400,8 @@
     }, [callback]);
   }
 
-  // app/javascript/components/EditUser.jsx
-  var import_react4 = __toESM(require_react());
-
-  // node_modules/@babel/runtime/helpers/esm/extends.js
-  function _extends4() {
-    _extends4 = Object.assign ? Object.assign.bind() : function(target) {
-      for (var i = 1; i < arguments.length; i++) {
-        var source = arguments[i];
-        for (var key in source) {
-          if (Object.prototype.hasOwnProperty.call(source, key)) {
-            target[key] = source[key];
-          }
-        }
-      }
-      return target;
-    };
-    return _extends4.apply(this, arguments);
-  }
+  // app/javascript/components/Users.jsx
+  var import_react6 = __toESM(require_react());
 
   // node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
   function _objectWithoutPropertiesLoose2(source, excluded) {
@@ -33455,11 +33439,21 @@
     return target;
   }
 
-  // node_modules/@material-ui/core/esm/IconButton/IconButton.js
-  var React11 = __toESM(require_react());
-  var import_prop_types5 = __toESM(require_prop_types());
-  var import_clsx4 = __toESM(require_clsx());
-  var import_utils5 = __toESM(require_utils());
+  // node_modules/@babel/runtime/helpers/esm/extends.js
+  function _extends4() {
+    _extends4 = Object.assign ? Object.assign.bind() : function(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+      return target;
+    };
+    return _extends4.apply(this, arguments);
+  }
 
   // node_modules/@material-ui/core/esm/styles/withStyles.js
   var import_styles = __toESM(require_styles());
@@ -35209,7 +35203,14 @@
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
 
+  // app/javascript/components/EditUser.jsx
+  var import_react4 = __toESM(require_react());
+
   // node_modules/@material-ui/core/esm/IconButton/IconButton.js
+  var React11 = __toESM(require_react());
+  var import_prop_types5 = __toESM(require_prop_types());
+  var import_clsx4 = __toESM(require_clsx());
+  var import_utils5 = __toESM(require_utils());
   var styles4 = function styles5(theme) {
     return {
       root: {
@@ -36419,21 +36420,571 @@
   }
   var EditUser_default = EditUser;
 
-  // app/javascript/components/Home.jsx
+  // app/javascript/components/ConfirmationModal.jsx
   var import_react5 = __toESM(require_react());
+  function ConfirmationModal({ setShowModal, deleteUser, userId, userData }) {
+    return /* @__PURE__ */ import_react5.default.createElement(import_react5.default.Fragment, null, /* @__PURE__ */ import_react5.default.createElement("div", {
+      className: "fixed inset-0 z-10 overflow-y-auto"
+    }, /* @__PURE__ */ import_react5.default.createElement("div", {
+      className: "fixed inset-0 w-full h-full bg-black opacity-40",
+      onClick: () => setShowModal(false)
+    }), /* @__PURE__ */ import_react5.default.createElement("div", {
+      className: "flex items-center min-h-screen px-4 py-8"
+    }, /* @__PURE__ */ import_react5.default.createElement("div", {
+      className: "relative w-full max-w-lg p-4 mx-auto bg-white rounded-md shadow-lg"
+    }, /* @__PURE__ */ import_react5.default.createElement("div", {
+      className: "mt-3 sm:flex"
+    }, /* @__PURE__ */ import_react5.default.createElement("div", {
+      className: "flex items-center justify-center flex-none w-12 h-12 mx-auto bg-red-100 rounded-full"
+    }, /* @__PURE__ */ import_react5.default.createElement("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      className: "w-6 h-6 text-red-600",
+      viewBox: "0 0 20 20",
+      fill: "currentColor"
+    }, /* @__PURE__ */ import_react5.default.createElement("path", {
+      fillRule: "evenodd",
+      d: "M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z",
+      clipRule: "evenodd"
+    }))), /* @__PURE__ */ import_react5.default.createElement("div", {
+      className: "mt-2 text-center sm:ml-4 sm:text-left"
+    }, /* @__PURE__ */ import_react5.default.createElement("h4", {
+      className: "text-lg font-medium text-gray-800"
+    }, "Delete account ?"), /* @__PURE__ */ import_react5.default.createElement("p", {
+      className: "mt-2 text-[15px] leading-relaxed text-gray-500"
+    }, "All data will be erased. Are you sure to delete ", userData.firstName, " ", userData.lastName, "'s account?"), /* @__PURE__ */ import_react5.default.createElement("div", {
+      className: "items-center gap-2 mt-3 sm:flex"
+    }, /* @__PURE__ */ import_react5.default.createElement("button", {
+      className: "w-full mt-2 p-2.5 flex-1 text-white bg-red-600 rounded-md outline-none ring-offset-2 ring-red-600 focus:ring-2",
+      onClick: () => {
+        setShowModal(false);
+        deleteUser(userId);
+        console.log(userId);
+      }
+    }, "Delete"), /* @__PURE__ */ import_react5.default.createElement("button", {
+      className: "w-full mt-2 p-2.5 flex-1 text-gray-800 rounded-md outline-none border ring-offset-2 ring-indigo-600 focus:ring-2",
+      onClick: () => setShowModal(false)
+    }, "Cancel"))))))));
+  }
+  var ConfirmationModal_default = ConfirmationModal;
+
+  // app/javascript/components/Users.jsx
+  function Users() {
+    const [users, setUsers] = (0, import_react6.useState)([]);
+    const [searchTerm, setSearchTerm] = (0, import_react6.useState)("");
+    const [selectedUser, setSelectedUser] = (0, import_react6.useState)("");
+    const [loading, setLoading] = (0, import_react6.useState)(false);
+    const [showModal, setShowModal] = (0, import_react6.useState)(false);
+    const [userId, setUserId] = (0, import_react6.useState)("");
+    const navigate = useNavigate();
+    const [userData, setUserData] = (0, import_react6.useState)({
+      first_name: "",
+      last_name: "",
+      email: ""
+    });
+    (0, import_react6.useEffect)(() => {
+      const fetchUsers = async () => {
+        const apiEndpoint = `/api/users?search_term=${searchTerm}`;
+        try {
+          const response = await fetch(apiEndpoint);
+          const data = await response.json();
+          setUsers(data["users"]);
+          setLoading(false);
+        } catch (err) {
+          console.log(err.message);
+        }
+      };
+      fetchUsers();
+    }, [searchTerm]);
+    const onSearchTextChange = (e) => {
+      setLoading(true);
+      setSearchTerm(e.target.value);
+    };
+    const fetchUserEmail = async (userId2) => {
+      const apiEndpointGetUserData = `/api/get-user/${userId2}`;
+      try {
+        const response = await fetch(apiEndpointGetUserData);
+        const data = await response.json();
+        const dataObject = data["user"];
+        console.log(dataObject);
+        console.log(data);
+        setUserData({
+          firstName: dataObject.first_name,
+          lastName: dataObject.last_name,
+          email: dataObject.email
+        });
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    const deleteUser = async (userId2) => {
+      const apiEndpointDelete = `/api/delete-user/${userId2}`;
+      try {
+        const response = await fetch(apiEndpointDelete, {
+          method: "DELETE"
+        });
+        if (response.ok) {
+          navigate("/users");
+          navigate(0);
+        }
+      } catch (err) {
+        console.log(err.message);
+      }
+    };
+    const loadUsers = users.map(
+      (user) => {
+        return /* @__PURE__ */ import_react6.default.createElement("tr", {
+          key: user.email,
+          className: "text-center"
+        }, /* @__PURE__ */ import_react6.default.createElement("th", {
+          className: "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center"
+        }, /* @__PURE__ */ import_react6.default.createElement("img", {
+          src: "",
+          className: "h-12 w-12 bg-white rounded-full border",
+          alt: "..."
+        }), /* @__PURE__ */ import_react6.default.createElement("span", {
+          className: "ml-3 font-bold text-white"
+        }, user.first_name, " ", user.last_name, " ")), /* @__PURE__ */ import_react6.default.createElement("td", {
+          className: "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+        }, user.email), /* @__PURE__ */ import_react6.default.createElement("td", {
+          className: "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+        }, /* @__PURE__ */ import_react6.default.createElement("i", {
+          className: "fas fa-circle text-orange-500 mr-2"
+        }, user.role)), /* @__PURE__ */ import_react6.default.createElement("td", {
+          className: "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+        }, user.company), /* @__PURE__ */ import_react6.default.createElement("td", {
+          className: "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+        }, user.package), /* @__PURE__ */ import_react6.default.createElement("td", {
+          className: "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right"
+        }, /* @__PURE__ */ import_react6.default.createElement("button", {
+          className: "shadow bg-indigo-800 hover:bg-indigo-700 focus:shadow-outline focus:outline-none text-white text-xs py-2 px-4 rounded ml-5",
+          onClick: () => {
+            navigate(`/edit-user/${user.id}`);
+          }
+        }, "Edit"), /* @__PURE__ */ import_react6.default.createElement("button", {
+          className: "shadow bg-indigo-800 hover:bg-indigo-700 focus:shadow-outline focus:outline-none text-white text-xs py-2 px-4 rounded ml-5",
+          onClick: () => {
+            setUserId(user.id);
+            fetchUserEmail(user.id);
+            setShowModal(true);
+          }
+        }, "Delete")), /* @__PURE__ */ import_react6.default.createElement("td", {
+          className: "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right"
+        }, user.created), /* @__PURE__ */ import_react6.default.createElement("td", {
+          className: "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right"
+        }, user.last_updated));
+      }
+    );
+    return /* @__PURE__ */ import_react6.default.createElement("div", null, /* @__PURE__ */ import_react6.default.createElement(Routes, null, /* @__PURE__ */ import_react6.default.createElement(Route, {
+      path: "/edit-user/:id",
+      element: /* @__PURE__ */ import_react6.default.createElement(EditUser_default, null)
+    })), /* @__PURE__ */ import_react6.default.createElement("section", {
+      className: "relative py-16 bg-blueGray-50"
+    }, /* @__PURE__ */ import_react6.default.createElement("div", {
+      className: "w-full mb-12 px-4"
+    }, /* @__PURE__ */ import_react6.default.createElement("div", {
+      className: "relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded bg-sky-700 text-white"
+    }, /* @__PURE__ */ import_react6.default.createElement("div", {
+      className: "rounded-t mb-0 px-4 py-3 border-0"
+    }, /* @__PURE__ */ import_react6.default.createElement("div", {
+      className: "flex justify-between items-center"
+    }, /* @__PURE__ */ import_react6.default.createElement("h3", {
+      className: "font-semibold text-lg text-white"
+    }, "Users"), /* @__PURE__ */ import_react6.default.createElement("div", {
+      className: "flex justify-between"
+    }, /* @__PURE__ */ import_react6.default.createElement("div", null, /* @__PURE__ */ import_react6.default.createElement("div", {
+      className: "flex bg-gray-50 items-center p-2 rounded-md"
+    }, /* @__PURE__ */ import_react6.default.createElement("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      className: "h-5 w-5 text-gray-400",
+      viewBox: "0 0 20 20",
+      fill: "currentColor"
+    }, /* @__PURE__ */ import_react6.default.createElement("path", {
+      d: "M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+    })), /* @__PURE__ */ import_react6.default.createElement("input", {
+      className: "bg-gray-50 outline-none ml-1 block text-black",
+      type: "text",
+      value: searchTerm,
+      placeholder: "search...",
+      onChange: onSearchTextChange
+    }))), /* @__PURE__ */ import_react6.default.createElement(Link, {
+      to: "/new-user"
+    }, /* @__PURE__ */ import_react6.default.createElement("button", {
+      className: "shadow bg-indigo-800 hover:bg-indigo-700 focus:shadow-outline focus:outline-none text-white text-xs py-3 px-10 rounded ml-5"
+    }, "New"))))), /* @__PURE__ */ import_react6.default.createElement("div", {
+      className: "block w-full overflow-x-auto "
+    }, /* @__PURE__ */ import_react6.default.createElement("table", {
+      className: "items-center w-full bg-transparent border-collapse"
+    }, /* @__PURE__ */ import_react6.default.createElement("thead", {
+      className: "bg-sky-600 "
+    }, /* @__PURE__ */ import_react6.default.createElement("tr", null, /* @__PURE__ */ import_react6.default.createElement("th", {
+      className: "text-center px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-white"
+    }, "Full Name"), /* @__PURE__ */ import_react6.default.createElement("th", {
+      className: "text-center px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-white"
+    }, "Email"), /* @__PURE__ */ import_react6.default.createElement("th", {
+      className: "text-center px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-white"
+    }, "Role"), /* @__PURE__ */ import_react6.default.createElement("th", {
+      className: "text-center px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-white"
+    }, "Company"), /* @__PURE__ */ import_react6.default.createElement("th", {
+      className: "text-center px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-white"
+    }, "Package"), /* @__PURE__ */ import_react6.default.createElement("th", {
+      className: "text-center px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-white"
+    }, "Actions"), /* @__PURE__ */ import_react6.default.createElement("th", {
+      className: "text-center px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-white"
+    }, "Created at"), /* @__PURE__ */ import_react6.default.createElement("th", {
+      className: "text-center px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-white"
+    }, "Last updated"))), /* @__PURE__ */ import_react6.default.createElement("tbody", null, loading && /* @__PURE__ */ import_react6.default.createElement("tr", null, /* @__PURE__ */ import_react6.default.createElement("td", null, "Loadingssss....")), loadUsers)))))), showModal && /* @__PURE__ */ import_react6.default.createElement(ConfirmationModal_default, {
+      setShowModal,
+      deleteUser: () => deleteUser(userId),
+      userData,
+      userId
+    }));
+  }
+  var Users_default = Users;
+
+  // app/javascript/components/Home.jsx
+  var import_react9 = __toESM(require_react());
+
+  // app/javascript/components/PopOutOptions.jsx
+  var import_react7 = __toESM(require_react());
+  function PopOutOptions() {
+    return /* @__PURE__ */ import_react7.default.createElement("div", {
+      className: "absolute z-50 top-[40%]"
+    }, /* @__PURE__ */ import_react7.default.createElement("div", {
+      className: "overflow-y-auto overflow-x-hidden h-modal md:h-full w-fit"
+    }, /* @__PURE__ */ import_react7.default.createElement("div", {
+      className: "w-fit h-full md:h-auto p-4"
+    }, /* @__PURE__ */ import_react7.default.createElement("ul", {
+      className: "my-4 p-4 rounded dark:bg-gray-600"
+    }, /* @__PURE__ */ import_react7.default.createElement("li", {
+      className: "w-full p-2 rounded  hover:bg-gray-100 group hover:shadow dark:hover:bg-gray-500"
+    }, /* @__PURE__ */ import_react7.default.createElement("a", {
+      href: "#",
+      className: "w-full p-2 rounded-lg items-center text-base font-bold text-gray-900 dark:text-white"
+    }, /* @__PURE__ */ import_react7.default.createElement("span", {
+      className: "whitespace-nowrap w-full"
+    }, "Add Document"))), /* @__PURE__ */ import_react7.default.createElement("li", {
+      className: "w-full p-2 rounded  hover:bg-gray-100 group hover:shadow dark:hover:bg-gray-500"
+    }, /* @__PURE__ */ import_react7.default.createElement("a", {
+      href: "#",
+      className: "w-full p-2 rounded-lg items-center text-base font-bold text-gray-900  dark:text-white"
+    }, /* @__PURE__ */ import_react7.default.createElement("span", {
+      className: "whitespace-nowrap w-full"
+    }, "Search"))), /* @__PURE__ */ import_react7.default.createElement("li", {
+      className: "w-full p-2 rounded  hover:bg-gray-100 group hover:shadow dark:hover:bg-gray-500"
+    }, /* @__PURE__ */ import_react7.default.createElement("a", {
+      href: "#",
+      className: "w-full p-2 rounded-lg items-center text-base font-bold text-gray-900  dark:text-white"
+    }, /* @__PURE__ */ import_react7.default.createElement("span", {
+      className: "whitespace-nowrap w-full"
+    }, "Master Inquiry")))))));
+  }
+  var PopOutOptions_default = PopOutOptions;
+
+  // app/javascript/components/Sidebar.jsx
+  var import_react8 = __toESM(require_react());
+  function Sidebar() {
+    const [open, setOpen] = (0, import_react8.useState)(false);
+    const [dropDrawing, setDropDrawing] = (0, import_react8.useState)(false);
+    const [dropSubmittal, setDropSubmittal] = (0, import_react8.useState)(false);
+    const [dropQaQc, setDropQaQc] = (0, import_react8.useState)(false);
+    const [popOptionsCD, setPopOptionsCD] = (0, import_react8.useState)(false);
+    const [popOptionsSD, setPopOptionsSD] = (0, import_react8.useState)(false);
+    const [popOptionsMET, setPopOptionsMET] = (0, import_react8.useState)(false);
+    const [popOptionsMS, setPopOptionsMS] = (0, import_react8.useState)(false);
+    const [popOptionsNFI, setPopOptionsNFI] = (0, import_react8.useState)(false);
+    const [popOptionsNCR, setPopOptionsNCR] = (0, import_react8.useState)(false);
+    const [popOptionsRFI, setPopOptionsRFI] = (0, import_react8.useState)(false);
+    return /* @__PURE__ */ import_react8.default.createElement("aside", {
+      className: "w-64 h-screen",
+      "aria-label": "Sidebar"
+    }, /* @__PURE__ */ import_react8.default.createElement("div", {
+      className: "overflow-y-auto py-4 px-3 bg-gray-50 dark:bg-gray-800 h-full"
+    }, /* @__PURE__ */ import_react8.default.createElement("ul", {
+      className: "space-y-2"
+    }, /* @__PURE__ */ import_react8.default.createElement("li", null, /* @__PURE__ */ import_react8.default.createElement("a", {
+      href: "#",
+      className: "flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+    }, /* @__PURE__ */ import_react8.default.createElement("svg", {
+      "aria-hidden": "true",
+      className: "w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white",
+      fill: "currentColor",
+      viewBox: "0 0 20 20",
+      xmlns: "http://www.w3.org/2000/svg"
+    }, /* @__PURE__ */ import_react8.default.createElement("path", {
+      d: "M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"
+    }), /* @__PURE__ */ import_react8.default.createElement("path", {
+      d: "M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"
+    })), /* @__PURE__ */ import_react8.default.createElement("span", {
+      className: "ml-3"
+    }, "Dashboard"))), /* @__PURE__ */ import_react8.default.createElement("li", null, /* @__PURE__ */ import_react8.default.createElement("button", {
+      onClick: () => {
+        setDropDrawing((prev) => !prev);
+        setDropSubmittal(false);
+        setDropQaQc(false);
+      },
+      type: "button",
+      className: "flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700",
+      "aria-controls": "dropdown-example",
+      datacollapsetoggle: "dropdown-example"
+    }, /* @__PURE__ */ import_react8.default.createElement("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      viewBox: "0 0 24 24",
+      fill: "currentColor",
+      className: "w-6 h-6"
+    }, /* @__PURE__ */ import_react8.default.createElement("path", {
+      d: "M5.625 1.5c-1.036 0-1.875.84-1.875 1.875v17.25c0 1.035.84 1.875 1.875 1.875h12.75c1.035 0 1.875-.84 1.875-1.875V12.75A3.75 3.75 0 0016.5 9h-1.875a1.875 1.875 0 01-1.875-1.875V5.25A3.75 3.75 0 009 1.5H5.625z"
+    }), /* @__PURE__ */ import_react8.default.createElement("path", {
+      d: "M12.971 1.816A5.23 5.23 0 0114.25 5.25v1.875c0 .207.168.375.375.375H16.5a5.23 5.23 0 013.434 1.279 9.768 9.768 0 00-6.963-6.963z"
+    })), "                ", /* @__PURE__ */ import_react8.default.createElement("span", {
+      className: "flex-1 ml-3 text-left whitespace-nowrap",
+      sidebartoggleitem: "true"
+    }, "Drawings"), /* @__PURE__ */ import_react8.default.createElement("svg", {
+      sidebartoggleitem: "true",
+      className: "w-6 h-6",
+      fill: "currentColor",
+      viewBox: "0 0 20 20",
+      xmlns: "http://www.w3.org/2000/svg"
+    }, /* @__PURE__ */ import_react8.default.createElement("path", {
+      fillRule: "evenodd",
+      d: "M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z",
+      clipRule: "evenodd"
+    }))), dropDrawing && /* @__PURE__ */ import_react8.default.createElement("ul", {
+      id: "dropdown-example",
+      className: "py-2 space-y-2"
+    }, /* @__PURE__ */ import_react8.default.createElement("li", {
+      onClick: () => {
+        setPopOptionsCD((prev) => !prev);
+        setPopOptionsSD(false);
+        setPopOptionsMET(false);
+        setPopOptionsMS(false);
+      },
+      className: "relative"
+    }, /* @__PURE__ */ import_react8.default.createElement("a", {
+      href: "#",
+      className: "flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+    }, "Construction Drawings", popOptionsCD && /* @__PURE__ */ import_react8.default.createElement(PopOutOptions_default, null))), /* @__PURE__ */ import_react8.default.createElement("li", {
+      onClick: () => {
+        setPopOptionsSD((prev) => !prev);
+        setPopOptionsCD(false);
+        setPopOptionsMET(false);
+        setPopOptionsMS(false);
+      },
+      className: "relative"
+    }, /* @__PURE__ */ import_react8.default.createElement("a", {
+      href: "#",
+      className: "flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+    }, "Shop Drawings", popOptionsSD && /* @__PURE__ */ import_react8.default.createElement(PopOutOptions_default, null))))), /* @__PURE__ */ import_react8.default.createElement("li", null, /* @__PURE__ */ import_react8.default.createElement("button", {
+      onClick: () => {
+        setDropSubmittal((prev) => !prev);
+        setDropDrawing(false);
+        setDropQaQc(false);
+      },
+      type: "button",
+      className: "flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700",
+      "aria-controls": "dropdown-example",
+      datacollapsetoggle: "dropdown-example"
+    }, /* @__PURE__ */ import_react8.default.createElement("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      viewBox: "0 0 24 24",
+      fill: "currentColor",
+      className: "w-6 h-6"
+    }, /* @__PURE__ */ import_react8.default.createElement("path", {
+      fillRule: "evenodd",
+      d: "M5.625 1.5H9a3.75 3.75 0 013.75 3.75v1.875c0 1.036.84 1.875 1.875 1.875H16.5a3.75 3.75 0 013.75 3.75v7.875c0 1.035-.84 1.875-1.875 1.875H5.625a1.875 1.875 0 01-1.875-1.875V3.375c0-1.036.84-1.875 1.875-1.875zm5.845 17.03a.75.75 0 001.06 0l3-3a.75.75 0 10-1.06-1.06l-1.72 1.72V12a.75.75 0 00-1.5 0v4.19l-1.72-1.72a.75.75 0 00-1.06 1.06l3 3z",
+      clipRule: "evenodd"
+    }), /* @__PURE__ */ import_react8.default.createElement("path", {
+      d: "M14.25 5.25a5.23 5.23 0 00-1.279-3.434 9.768 9.768 0 016.963 6.963A5.23 5.23 0 0016.5 7.5h-1.875a.375.375 0 01-.375-.375V5.25z"
+    })), /* @__PURE__ */ import_react8.default.createElement("span", {
+      className: "flex-1 ml-3 text-left whitespace-nowrap",
+      sidebartoggleitem: "true"
+    }, "Submittals"), /* @__PURE__ */ import_react8.default.createElement("svg", {
+      sidebartoggleitem: "true",
+      className: "w-6 h-6",
+      fill: "currentColor",
+      viewBox: "0 0 20 20",
+      xmlns: "http://www.w3.org/2000/svg"
+    }, /* @__PURE__ */ import_react8.default.createElement("path", {
+      fillRule: "evenodd",
+      d: "M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z",
+      clipRule: "evenodd"
+    }))), dropSubmittal && /* @__PURE__ */ import_react8.default.createElement("ul", {
+      id: "dropdown-example",
+      className: "py-2 space-y-2"
+    }, /* @__PURE__ */ import_react8.default.createElement("li", {
+      onClick: () => {
+        setPopOptionsMET((prev) => !prev);
+        setPopOptionsSD(false);
+        setPopOptionsMS(false);
+        setPopOptionsCD(false);
+      },
+      className: "relative"
+    }, /* @__PURE__ */ import_react8.default.createElement("a", {
+      href: "#",
+      className: "flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+    }, "Methodology", popOptionsMET && /* @__PURE__ */ import_react8.default.createElement(PopOutOptions_default, null))), /* @__PURE__ */ import_react8.default.createElement("li", {
+      onClick: () => {
+        setPopOptionsMS((prev) => !prev);
+        setPopOptionsSD(false);
+        setPopOptionsMET(false);
+        setPopOptionsCD(false);
+      },
+      className: "relative"
+    }, /* @__PURE__ */ import_react8.default.createElement("a", {
+      href: "#",
+      className: "flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+    }, "Material Submittals", popOptionsMS && /* @__PURE__ */ import_react8.default.createElement(PopOutOptions_default, null))))), /* @__PURE__ */ import_react8.default.createElement("li", null, /* @__PURE__ */ import_react8.default.createElement("button", {
+      onClick: () => {
+        setDropQaQc((prev) => !prev);
+        setDropSubmittal(false);
+        setDropDrawing(false);
+      },
+      type: "button",
+      className: "flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700",
+      "aria-controls": "dropdown-example",
+      datacollapsetoggle: "dropdown-example"
+    }, /* @__PURE__ */ import_react8.default.createElement("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      viewBox: "0 0 24 24",
+      fill: "currentColor",
+      className: "w-6 h-6"
+    }, /* @__PURE__ */ import_react8.default.createElement("path", {
+      fillRule: "evenodd",
+      d: "M7.502 6h7.128A3.375 3.375 0 0118 9.375v9.375a3 3 0 003-3V6.108c0-1.505-1.125-2.811-2.664-2.94a48.972 48.972 0 00-.673-.05A3 3 0 0015 1.5h-1.5a3 3 0 00-2.663 1.618c-.225.015-.45.032-.673.05C8.662 3.295 7.554 4.542 7.502 6zM13.5 3A1.5 1.5 0 0012 4.5h4.5A1.5 1.5 0 0015 3h-1.5z",
+      clipRule: "evenodd"
+    }), /* @__PURE__ */ import_react8.default.createElement("path", {
+      fillRule: "evenodd",
+      d: "M3 9.375C3 8.339 3.84 7.5 4.875 7.5h9.75c1.036 0 1.875.84 1.875 1.875v11.25c0 1.035-.84 1.875-1.875 1.875h-9.75A1.875 1.875 0 013 20.625V9.375zM6 12a.75.75 0 01.75-.75h.008a.75.75 0 01.75.75v.008a.75.75 0 01-.75.75H6.75a.75.75 0 01-.75-.75V12zm2.25 0a.75.75 0 01.75-.75h3.75a.75.75 0 010 1.5H9a.75.75 0 01-.75-.75zM6 15a.75.75 0 01.75-.75h.008a.75.75 0 01.75.75v.008a.75.75 0 01-.75.75H6.75a.75.75 0 01-.75-.75V15zm2.25 0a.75.75 0 01.75-.75h3.75a.75.75 0 010 1.5H9a.75.75 0 01-.75-.75zM6 18a.75.75 0 01.75-.75h.008a.75.75 0 01.75.75v.008a.75.75 0 01-.75.75H6.75a.75.75 0 01-.75-.75V18zm2.25 0a.75.75 0 01.75-.75h3.75a.75.75 0 010 1.5H9a.75.75 0 01-.75-.75z",
+      clipRule: "evenodd"
+    })), /* @__PURE__ */ import_react8.default.createElement("span", {
+      className: "flex-1 ml-3 text-left whitespace-nowrap",
+      sidebartoggleitem: "true"
+    }, "QA/QC"), /* @__PURE__ */ import_react8.default.createElement("svg", {
+      sidebartoggleitem: "true",
+      className: "w-6 h-6",
+      fill: "currentColor",
+      viewBox: "0 0 20 20",
+      xmlns: "http://www.w3.org/2000/svg"
+    }, /* @__PURE__ */ import_react8.default.createElement("path", {
+      fillRule: "evenodd",
+      d: "M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z",
+      clipRule: "evenodd"
+    }))), dropQaQc && /* @__PURE__ */ import_react8.default.createElement("ul", {
+      id: "dropdown-example",
+      className: "py-2 space-y-2"
+    }, /* @__PURE__ */ import_react8.default.createElement("li", {
+      onClick: () => {
+        setPopOptionsNFI((prev) => !prev);
+        setPopOptionsSD(false);
+        setPopOptionsMS(false);
+        setPopOptionsCD(false);
+        setPopOptionsMET(false);
+      },
+      className: "relative"
+    }, /* @__PURE__ */ import_react8.default.createElement("a", {
+      href: "#",
+      className: "flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+    }, "Notice for Inspection", popOptionsNFI && /* @__PURE__ */ import_react8.default.createElement(PopOutOptions_default, null))), /* @__PURE__ */ import_react8.default.createElement("li", {
+      onClick: () => {
+        setPopOptionsNCR((prev) => !prev);
+        setPopOptionsSD(false);
+        setPopOptionsMS(false);
+        setPopOptionsCD(false);
+        setPopOptionsMET(false);
+        setPopOptionsNFI(false);
+      },
+      className: "relative"
+    }, /* @__PURE__ */ import_react8.default.createElement("a", {
+      href: "#",
+      className: "flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+    }, "Non-conformance Report", popOptionsNCR && /* @__PURE__ */ import_react8.default.createElement(PopOutOptions_default, null))))), /* @__PURE__ */ import_react8.default.createElement("li", {
+      onClick: () => {
+        setPopOptionsRFI((prev) => !prev);
+        setPopOptionsSD(false);
+        setPopOptionsMS(false);
+        setPopOptionsCD(false);
+        setPopOptionsMET(false);
+        setPopOptionsNFI(false);
+        setPopOptionsNCR(false);
+      },
+      className: "relative"
+    }, /* @__PURE__ */ import_react8.default.createElement("a", {
+      href: "#",
+      className: "flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+    }, /* @__PURE__ */ import_react8.default.createElement("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      viewBox: "0 0 24 24",
+      fill: "currentColor",
+      className: "w-6 h-6"
+    }, /* @__PURE__ */ import_react8.default.createElement("path", {
+      fillRule: "evenodd",
+      d: "M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 01.67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 11-.671-1.34l.041-.022zM12 9a.75.75 0 100-1.5.75.75 0 000 1.5z",
+      clipRule: "evenodd"
+    })), /* @__PURE__ */ import_react8.default.createElement("span", {
+      className: "flex-1 ml-3 whitespace-nowrap"
+    }, "RFI", popOptionsRFI && /* @__PURE__ */ import_react8.default.createElement(PopOutOptions_default, null)))), /* @__PURE__ */ import_react8.default.createElement("li", null, /* @__PURE__ */ import_react8.default.createElement("a", {
+      href: "#",
+      className: "flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+    }, /* @__PURE__ */ import_react8.default.createElement("svg", {
+      "aria-hidden": "true",
+      className: "flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white",
+      fill: "currentColor",
+      viewBox: "0 0 20 20",
+      xmlns: "http://www.w3.org/2000/svg"
+    }, /* @__PURE__ */ import_react8.default.createElement("path", {
+      d: "M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
+    })), /* @__PURE__ */ import_react8.default.createElement("span", {
+      className: "flex-1 ml-3 whitespace-nowrap"
+    }, "Daily Logs"), /* @__PURE__ */ import_react8.default.createElement("span", {
+      className: "inline-flex justify-center items-center px-2 ml-3 text-sm font-medium text-gray-800 bg-gray-200 rounded-full dark:bg-gray-700 dark:text-gray-300"
+    }, "Pro"))), /* @__PURE__ */ import_react8.default.createElement("li", null, /* @__PURE__ */ import_react8.default.createElement("a", {
+      href: "#",
+      className: "flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+    }, /* @__PURE__ */ import_react8.default.createElement("svg", {
+      "aria-hidden": "true",
+      className: "flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white",
+      fill: "currentColor",
+      viewBox: "0 0 20 20",
+      xmlns: "http://www.w3.org/2000/svg"
+    }, /* @__PURE__ */ import_react8.default.createElement("path", {
+      d: "M8.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l2-2a1 1 0 00-1.414-1.414L11 7.586V3a1 1 0 10-2 0v4.586l-.293-.293z"
+    }), /* @__PURE__ */ import_react8.default.createElement("path", {
+      d: "M3 5a2 2 0 012-2h1a1 1 0 010 2H5v7h2l1 2h4l1-2h2V5h-1a1 1 0 110-2h1a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"
+    })), /* @__PURE__ */ import_react8.default.createElement("span", {
+      className: "flex-1 ml-3 whitespace-nowrap"
+    }, "Open Items"), /* @__PURE__ */ import_react8.default.createElement("span", {
+      className: "inline-flex justify-center items-center p-3 ml-3 w-3 h-3 text-sm font-medium text-blue-600 bg-blue-200 rounded-full dark:bg-blue-900 dark:text-blue-200"
+    }, "3"))), /* @__PURE__ */ import_react8.default.createElement("li", null, /* @__PURE__ */ import_react8.default.createElement("a", {
+      href: "#",
+      className: "flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+    }, /* @__PURE__ */ import_react8.default.createElement("svg", {
+      "aria-hidden": "true",
+      className: "flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white",
+      fill: "currentColor",
+      viewBox: "0 0 20 20",
+      xmlns: "http://www.w3.org/2000/svg"
+    }, /* @__PURE__ */ import_react8.default.createElement("path", {
+      fillRule: "evenodd",
+      d: "M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z",
+      clipRule: "evenodd"
+    })), /* @__PURE__ */ import_react8.default.createElement("span", {
+      className: "flex-1 ml-3 whitespace-nowrap"
+    }, "Scheduled Work"))))));
+  }
+
+  // app/javascript/components/Home.jsx
   function Home() {
-    return /* @__PURE__ */ import_react5.default.createElement("div", {
-      className: "bg-slate-400 w-full h-full"
-    }, "Home");
+    return /* @__PURE__ */ import_react9.default.createElement("div", {
+      className: "w-full h-full flex"
+    }, /* @__PURE__ */ import_react9.default.createElement(Sidebar, null));
   }
   var Home_default = Home;
 
   // app/javascript/components/NewUser.jsx
-  var import_react6 = __toESM(require_react());
+  var import_react10 = __toESM(require_react());
   var import_Visibility2 = __toESM(require_Visibility());
   var import_VisibilityOff2 = __toESM(require_VisibilityOff());
   function NewUser() {
-    const [values2, setValues] = (0, import_react6.useState)({
+    const [values2, setValues] = (0, import_react10.useState)({
       firstName: "",
       lastName: "",
       email: "",
@@ -36500,18 +37051,18 @@
     ];
     const companies = ["Company A", "Company B", "Company C", "Company D", "Company E"];
     const packages = ["BA101", "BB102", "BA412", "BT101", "BC222"];
-    return /* @__PURE__ */ import_react6.default.createElement("div", {
+    return /* @__PURE__ */ import_react10.default.createElement("div", {
       className: "bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col my-2"
-    }, /* @__PURE__ */ import_react6.default.createElement("h1", {
+    }, /* @__PURE__ */ import_react10.default.createElement("h1", {
       className: "font-bold text-3xl mb-6"
-    }, "New User"), /* @__PURE__ */ import_react6.default.createElement("div", {
+    }, "New User"), /* @__PURE__ */ import_react10.default.createElement("div", {
       className: "-mx-3 md:flex mb-6"
-    }, /* @__PURE__ */ import_react6.default.createElement("div", {
+    }, /* @__PURE__ */ import_react10.default.createElement("div", {
       className: "md:w-1/2 px-3 mb-6 md:mb-0"
-    }, /* @__PURE__ */ import_react6.default.createElement("label", {
+    }, /* @__PURE__ */ import_react10.default.createElement("label", {
       className: "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
       htmlFor: "grid-first-name"
-    }, "First Name"), /* @__PURE__ */ import_react6.default.createElement("input", {
+    }, "First Name"), /* @__PURE__ */ import_react10.default.createElement("input", {
       className: "appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3",
       id: "grid-first-name",
       type: "text",
@@ -36520,12 +37071,12 @@
         return setValues({ ...values2, firstName: e.target.value });
       },
       value: values2.firstName
-    })), /* @__PURE__ */ import_react6.default.createElement("div", {
+    })), /* @__PURE__ */ import_react10.default.createElement("div", {
       className: "md:w-1/2 px-3"
-    }, /* @__PURE__ */ import_react6.default.createElement("label", {
+    }, /* @__PURE__ */ import_react10.default.createElement("label", {
       className: "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
       htmlFor: "grid-last-name"
-    }, "Last Name"), /* @__PURE__ */ import_react6.default.createElement("input", {
+    }, "Last Name"), /* @__PURE__ */ import_react10.default.createElement("input", {
       className: "appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4",
       id: "grid-last-name",
       type: "text",
@@ -36534,12 +37085,12 @@
         return setValues({ ...values2, lastName: e.target.value });
       },
       value: values2.lastName
-    })), /* @__PURE__ */ import_react6.default.createElement("div", {
+    })), /* @__PURE__ */ import_react10.default.createElement("div", {
       className: "md:w-1/2 px-3"
-    }, /* @__PURE__ */ import_react6.default.createElement("label", {
+    }, /* @__PURE__ */ import_react10.default.createElement("label", {
       className: "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
       htmlFor: "grid-last-name"
-    }, "Email"), /* @__PURE__ */ import_react6.default.createElement("input", {
+    }, "Email"), /* @__PURE__ */ import_react10.default.createElement("input", {
       className: "appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4",
       id: "grid-last-name",
       type: "text",
@@ -36548,103 +37099,103 @@
         return setValues({ ...values2, email: e.target.value });
       },
       value: values2.email
-    }))), /* @__PURE__ */ import_react6.default.createElement("div", {
+    }))), /* @__PURE__ */ import_react10.default.createElement("div", {
       className: "-mx-3 md:flex mb-6"
-    }, /* @__PURE__ */ import_react6.default.createElement("div", {
+    }, /* @__PURE__ */ import_react10.default.createElement("div", {
       className: "md:w-full px-3"
-    }, /* @__PURE__ */ import_react6.default.createElement("label", {
+    }, /* @__PURE__ */ import_react10.default.createElement("label", {
       htmlFor: "standard-adornment-password",
       className: "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"
-    }, "PASSWORD"), /* @__PURE__ */ import_react6.default.createElement(Input_default, {
+    }, "PASSWORD"), /* @__PURE__ */ import_react10.default.createElement(Input_default, {
       placeholder: "******************",
       className: "appearance-none block bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3 w-[350px]",
       type: values2.showPassword ? "text" : "password",
       onChange: handlePasswordChange("password"),
       value: values2.password,
-      endAdornment: /* @__PURE__ */ import_react6.default.createElement(InputAdornment_default, {
+      endAdornment: /* @__PURE__ */ import_react10.default.createElement(InputAdornment_default, {
         position: "end"
-      }, /* @__PURE__ */ import_react6.default.createElement(IconButton_default, {
+      }, /* @__PURE__ */ import_react10.default.createElement(IconButton_default, {
         onClick: handleClickShowPassword,
         onMouseDown: handleMouseDownPassword
-      }, values2.showPassword ? /* @__PURE__ */ import_react6.default.createElement(import_Visibility2.default, null) : /* @__PURE__ */ import_react6.default.createElement(import_VisibilityOff2.default, null)))
-    }))), /* @__PURE__ */ import_react6.default.createElement("div", {
+      }, values2.showPassword ? /* @__PURE__ */ import_react10.default.createElement(import_Visibility2.default, null) : /* @__PURE__ */ import_react10.default.createElement(import_VisibilityOff2.default, null)))
+    }))), /* @__PURE__ */ import_react10.default.createElement("div", {
       className: "-mx-3 md:flex mb-2"
-    }, /* @__PURE__ */ import_react6.default.createElement("div", {
+    }, /* @__PURE__ */ import_react10.default.createElement("div", {
       className: "md:w-1/2 px-3"
-    }, /* @__PURE__ */ import_react6.default.createElement("label", {
+    }, /* @__PURE__ */ import_react10.default.createElement("label", {
       className: "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
       htmlFor: "grid-state"
-    }, "Role"), /* @__PURE__ */ import_react6.default.createElement("div", {
+    }, "Role"), /* @__PURE__ */ import_react10.default.createElement("div", {
       className: "relative"
-    }, /* @__PURE__ */ import_react6.default.createElement("select", {
+    }, /* @__PURE__ */ import_react10.default.createElement("select", {
       className: "block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded",
       id: "grid-state",
       onChange: (e) => {
         return setValues({ ...values2, role: e.target.value });
       },
       value: values2.role
-    }, roles.map((role) => /* @__PURE__ */ import_react6.default.createElement("option", {
+    }, roles.map((role) => /* @__PURE__ */ import_react10.default.createElement("option", {
       key: role,
       value: role
-    }, role))), /* @__PURE__ */ import_react6.default.createElement("div", {
+    }, role))), /* @__PURE__ */ import_react10.default.createElement("div", {
       className: "pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey-darker right-0 bottom-3"
-    }, /* @__PURE__ */ import_react6.default.createElement("svg", {
+    }, /* @__PURE__ */ import_react10.default.createElement("svg", {
       className: "h-4 w-4",
       xmlns: "http://www.w3.org/2000/svg",
       viewBox: "0 0 20 20"
-    }, /* @__PURE__ */ import_react6.default.createElement("path", {
+    }, /* @__PURE__ */ import_react10.default.createElement("path", {
       d: "M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
-    }))))), /* @__PURE__ */ import_react6.default.createElement("div", {
+    }))))), /* @__PURE__ */ import_react10.default.createElement("div", {
       className: "md:w-1/2 px-3"
-    }, /* @__PURE__ */ import_react6.default.createElement("label", {
+    }, /* @__PURE__ */ import_react10.default.createElement("label", {
       className: "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
       htmlFor: "grid-state"
-    }, "Company"), /* @__PURE__ */ import_react6.default.createElement("div", {
+    }, "Company"), /* @__PURE__ */ import_react10.default.createElement("div", {
       className: "relative"
-    }, /* @__PURE__ */ import_react6.default.createElement("select", {
+    }, /* @__PURE__ */ import_react10.default.createElement("select", {
       className: "block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded",
       id: "grid-state",
       onChange: (e) => {
         return setValues({ ...values2, company: e.target.value });
       },
       value: values2.company
-    }, companies.map((company) => /* @__PURE__ */ import_react6.default.createElement("option", {
+    }, companies.map((company) => /* @__PURE__ */ import_react10.default.createElement("option", {
       key: company,
       value: company
-    }, company))), /* @__PURE__ */ import_react6.default.createElement("div", {
+    }, company))), /* @__PURE__ */ import_react10.default.createElement("div", {
       className: "pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey-darker right-0 bottom-3"
-    }, /* @__PURE__ */ import_react6.default.createElement("svg", {
+    }, /* @__PURE__ */ import_react10.default.createElement("svg", {
       className: "h-4 w-4",
       xmlns: "http://www.w3.org/2000/svg",
       viewBox: "0 0 20 20"
-    }, /* @__PURE__ */ import_react6.default.createElement("path", {
+    }, /* @__PURE__ */ import_react10.default.createElement("path", {
       d: "M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
-    }))))), /* @__PURE__ */ import_react6.default.createElement("div", {
+    }))))), /* @__PURE__ */ import_react10.default.createElement("div", {
       className: "md:w-1/2 px-3"
-    }, /* @__PURE__ */ import_react6.default.createElement("label", {
+    }, /* @__PURE__ */ import_react10.default.createElement("label", {
       className: "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
       htmlFor: "grid-state"
-    }, "Package"), /* @__PURE__ */ import_react6.default.createElement("div", {
+    }, "Package"), /* @__PURE__ */ import_react10.default.createElement("div", {
       className: "relative"
-    }, /* @__PURE__ */ import_react6.default.createElement("select", {
+    }, /* @__PURE__ */ import_react10.default.createElement("select", {
       className: "block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded",
       id: "grid-state",
       onChange: (e) => {
         return setValues({ ...values2, package: e.target.value });
       },
       value: values2.package
-    }, packages.map((item) => /* @__PURE__ */ import_react6.default.createElement("option", {
+    }, packages.map((item) => /* @__PURE__ */ import_react10.default.createElement("option", {
       key: item,
       value: item
-    }, item))), /* @__PURE__ */ import_react6.default.createElement("div", {
+    }, item))), /* @__PURE__ */ import_react10.default.createElement("div", {
       className: "pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey-darker right-0 bottom-3"
-    }, /* @__PURE__ */ import_react6.default.createElement("svg", {
+    }, /* @__PURE__ */ import_react10.default.createElement("svg", {
       className: "h-4 w-4",
       xmlns: "http://www.w3.org/2000/svg",
       viewBox: "0 0 20 20"
-    }, /* @__PURE__ */ import_react6.default.createElement("path", {
+    }, /* @__PURE__ */ import_react10.default.createElement("path", {
       d: "M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
-    })))))), /* @__PURE__ */ import_react6.default.createElement("button", {
+    })))))), /* @__PURE__ */ import_react10.default.createElement("button", {
       onClick: () => createUser(),
       type: "submit",
       className: "text-white bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mx-auto mb-2 mt-4 w-[150px]"
@@ -36652,246 +37203,36 @@
   }
   var NewUser_default = NewUser;
 
-  // app/javascript/components/Users.jsx
-  var import_react8 = __toESM(require_react());
-
-  // app/javascript/components/ConfirmationModal.jsx
-  var import_react7 = __toESM(require_react());
-  function ConfirmationModal({ setShowModal, deleteUser, userId, userData }) {
-    return /* @__PURE__ */ import_react7.default.createElement(import_react7.default.Fragment, null, /* @__PURE__ */ import_react7.default.createElement("div", {
-      className: "fixed inset-0 z-10 overflow-y-auto"
-    }, /* @__PURE__ */ import_react7.default.createElement("div", {
-      className: "fixed inset-0 w-full h-full bg-black opacity-40",
-      onClick: () => setShowModal(false)
-    }), /* @__PURE__ */ import_react7.default.createElement("div", {
-      className: "flex items-center min-h-screen px-4 py-8"
-    }, /* @__PURE__ */ import_react7.default.createElement("div", {
-      className: "relative w-full max-w-lg p-4 mx-auto bg-white rounded-md shadow-lg"
-    }, /* @__PURE__ */ import_react7.default.createElement("div", {
-      className: "mt-3 sm:flex"
-    }, /* @__PURE__ */ import_react7.default.createElement("div", {
-      className: "flex items-center justify-center flex-none w-12 h-12 mx-auto bg-red-100 rounded-full"
-    }, /* @__PURE__ */ import_react7.default.createElement("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      className: "w-6 h-6 text-red-600",
-      viewBox: "0 0 20 20",
-      fill: "currentColor"
-    }, /* @__PURE__ */ import_react7.default.createElement("path", {
-      fillRule: "evenodd",
-      d: "M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z",
-      clipRule: "evenodd"
-    }))), /* @__PURE__ */ import_react7.default.createElement("div", {
-      className: "mt-2 text-center sm:ml-4 sm:text-left"
-    }, /* @__PURE__ */ import_react7.default.createElement("h4", {
-      className: "text-lg font-medium text-gray-800"
-    }, "Delete account ?"), /* @__PURE__ */ import_react7.default.createElement("p", {
-      className: "mt-2 text-[15px] leading-relaxed text-gray-500"
-    }, "All data will be erased. Are you sure to delete ", userData.firstName, " ", userData.lastName, "'s account?"), /* @__PURE__ */ import_react7.default.createElement("div", {
-      className: "items-center gap-2 mt-3 sm:flex"
-    }, /* @__PURE__ */ import_react7.default.createElement("button", {
-      className: "w-full mt-2 p-2.5 flex-1 text-white bg-red-600 rounded-md outline-none ring-offset-2 ring-red-600 focus:ring-2",
-      onClick: () => {
-        setShowModal(false);
-        deleteUser(userId);
-        console.log(userId);
-      }
-    }, "Delete"), /* @__PURE__ */ import_react7.default.createElement("button", {
-      className: "w-full mt-2 p-2.5 flex-1 text-gray-800 rounded-md outline-none border ring-offset-2 ring-indigo-600 focus:ring-2",
-      onClick: () => setShowModal(false)
-    }, "Cancel"))))))));
-  }
-  var ConfirmationModal_default = ConfirmationModal;
-
-  // app/javascript/components/Users.jsx
-  function Users() {
-    const [users, setUsers] = (0, import_react8.useState)([]);
-    const [searchTerm, setSearchTerm] = (0, import_react8.useState)("");
-    const [selectedUser, setSelectedUser] = (0, import_react8.useState)("");
-    const [loading, setLoading] = (0, import_react8.useState)(true);
-    const [showModal, setShowModal] = (0, import_react8.useState)(false);
-    const [userId, setUserId] = (0, import_react8.useState)("");
-    const navigate = useNavigate();
-    const [userData, setUserData] = (0, import_react8.useState)({
-      first_name: "",
-      last_name: "",
-      email: ""
-    });
-    (0, import_react8.useEffect)(() => {
-      fetchUsers();
+  // app/javascript/components/App.jsx
+  function App() {
+    const [userRole, setUserRole] = (0, import_react11.useState)("");
+    (0, import_react11.useEffect)(() => {
+      checkUserRole();
     }, []);
-    const fetchUsers = async () => {
-      const apiEndpoint = `/api/users?search_term=${searchTerm}`;
+    const checkUserRole = async () => {
+      const apiEndpoint = `/api/user-role`;
       try {
         const response = await fetch(apiEndpoint);
         const data = await response.json();
-        setUsers(data["users"]);
-        setLoading(false);
+        setUserRole(data["user_role"]);
       } catch (err) {
         console.log(err.message);
       }
     };
-    const fetchUserEmail = async (userId2) => {
-      const apiEndpointGetUserData = `/api/get-user/${userId2}`;
-      try {
-        const response = await fetch(apiEndpointGetUserData);
-        const data = await response.json();
-        const dataObject = data["user"];
-        console.log(dataObject);
-        console.log(data);
-        setUserData({
-          firstName: dataObject.first_name,
-          lastName: dataObject.last_name,
-          email: dataObject.email
-        });
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    const deleteUser = async (userId2) => {
-      const apiEndpointDelete = `/api/delete-user/${userId2}`;
-      try {
-        const response = await fetch(apiEndpointDelete, {
-          method: "DELETE"
-        });
-        if (response.ok) {
-          navigate("/users");
-          navigate(0);
-        }
-      } catch (err) {
-        console.log(err.message);
-      }
-    };
-    const onSearchTextChange = (e) => {
-      setLoading(true);
-      setSearchTerm(e.target.value);
-    };
-    const loadUsers = users.map(
-      (user) => {
-        return /* @__PURE__ */ import_react8.default.createElement("tr", {
-          key: user.email,
-          className: "text-center"
-        }, /* @__PURE__ */ import_react8.default.createElement("th", {
-          className: "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center"
-        }, /* @__PURE__ */ import_react8.default.createElement("img", {
-          src: "https://www.linkedin.com/in/jose-robelle-pajarin-861a5696/overlay/photo/",
-          className: "h-12 w-12 bg-white rounded-full border",
-          alt: "..."
-        }), /* @__PURE__ */ import_react8.default.createElement("span", {
-          className: "ml-3 font-bold text-white"
-        }, user.first_name, " ", user.last_name, " ")), /* @__PURE__ */ import_react8.default.createElement("td", {
-          className: "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-        }, user.email), /* @__PURE__ */ import_react8.default.createElement("td", {
-          className: "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-        }, /* @__PURE__ */ import_react8.default.createElement("i", {
-          className: "fas fa-circle text-orange-500 mr-2"
-        }, user.role)), /* @__PURE__ */ import_react8.default.createElement("td", {
-          className: "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-        }, user.company), /* @__PURE__ */ import_react8.default.createElement("td", {
-          className: "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-        }, user.package), /* @__PURE__ */ import_react8.default.createElement("td", {
-          className: "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right"
-        }, /* @__PURE__ */ import_react8.default.createElement("button", {
-          className: "shadow bg-indigo-800 hover:bg-indigo-700 focus:shadow-outline focus:outline-none text-white text-xs py-2 px-4 rounded ml-5",
-          onClick: () => {
-            navigate(`/users/edit-user/${user.id}`);
-          }
-        }, "Edit"), /* @__PURE__ */ import_react8.default.createElement("button", {
-          className: "shadow bg-indigo-800 hover:bg-indigo-700 focus:shadow-outline focus:outline-none text-white text-xs py-2 px-4 rounded ml-5",
-          onClick: () => {
-            setUserId(user.id);
-            fetchUserEmail(user.id);
-            setShowModal(true);
-          }
-        }, "Delete")), /* @__PURE__ */ import_react8.default.createElement("td", {
-          className: "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right"
-        }, user.created), /* @__PURE__ */ import_react8.default.createElement("td", {
-          className: "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right"
-        }, user.last_updated));
-      }
-    );
-    return /* @__PURE__ */ import_react8.default.createElement("div", null, /* @__PURE__ */ import_react8.default.createElement(Routes, null, /* @__PURE__ */ import_react8.default.createElement(Route, {
-      path: "/edit-user/:id",
-      element: /* @__PURE__ */ import_react8.default.createElement(EditUser_default, null)
-    })), /* @__PURE__ */ import_react8.default.createElement("section", {
-      className: "relative py-16 bg-blueGray-50"
-    }, /* @__PURE__ */ import_react8.default.createElement("div", {
-      className: "w-full mb-12 px-4"
-    }, /* @__PURE__ */ import_react8.default.createElement("div", {
-      className: "relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded bg-sky-700 text-white"
-    }, /* @__PURE__ */ import_react8.default.createElement("div", {
-      className: "rounded-t mb-0 px-4 py-3 border-0"
-    }, /* @__PURE__ */ import_react8.default.createElement("div", {
-      className: "flex justify-between items-center"
-    }, /* @__PURE__ */ import_react8.default.createElement("h3", {
-      className: "font-semibold text-lg text-white"
-    }, "Users"), /* @__PURE__ */ import_react8.default.createElement("div", {
-      className: "flex justify-between"
-    }, /* @__PURE__ */ import_react8.default.createElement("div", null, /* @__PURE__ */ import_react8.default.createElement("div", {
-      className: "flex bg-gray-50 items-center p-2 rounded-md"
-    }, /* @__PURE__ */ import_react8.default.createElement("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      className: "h-5 w-5 text-gray-400",
-      viewBox: "0 0 20 20",
-      fill: "currentColor"
-    }, /* @__PURE__ */ import_react8.default.createElement("path", {
-      d: "M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-    })), /* @__PURE__ */ import_react8.default.createElement("input", {
-      className: "bg-gray-50 outline-none ml-1 block text-black",
-      type: "text",
-      name: "",
-      id: "",
-      placeholder: "search...",
-      onChange: onSearchTextChange
-    }))), /* @__PURE__ */ import_react8.default.createElement(Link, {
-      to: "/new-user"
-    }, /* @__PURE__ */ import_react8.default.createElement("button", {
-      className: "shadow bg-indigo-800 hover:bg-indigo-700 focus:shadow-outline focus:outline-none text-white text-xs py-3 px-10 rounded ml-5"
-    }, "New"))))), /* @__PURE__ */ import_react8.default.createElement("div", {
-      className: "block w-full overflow-x-auto "
-    }, /* @__PURE__ */ import_react8.default.createElement("table", {
-      className: "items-center w-full bg-transparent border-collapse"
-    }, /* @__PURE__ */ import_react8.default.createElement("thead", {
-      className: "bg-sky-600 "
-    }, /* @__PURE__ */ import_react8.default.createElement("tr", null, /* @__PURE__ */ import_react8.default.createElement("th", {
-      className: "text-center px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-white"
-    }, "Full Name"), /* @__PURE__ */ import_react8.default.createElement("th", {
-      className: "text-center px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-white"
-    }, "Email"), /* @__PURE__ */ import_react8.default.createElement("th", {
-      className: "text-center px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-white"
-    }, "Role"), /* @__PURE__ */ import_react8.default.createElement("th", {
-      className: "text-center px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-white"
-    }, "Company"), /* @__PURE__ */ import_react8.default.createElement("th", {
-      className: "text-center px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-white"
-    }, "Package"), /* @__PURE__ */ import_react8.default.createElement("th", {
-      className: "text-center px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-white"
-    }, "Actions"), /* @__PURE__ */ import_react8.default.createElement("th", {
-      className: "text-center px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-white"
-    }, "Created at"), /* @__PURE__ */ import_react8.default.createElement("th", {
-      className: "text-center px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-white"
-    }, "Last updated"))), /* @__PURE__ */ import_react8.default.createElement("tbody", null, loading && /* @__PURE__ */ import_react8.default.createElement("tr", null, /* @__PURE__ */ import_react8.default.createElement("td", null, "Loading....")), loadUsers)))))), showModal && /* @__PURE__ */ import_react8.default.createElement(ConfirmationModal_default, {
-      setShowModal,
-      deleteUser: () => deleteUser(userId),
-      userData,
-      userId
-    }));
-  }
-  var Users_default = Users;
-
-  // app/javascript/components/App.jsx
-  function App() {
-    return /* @__PURE__ */ import_react9.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react9.default.createElement(Routes, null, /* @__PURE__ */ import_react9.default.createElement(Route, {
-      path: "/",
-      element: /* @__PURE__ */ import_react9.default.createElement(Home_default, null)
-    }), /* @__PURE__ */ import_react9.default.createElement(Route, {
-      path: "/users/*",
-      element: /* @__PURE__ */ import_react9.default.createElement(Users_default, null)
-    }), /* @__PURE__ */ import_react9.default.createElement(Route, {
+    return /* @__PURE__ */ import_react11.default.createElement("div", {
+      className: "w-full h-screen"
+    }, /* @__PURE__ */ import_react11.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react11.default.createElement(Routes, null, /* @__PURE__ */ import_react11.default.createElement(Route, {
+      path: "*",
+      element: userRole === "Admin" ? /* @__PURE__ */ import_react11.default.createElement(Users_default, null) : /* @__PURE__ */ import_react11.default.createElement(Home_default, null)
+    }), /* @__PURE__ */ import_react11.default.createElement(Route, {
       path: "/new-user",
-      element: /* @__PURE__ */ import_react9.default.createElement(NewUser_default, null)
-    })));
+      element: /* @__PURE__ */ import_react11.default.createElement(NewUser_default, null)
+    }))));
   }
   var root = import_client.default.createRoot(document.getElementById("app"));
-  root.render(/* @__PURE__ */ import_react9.default.createElement(App, null));
+  root.render(
+    /* @__PURE__ */ import_react11.default.createElement(import_react11.default.StrictMode, null, /* @__PURE__ */ import_react11.default.createElement(App, null))
+  );
 })();
 /*
 object-assign

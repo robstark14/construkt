@@ -1,8 +1,14 @@
 import React from 'react'
+import PopOutOptions from './PopOutOptions'
+import Sidebar from './Sidebar'
 
 function Home() {
   return (
-    <div className='bg-slate-400 w-full h-full'>Home</div>
+    <div className='w-full h-full flex'>
+      <Sidebar />
+      {/* <PopOutOptions /> */}
+
+    </div>
   )
 }
 
