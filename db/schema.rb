@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_27_201315) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_28_143232) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -24,11 +24,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_27_201315) do
     t.string "published_by", default: "", null: false
     t.string "published_by_id", default: "", null: false
     t.string "subject", default: "", null: false
-    t.string "revision_number", default: "", null: false
     t.string "company_to", default: ""
     t.string "company_from", default: ""
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "document_number"
+    t.integer "revision_number", null: false
+    t.string "attachments"
+    t.text "remarks"
+    t.index ["document_number"], name: "index_construction_drawings_on_document_number"
   end
 
   create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|

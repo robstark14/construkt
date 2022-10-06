@@ -12,9 +12,14 @@
 
   <body class="w-full h-screen">
     <nav class="w-full h-[50px] text-white p-2 dark:bg-gray-800 flex justify-between border-b border-gray-900">
-      <h1 class = "text-xl font-bold text-shadow text-yellow">Construkt</h1>
+      <div class = "text-xl font-bold text-shadow text-yellow"><%= link_to "Construkt", root_path %></div>
       <% if current_user %>
-        <p class = "text-xl font-bold text-shadow text-yellow"><%=current_user.first_name%> <%=current_user.last_name%></p>
+        <% if current_user.role == 'Admin' %>
+          <p class = "text-l text-shadow text-yellow">Hi admin <%=current_user.first_name%> <%=current_user.last_name%>!</p>
+        <%else%>
+          <p class = "text-l text-shadow text-yellow">Hi, <%=current_user.first_name%> <%=current_user.last_name%>!</p>
+      <%end%>
+        
         <%= link_to "Logout", destroy_user_session_path, method: :delete %>
       <%end%>
     </nav>

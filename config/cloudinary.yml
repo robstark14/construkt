@@ -1,0 +1,10 @@
+development: 
+  cloud_name: "dbemq5eyn"
+  api_key: "247378562332589"
+  api_secret: "pzbtxEsrinK88htZYKIQP9OTgDY"
+  secure: true
+
+production:
+  cloud_name: "dbemq5eyn"
+  api_key: "247378562332589"
+  api_secret: "pzbtxEsrinK88htZYKIQP9OTgDY"

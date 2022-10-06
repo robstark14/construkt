@@ -12,6 +12,11 @@ Rails.application.routes.draw do
   post "/api/new-user-create", to: "api/users#create"
   
   #Construction Drawings
+  get "/api/user", to: "api/construction_drawings#add_doc"
+  post "/api/create-cd", to: "api/construction_drawings#create"
+  get "/api/construction_drawings", to: "api/construction_drawings#index"
+
+
   
 
   get "*path", to: "react#home"

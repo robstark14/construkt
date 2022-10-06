@@ -1,7 +1,7 @@
 module Api
   class UsersController < BaseController
   # respond_to :json
-  before_action :user_params
+  # before_action :user_params
   # before_action :verify_if_admin, only: [:index, :edit, :show, :create, :new]
 
 

@@ -1000,7 +1000,7 @@
             }
             return dispatcher.useContext(Context);
           }
-          function useState14(initialState) {
+          function useState16(initialState) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useState(initialState);
           }
@@ -1012,7 +1012,7 @@
             var dispatcher = resolveDispatcher();
             return dispatcher.useRef(initialValue);
           }
-          function useEffect15(create2, deps) {
+          function useEffect17(create2, deps) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useEffect(create2, deps);
           }
@@ -1792,7 +1792,7 @@
           exports.useContext = useContext4;
           exports.useDebugValue = useDebugValue3;
           exports.useDeferredValue = useDeferredValue;
-          exports.useEffect = useEffect15;
+          exports.useEffect = useEffect17;
           exports.useId = useId;
           exports.useImperativeHandle = useImperativeHandle3;
           exports.useInsertionEffect = useInsertionEffect;
@@ -1800,7 +1800,7 @@
           exports.useMemo = useMemo4;
           exports.useReducer = useReducer;
           exports.useRef = useRef8;
-          exports.useState = useState14;
+          exports.useState = useState16;
           exports.useSyncExternalStore = useSyncExternalStore2;
           exports.useTransition = useTransition;
           exports.version = ReactVersion;
@@ -2296,9 +2296,9 @@
           if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") {
             __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
           }
-          var React26 = require_react();
+          var React29 = require_react();
           var Scheduler = require_scheduler();
-          var ReactSharedInternals = React26.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          var ReactSharedInternals = React29.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
           var suppressWarning = false;
           function setSuppressWarning(newSuppressWarning) {
             {
@@ -3819,7 +3819,7 @@
             {
               if (props.value == null) {
                 if (typeof props.children === "object" && props.children !== null) {
-                  React26.Children.forEach(props.children, function(child) {
+                  React29.Children.forEach(props.children, function(child) {
                     if (child == null) {
                       return;
                     }
@@ -11980,7 +11980,7 @@
             }
           }
           var fakeInternalInstance = {};
-          var emptyRefsObject = new React26.Component().refs;
+          var emptyRefsObject = new React29.Component().refs;
           var didWarnAboutStateAssignmentForComponent;
           var didWarnAboutUninitializedState;
           var didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate;
@@ -31173,7 +31173,7 @@
       exports.default = exports.styles = void 0;
       var _extends22 = _interopRequireDefault(require_extends());
       var _objectWithoutProperties2 = _interopRequireDefault(require_objectWithoutProperties());
-      var React26 = _interopRequireWildcard(require_react());
+      var React29 = _interopRequireWildcard(require_react());
       var _propTypes = _interopRequireDefault(require_prop_types());
       var _clsx = _interopRequireDefault(require_clsx());
       var _utils = require_utils();
@@ -31220,9 +31220,9 @@
         };
       };
       exports.styles = styles14;
-      var SvgIcon = /* @__PURE__ */ React26.forwardRef(function SvgIcon2(props, ref) {
+      var SvgIcon = /* @__PURE__ */ React29.forwardRef(function SvgIcon2(props, ref) {
         var children = props.children, classes = props.classes, className = props.className, _props$color = props.color, color = _props$color === void 0 ? "inherit" : _props$color, _props$component = props.component, Component2 = _props$component === void 0 ? "svg" : _props$component, _props$fontSize = props.fontSize, fontSize = _props$fontSize === void 0 ? "medium" : _props$fontSize, htmlColor = props.htmlColor, titleAccess = props.titleAccess, _props$viewBox = props.viewBox, viewBox = _props$viewBox === void 0 ? "0 0 24 24" : _props$viewBox, other = (0, _objectWithoutProperties2.default)(props, ["children", "classes", "className", "color", "component", "fontSize", "htmlColor", "titleAccess", "viewBox"]);
-        return /* @__PURE__ */ React26.createElement(Component2, (0, _extends22.default)({
+        return /* @__PURE__ */ React29.createElement(Component2, (0, _extends22.default)({
           className: (0, _clsx.default)(classes.root, className, color !== "inherit" && classes["color".concat((0, _capitalize.default)(color))], fontSize !== "default" && fontSize !== "medium" && classes["fontSize".concat((0, _capitalize.default)(fontSize))]),
           focusable: "false",
           viewBox,
@@ -31230,7 +31230,7 @@
           "aria-hidden": titleAccess ? void 0 : true,
           role: titleAccess ? "img" : void 0,
           ref
-        }, other), children, titleAccess ? /* @__PURE__ */ React26.createElement("title", null, titleAccess) : null);
+        }, other), children, titleAccess ? /* @__PURE__ */ React29.createElement("title", null, titleAccess) : null);
       });
       true ? SvgIcon.propTypes = {
         children: _propTypes.default.node,
@@ -31368,9 +31368,9 @@
         value: true
       });
       exports.default = isMuiElement;
-      var React26 = _interopRequireWildcard(require_react());
+      var React29 = _interopRequireWildcard(require_react());
       function isMuiElement(element, muiNames) {
-        return /* @__PURE__ */ React26.isValidElement(element) && muiNames.indexOf(element.type.muiName) !== -1;
+        return /* @__PURE__ */ React29.isValidElement(element) && muiNames.indexOf(element.type.muiName) !== -1;
       }
     }
   });
@@ -31482,26 +31482,26 @@
         value: true
       });
       exports.default = useControlled;
-      var React26 = _interopRequireWildcard(require_react());
+      var React29 = _interopRequireWildcard(require_react());
       function useControlled(_ref) {
         var controlled = _ref.controlled, defaultProp = _ref.default, name = _ref.name, _ref$state = _ref.state, state = _ref$state === void 0 ? "value" : _ref$state;
-        var _React$useRef = React26.useRef(controlled !== void 0), isControlled = _React$useRef.current;
-        var _React$useState = React26.useState(defaultProp), valueState = _React$useState[0], setValue = _React$useState[1];
+        var _React$useRef = React29.useRef(controlled !== void 0), isControlled = _React$useRef.current;
+        var _React$useState = React29.useState(defaultProp), valueState = _React$useState[0], setValue = _React$useState[1];
         var value = isControlled ? controlled : valueState;
         if (true) {
-          React26.useEffect(function() {
+          React29.useEffect(function() {
             if (isControlled !== (controlled !== void 0)) {
               console.error(["Material-UI: A component is changing the ".concat(isControlled ? "" : "un", "controlled ").concat(state, " state of ").concat(name, " to be ").concat(isControlled ? "un" : "", "controlled."), "Elements should not switch from uncontrolled to controlled (or vice versa).", "Decide between using a controlled or uncontrolled ".concat(name, " ") + "element for the lifetime of the component.", "The nature of the state is determined during the first render, it's considered controlled if the value is not `undefined`.", "More info: https://fb.me/react-controlled-components"].join("\n"));
             }
           }, [controlled]);
-          var _React$useRef2 = React26.useRef(defaultProp), defaultValue = _React$useRef2.current;
-          React26.useEffect(function() {
+          var _React$useRef2 = React29.useRef(defaultProp), defaultValue = _React$useRef2.current;
+          React29.useEffect(function() {
             if (!isControlled && defaultValue !== defaultProp) {
               console.error(["Material-UI: A component is changing the default ".concat(state, " state of an uncontrolled ").concat(name, " after being initialized. ") + "To suppress this warning opt to use a controlled ".concat(name, ".")].join("\n"));
             }
           }, [JSON.stringify(defaultProp)]);
         }
-        var setValueIfUncontrolled = React26.useCallback(function(newValue) {
+        var setValueIfUncontrolled = React29.useCallback(function(newValue) {
           if (!isControlled) {
             setValue(newValue);
           }
@@ -31520,14 +31520,14 @@
         value: true
       });
       exports.default = useEventCallback2;
-      var React26 = _interopRequireWildcard(require_react());
-      var useEnhancedEffect5 = typeof window !== "undefined" ? React26.useLayoutEffect : React26.useEffect;
+      var React29 = _interopRequireWildcard(require_react());
+      var useEnhancedEffect5 = typeof window !== "undefined" ? React29.useLayoutEffect : React29.useEffect;
       function useEventCallback2(fn) {
-        var ref = React26.useRef(fn);
+        var ref = React29.useRef(fn);
         useEnhancedEffect5(function() {
           ref.current = fn;
         });
-        return React26.useCallback(function() {
+        return React29.useCallback(function() {
           return (0, ref.current).apply(void 0, arguments);
         }, []);
       }
@@ -31544,10 +31544,10 @@
         value: true
       });
       exports.default = useForkRef2;
-      var React26 = _interopRequireWildcard(require_react());
+      var React29 = _interopRequireWildcard(require_react());
       var _setRef = _interopRequireDefault(require_setRef());
       function useForkRef2(refA, refB) {
-        return React26.useMemo(function() {
+        return React29.useMemo(function() {
           if (refA == null && refB == null) {
             return null;
           }
@@ -31569,11 +31569,11 @@
         value: true
       });
       exports.default = useId;
-      var React26 = _interopRequireWildcard(require_react());
+      var React29 = _interopRequireWildcard(require_react());
       function useId(idOverride) {
-        var _React$useState = React26.useState(idOverride), defaultId = _React$useState[0], setDefaultId = _React$useState[1];
+        var _React$useState = React29.useState(idOverride), defaultId = _React$useState[0], setDefaultId = _React$useState[1];
         var id = idOverride || defaultId;
-        React26.useEffect(function() {
+        React29.useEffect(function() {
           if (defaultId == null) {
             setDefaultId("mui-".concat(Math.round(Math.random() * 1e5)));
           }
@@ -31593,7 +31593,7 @@
       });
       exports.teardown = teardown;
       exports.default = useIsFocusVisible2;
-      var React26 = _interopRequireWildcard(require_react());
+      var React29 = _interopRequireWildcard(require_react());
       var ReactDOM4 = _interopRequireWildcard(require_react_dom());
       var hadKeyboardEvent2 = true;
       var hadFocusVisibleRecently2 = false;
@@ -31672,14 +31672,14 @@
         }, 100);
       }
       function useIsFocusVisible2() {
-        var ref = React26.useCallback(function(instance) {
+        var ref = React29.useCallback(function(instance) {
           var node = ReactDOM4.findDOMNode(instance);
           if (node != null) {
             prepare2(node.ownerDocument);
           }
         }, []);
         if (true) {
-          React26.useDebugValue(isFocusVisible2);
+          React29.useDebugValue(isFocusVisible2);
         }
         return {
           isFocusVisible: isFocusVisible2,
@@ -31840,9 +31840,9 @@
         value: true
       });
       exports.default = void 0;
-      var React26 = _interopRequireWildcard(require_react());
+      var React29 = _interopRequireWildcard(require_react());
       var _createSvgIcon = _interopRequireDefault(require_createSvgIcon2());
-      var _default = (0, _createSvgIcon.default)(/* @__PURE__ */ React26.createElement("path", {
+      var _default = (0, _createSvgIcon.default)(/* @__PURE__ */ React29.createElement("path", {
         d: "M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"
       }), "Visibility");
       exports.default = _default;
@@ -31859,9 +31859,9 @@
         value: true
       });
       exports.default = void 0;
-      var React26 = _interopRequireWildcard(require_react());
+      var React29 = _interopRequireWildcard(require_react());
       var _createSvgIcon = _interopRequireDefault(require_createSvgIcon2());
-      var _default = (0, _createSvgIcon.default)(/* @__PURE__ */ React26.createElement("path", {
+      var _default = (0, _createSvgIcon.default)(/* @__PURE__ */ React29.createElement("path", {
         d: "M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46C3.08 8.3 1.78 10.02 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.53-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.53.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"
       }), "VisibilityOff");
       exports.default = _default;
@@ -31869,7 +31869,7 @@
   });
 
   // app/javascript/components/App.jsx
-  var import_react11 = __toESM(require_react());
+  var import_react14 = __toESM(require_react());
   var import_client = __toESM(require_client());
 
   // node_modules/react-router-dom/dist/index.js
@@ -36646,7 +36646,7 @@
 
   // app/javascript/components/PopOutOptions.jsx
   var import_react7 = __toESM(require_react());
-  function PopOutOptions() {
+  function PopOutOptions({ optionAdd, masterInquiry }) {
     return /* @__PURE__ */ import_react7.default.createElement("div", {
       className: "absolute z-50 top-[40%]"
     }, /* @__PURE__ */ import_react7.default.createElement("div", {
@@ -36657,8 +36657,8 @@
       className: "my-4 p-4 rounded dark:bg-gray-600"
     }, /* @__PURE__ */ import_react7.default.createElement("li", {
       className: "w-full p-2 rounded  hover:bg-gray-100 group hover:shadow dark:hover:bg-gray-500"
-    }, /* @__PURE__ */ import_react7.default.createElement("a", {
-      href: "#",
+    }, /* @__PURE__ */ import_react7.default.createElement(Link, {
+      to: `/construction-drawings/${optionAdd}`,
       className: "w-full p-2 rounded-lg items-center text-base font-bold text-gray-900 dark:text-white"
     }, /* @__PURE__ */ import_react7.default.createElement("span", {
       className: "whitespace-nowrap w-full"
@@ -36671,9 +36671,9 @@
       className: "whitespace-nowrap w-full"
     }, "Search"))), /* @__PURE__ */ import_react7.default.createElement("li", {
       className: "w-full p-2 rounded  hover:bg-gray-100 group hover:shadow dark:hover:bg-gray-500"
-    }, /* @__PURE__ */ import_react7.default.createElement("a", {
-      href: "#",
-      className: "w-full p-2 rounded-lg items-center text-base font-bold text-gray-900  dark:text-white"
+    }, /* @__PURE__ */ import_react7.default.createElement(Link, {
+      to: `/construction-drawings/${masterInquiry}`,
+      className: "w-full p-2 rounded-lg items-center text-base font-bold text-gray-900 dark:text-white"
     }, /* @__PURE__ */ import_react7.default.createElement("span", {
       className: "whitespace-nowrap w-full"
     }, "Master Inquiry")))))));
@@ -36701,9 +36701,8 @@
       className: "overflow-y-auto py-4 px-3 bg-gray-50 dark:bg-gray-800 h-full"
     }, /* @__PURE__ */ import_react8.default.createElement("ul", {
       className: "space-y-2"
-    }, /* @__PURE__ */ import_react8.default.createElement("li", null, /* @__PURE__ */ import_react8.default.createElement("a", {
-      href: "#",
-      className: "flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+    }, /* @__PURE__ */ import_react8.default.createElement("li", null, /* @__PURE__ */ import_react8.default.createElement("div", {
+      className: "flex items-center cursor-pointer p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
     }, /* @__PURE__ */ import_react8.default.createElement("svg", {
       "aria-hidden": "true",
       className: "w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white",
@@ -36759,10 +36758,12 @@
         setPopOptionsMS(false);
       },
       className: "relative"
-    }, /* @__PURE__ */ import_react8.default.createElement("a", {
-      href: "#",
-      className: "flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-    }, "Construction Drawings", popOptionsCD && /* @__PURE__ */ import_react8.default.createElement(PopOutOptions_default, null))), /* @__PURE__ */ import_react8.default.createElement("li", {
+    }, /* @__PURE__ */ import_react8.default.createElement("div", {
+      className: "flex items-center cursor-pointer p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+    }, "Construction Drawings", popOptionsCD && /* @__PURE__ */ import_react8.default.createElement(PopOutOptions_default, {
+      optionAdd: "addCD",
+      masterInquiry: "masterInquiry"
+    }))), /* @__PURE__ */ import_react8.default.createElement("li", {
       onClick: () => {
         setPopOptionsSD((prev) => !prev);
         setPopOptionsCD(false);
@@ -36770,9 +36771,8 @@
         setPopOptionsMS(false);
       },
       className: "relative"
-    }, /* @__PURE__ */ import_react8.default.createElement("a", {
-      href: "#",
-      className: "flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+    }, /* @__PURE__ */ import_react8.default.createElement("div", {
+      className: "flex items-center cursor-pointer p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
     }, "Shop Drawings", popOptionsSD && /* @__PURE__ */ import_react8.default.createElement(PopOutOptions_default, null))))), /* @__PURE__ */ import_react8.default.createElement("li", null, /* @__PURE__ */ import_react8.default.createElement("button", {
       onClick: () => {
         setDropSubmittal((prev) => !prev);
@@ -36818,9 +36818,8 @@
         setPopOptionsCD(false);
       },
       className: "relative"
-    }, /* @__PURE__ */ import_react8.default.createElement("a", {
-      href: "#",
-      className: "flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+    }, /* @__PURE__ */ import_react8.default.createElement("div", {
+      className: "flex items-center cursor-pointer p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
     }, "Methodology", popOptionsMET && /* @__PURE__ */ import_react8.default.createElement(PopOutOptions_default, null))), /* @__PURE__ */ import_react8.default.createElement("li", {
       onClick: () => {
         setPopOptionsMS((prev) => !prev);
@@ -36829,9 +36828,8 @@
         setPopOptionsCD(false);
       },
       className: "relative"
-    }, /* @__PURE__ */ import_react8.default.createElement("a", {
-      href: "#",
-      className: "flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+    }, /* @__PURE__ */ import_react8.default.createElement("div", {
+      className: "flex items-center cursor-pointer p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
     }, "Material Submittals", popOptionsMS && /* @__PURE__ */ import_react8.default.createElement(PopOutOptions_default, null))))), /* @__PURE__ */ import_react8.default.createElement("li", null, /* @__PURE__ */ import_react8.default.createElement("button", {
       onClick: () => {
         setDropQaQc((prev) => !prev);
@@ -36880,9 +36878,8 @@
         setPopOptionsMET(false);
       },
       className: "relative"
-    }, /* @__PURE__ */ import_react8.default.createElement("a", {
-      href: "#",
-      className: "flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+    }, /* @__PURE__ */ import_react8.default.createElement("div", {
+      className: "flex items-center cursor-pointer p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
     }, "Notice for Inspection", popOptionsNFI && /* @__PURE__ */ import_react8.default.createElement(PopOutOptions_default, null))), /* @__PURE__ */ import_react8.default.createElement("li", {
       onClick: () => {
         setPopOptionsNCR((prev) => !prev);
@@ -36893,9 +36890,8 @@
         setPopOptionsNFI(false);
       },
       className: "relative"
-    }, /* @__PURE__ */ import_react8.default.createElement("a", {
-      href: "#",
-      className: "flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+    }, /* @__PURE__ */ import_react8.default.createElement("div", {
+      className: "flex items-center cursor-pointer p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
     }, "Non-conformance Report", popOptionsNCR && /* @__PURE__ */ import_react8.default.createElement(PopOutOptions_default, null))))), /* @__PURE__ */ import_react8.default.createElement("li", {
       onClick: () => {
         setPopOptionsRFI((prev) => !prev);
@@ -36907,9 +36903,8 @@
         setPopOptionsNCR(false);
       },
       className: "relative"
-    }, /* @__PURE__ */ import_react8.default.createElement("a", {
-      href: "#",
-      className: "flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+    }, /* @__PURE__ */ import_react8.default.createElement("div", {
+      className: "flex items-center cursor-pointer p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
     }, /* @__PURE__ */ import_react8.default.createElement("svg", {
       xmlns: "http://www.w3.org/2000/svg",
       viewBox: "0 0 24 24",
@@ -36921,9 +36916,8 @@
       clipRule: "evenodd"
     })), /* @__PURE__ */ import_react8.default.createElement("span", {
       className: "flex-1 ml-3 whitespace-nowrap"
-    }, "RFI", popOptionsRFI && /* @__PURE__ */ import_react8.default.createElement(PopOutOptions_default, null)))), /* @__PURE__ */ import_react8.default.createElement("li", null, /* @__PURE__ */ import_react8.default.createElement("a", {
-      href: "#",
-      className: "flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+    }, "RFI", popOptionsRFI && /* @__PURE__ */ import_react8.default.createElement(PopOutOptions_default, null)))), /* @__PURE__ */ import_react8.default.createElement("li", null, /* @__PURE__ */ import_react8.default.createElement("div", {
+      className: "flex items-center cursor-pointer p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
     }, /* @__PURE__ */ import_react8.default.createElement("svg", {
       "aria-hidden": "true",
       className: "flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white",
@@ -36936,9 +36930,8 @@
       className: "flex-1 ml-3 whitespace-nowrap"
     }, "Daily Logs"), /* @__PURE__ */ import_react8.default.createElement("span", {
       className: "inline-flex justify-center items-center px-2 ml-3 text-sm font-medium text-gray-800 bg-gray-200 rounded-full dark:bg-gray-700 dark:text-gray-300"
-    }, "Pro"))), /* @__PURE__ */ import_react8.default.createElement("li", null, /* @__PURE__ */ import_react8.default.createElement("a", {
-      href: "#",
-      className: "flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+    }, "Pro"))), /* @__PURE__ */ import_react8.default.createElement("li", null, /* @__PURE__ */ import_react8.default.createElement("div", {
+      className: "flex items-center cursor-pointer p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
     }, /* @__PURE__ */ import_react8.default.createElement("svg", {
       "aria-hidden": "true",
       className: "flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white",
@@ -36953,9 +36946,8 @@
       className: "flex-1 ml-3 whitespace-nowrap"
     }, "Open Items"), /* @__PURE__ */ import_react8.default.createElement("span", {
       className: "inline-flex justify-center items-center p-3 ml-3 w-3 h-3 text-sm font-medium text-blue-600 bg-blue-200 rounded-full dark:bg-blue-900 dark:text-blue-200"
-    }, "3"))), /* @__PURE__ */ import_react8.default.createElement("li", null, /* @__PURE__ */ import_react8.default.createElement("a", {
-      href: "#",
-      className: "flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+    }, "3"))), /* @__PURE__ */ import_react8.default.createElement("li", null, /* @__PURE__ */ import_react8.default.createElement("div", {
+      className: "flex items-center cursor-pointer p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
     }, /* @__PURE__ */ import_react8.default.createElement("svg", {
       "aria-hidden": "true",
       className: "flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white",
@@ -37203,10 +37195,444 @@
   }
   var NewUser_default = NewUser;
 
+  // app/javascript/components/ConstructionDrawings/ConstructionDrawings.jsx
+  var import_react13 = __toESM(require_react());
+
+  // app/javascript/components/ConstructionDrawings/AddDoc.jsx
+  var import_react11 = __toESM(require_react());
+  function AddDoc() {
+    const [levels, setLevels] = (0, import_react11.useState)([]);
+    const [user, setUser] = (0, import_react11.useState)({
+      userName: "",
+      documentNumber: ""
+    });
+    const [values2, setValues] = (0, import_react11.useState)({
+      register: "CD",
+      location: "",
+      revisionNumber: "",
+      documentStatus: "",
+      discipline: "",
+      dateSubmitted: "",
+      publishedBy: "",
+      subject: "",
+      attachments: {},
+      remarks: ""
+    });
+    (0, import_react11.useEffect)(() => {
+      fetchCurrentUser();
+      generateLevels();
+      setLevels(levelsArr);
+    }, []);
+    const navigate = useNavigate();
+    const createDoc = async (e) => {
+      console.log(values2.attachments);
+      e.preventDefault();
+      const form = new FormData();
+      form.append("document_status", values2.documentStatus);
+      form.append("register", values2.register);
+      form.append("location", values2.location);
+      form.append("revision_number", values2.revisionNumber);
+      form.append("discipline", values2.discipline);
+      form.append("company_from", "Project Management");
+      form.append("published_by", values2.publishedBy);
+      form.append("attachments", values2.attachments);
+      form.append("subject", values2.subject);
+      form.append("remarks", values2.remarks);
+      const apiEndpoint = "/api/create-cd";
+      try {
+        if (values2.location !== "" && values2.revisionNumber !== "" && values2.documentStatus !== "" && values2.discipline !== "" && values2.publishedBy !== "" && values2.subject !== "" && values2.attachments !== "" && values2.remarks !== "") {
+          const response = await fetch(apiEndpoint, {
+            mode: "no-cors",
+            method: "POST",
+            body: form
+          });
+          if (response.ok) {
+            console.log("posted!!");
+            console.log(values2.attachments.url);
+            console.log(values2.attachments);
+            console.log(values2.attachments.name);
+            console.log(values2.attachments["url"]);
+            console.log(values2.attachments["path"]);
+            console.log(values2.attachments.path);
+          }
+        }
+      } catch (err) {
+        console.log(err);
+        console.log(values2.attachments);
+      }
+    };
+    const disciplineArr = [
+      "Architect on Record(AOR)",
+      "Facade(FAC)",
+      "Fire Detection and Alarm System(FDAS)",
+      "Fire/Life Safety(FLS)",
+      "Fire Protection(FP)",
+      "Traffic Engineering(TE)",
+      "Fit-out",
+      "Mechanical(ME)",
+      "Plumbing/Sanitary(PD)",
+      "Electrical(EL)",
+      "Extra Low Voltage(ELV)",
+      "Conveying System(CS)",
+      "(MEPF)"
+    ];
+    const docStatus = ["DRAFT", "FCD", "WITHDRAWN", "CANCELLED"];
+    const otherLevels = ["B1", "B2", "B3", "B4", "LR", "URD", "HP"];
+    const levelsArr = [];
+    const generateLevels = () => {
+      let i;
+      for (i = 1; i <= 30; i++) {
+        levelsArr.push(`L${i}`);
+      }
+    };
+    const fetchCurrentUser = async () => {
+      const apiEndpointGetUserData = `/api/user`;
+      try {
+        const response = await fetch(apiEndpointGetUserData);
+        const data = await response.json();
+        setUser({ userName: data["user"].user_name, documentNumber: data["user"].enum });
+        setValues({ ...values2, publishedBy: data["user"].user_name });
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    const currDate = new Date().toLocaleDateString();
+    return /* @__PURE__ */ import_react11.default.createElement("div", {
+      className: "dark:text-gray-400"
+    }, /* @__PURE__ */ import_react11.default.createElement("form", {
+      className: "h-[90%] w-[90%] bg-white mx-auto py-[50px]",
+      onSubmit: createDoc
+    }, /* @__PURE__ */ import_react11.default.createElement("div", {
+      className: "grid gap-6 mb-6 md:grid-cols-3 "
+    }, /* @__PURE__ */ import_react11.default.createElement("div", {
+      className: "w-fit"
+    }, /* @__PURE__ */ import_react11.default.createElement("label", {
+      className: "block mb-2 text-sm font-medium text-gray-900"
+    }, "Doc(System Generated)"), /* @__PURE__ */ import_react11.default.createElement("input", {
+      name: "document_number",
+      value: user.documentNumber,
+      type: "text",
+      readOnly: true,
+      className: "border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:focus:ring-blue-500 dark:focus:border-blue-500",
+      placeholder: "Register Generated",
+      required: true
+    })), /* @__PURE__ */ import_react11.default.createElement("div", {
+      className: "w-fit"
+    }, /* @__PURE__ */ import_react11.default.createElement("label", {
+      className: "block mb-2 text-sm font-medium text-gray-900"
+    }, "Drawing Type"), /* @__PURE__ */ import_react11.default.createElement("input", {
+      name: "register",
+      value: values2.register,
+      type: "text",
+      readOnly: true,
+      className: "border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:focus:ring-blue-500 dark:focus:border-blue-500",
+      placeholder: "CD",
+      required: true
+    })), /* @__PURE__ */ import_react11.default.createElement("div", {
+      className: "w-fit"
+    }, /* @__PURE__ */ import_react11.default.createElement("label", {
+      className: "block mb-2 text-sm font-medium text-gray-900"
+    }, "Location"), /* @__PURE__ */ import_react11.default.createElement("select", {
+      className: "block appearance-none bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 w-fit",
+      id: "grid-state",
+      required: true,
+      name: "location",
+      onChange: (e) => {
+        return setValues({ ...values2, location: e.target.value });
+      },
+      value: values2.location
+    }, /* @__PURE__ */ import_react11.default.createElement("option", {
+      value: ""
+    }, "Select"), otherLevels.map((loc, index) => /* @__PURE__ */ import_react11.default.createElement("option", {
+      key: index,
+      value: loc
+    }, loc)), levels.map((loc, index) => /* @__PURE__ */ import_react11.default.createElement("option", {
+      key: index,
+      value: loc
+    }, loc)))), /* @__PURE__ */ import_react11.default.createElement("div", {
+      className: "w-fit"
+    }, /* @__PURE__ */ import_react11.default.createElement("label", {
+      className: "block mb-2 text-sm font-medium text-gray-900"
+    }, "Latest Revision"), /* @__PURE__ */ import_react11.default.createElement("input", {
+      name: "revision_number",
+      value: values2.revisionNumber,
+      onChange: (e) => {
+        return setValues({ ...values2, revisionNumber: e.target.value });
+      },
+      min: "0",
+      max: "10",
+      type: "number",
+      placeholder: 0,
+      className: "appearance-none border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:focus:ring-blue-500 dark:focus:border-blue-500",
+      required: true
+    })), /* @__PURE__ */ import_react11.default.createElement("div", {
+      className: "relative"
+    }, /* @__PURE__ */ import_react11.default.createElement("label", {
+      htmlFor: "website",
+      className: "block mb-2 text-sm font-medium text-gray-900"
+    }, "Document Status"), /* @__PURE__ */ import_react11.default.createElement("select", {
+      className: "block appearance-none bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 w-fit",
+      id: "grid-state",
+      name: "document_status",
+      onChange: (e) => {
+        return setValues({ ...values2, documentStatus: e.target.value });
+      },
+      value: values2.documentStatus
+    }, /* @__PURE__ */ import_react11.default.createElement("option", {
+      value: ""
+    }, "Select"), docStatus.map((status) => /* @__PURE__ */ import_react11.default.createElement("option", {
+      key: status,
+      value: status
+    }, status)))), /* @__PURE__ */ import_react11.default.createElement("div", {
+      className: "relative"
+    }, /* @__PURE__ */ import_react11.default.createElement("label", {
+      htmlFor: "website",
+      className: "block mb-2 text-sm font-medium text-gray-900"
+    }, "Discipline"), /* @__PURE__ */ import_react11.default.createElement("select", {
+      className: "block appearance-none bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 w-fit",
+      id: "grid-state",
+      name: "document_number",
+      onChange: (e) => {
+        return setValues({ ...values2, discipline: e.target.value });
+      },
+      value: values2.discipline
+    }, /* @__PURE__ */ import_react11.default.createElement("option", {
+      value: ""
+    }, "Select"), disciplineArr.map((role) => /* @__PURE__ */ import_react11.default.createElement("option", {
+      key: role,
+      value: role
+    }, role)))), /* @__PURE__ */ import_react11.default.createElement("div", {
+      className: "w-fit"
+    }, /* @__PURE__ */ import_react11.default.createElement("label", {
+      className: "block mb-2 text-sm font-medium text-gray-900"
+    }, "Company from (System Generated)"), /* @__PURE__ */ import_react11.default.createElement("input", {
+      name: "company_from",
+      type: "text",
+      value: "Project Owner",
+      readOnly: true,
+      className: "border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:focus:ring-blue-500 dark:focus:border-blue-500",
+      required: true
+    })), /* @__PURE__ */ import_react11.default.createElement("div", null, /* @__PURE__ */ import_react11.default.createElement("label", {
+      className: "block mb-2 text-sm font-medium text-gray-900"
+    }, "Date Submitted"), /* @__PURE__ */ import_react11.default.createElement("input", {
+      name: "createdAt",
+      type: "text",
+      readOnly: true,
+      value: currDate,
+      className: "border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:focus:ring-blue-500 dark:focus:border-blue-500",
+      placeholder: currDate,
+      required: true
+    })), /* @__PURE__ */ import_react11.default.createElement("div", null, /* @__PURE__ */ import_react11.default.createElement("label", {
+      className: "block mb-2 text-sm font-medium text-gray-900"
+    }, "Created by"), /* @__PURE__ */ import_react11.default.createElement("input", {
+      name: "publishedBy",
+      value: user.userName,
+      type: "text",
+      readOnly: true,
+      className: "border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:focus:ring-blue-500 dark:focus:border-blue-500",
+      required: true
+    }))), /* @__PURE__ */ import_react11.default.createElement("div", {
+      className: "mb-6"
+    }, /* @__PURE__ */ import_react11.default.createElement("label", {
+      className: "block mb-2 text-sm font-medium text-gray-900"
+    }, "Subject"), /* @__PURE__ */ import_react11.default.createElement("input", {
+      name: "subject",
+      onChange: (e) => {
+        return setValues({ ...values2, subject: e.target.value });
+      },
+      type: "text",
+      value: values2.subject,
+      className: "border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:focus:ring-blue-500 dark:focus:border-blue-500",
+      required: true
+    })), /* @__PURE__ */ import_react11.default.createElement("div", {
+      className: "mb-6 h-[5rem]"
+    }, /* @__PURE__ */ import_react11.default.createElement("label", {
+      className: "block mb-2 text-sm font-medium text-gray-900"
+    }, "Remarks"), /* @__PURE__ */ import_react11.default.createElement("textarea", {
+      name: "remarks",
+      onChange: (e) => {
+        return setValues({ ...values2, remarks: e.target.value });
+      },
+      value: values2.remarks,
+      className: "border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:focus:ring-blue-500 dark:focus:border-blue-500 h-[5rem]",
+      required: true
+    })), /* @__PURE__ */ import_react11.default.createElement("div", {
+      className: "flex justify-center items-center w-[70%] mx-auto mt-[50px]"
+    }, /* @__PURE__ */ import_react11.default.createElement("label", {
+      htmlFor: "dropzone-file",
+      className: "flex flex-col justify-center items-center w-full h-64 bg-gray-50 rounded-lg border-2 border-gray-300 border-dashed cursor-pointer dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
+    }, /* @__PURE__ */ import_react11.default.createElement("div", {
+      className: "flex flex-col justify-center items-center pt-5 pb-6"
+    }, /* @__PURE__ */ import_react11.default.createElement("svg", {
+      className: "mb-3 w-10 h-10 text-gray-400",
+      fill: "none",
+      stroke: "currentColor",
+      viewBox: "0 0 24 24",
+      xmlns: "http://www.w3.org/2000/svg"
+    }, /* @__PURE__ */ import_react11.default.createElement("path", {
+      strokeLinecap: "round",
+      strokeLinejoin: "round",
+      strokeWidth: "2",
+      d: "M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
+    })), /* @__PURE__ */ import_react11.default.createElement("p", {
+      className: "mb-2 text-sm text-gray-500 dark:text-gray-400"
+    }, /* @__PURE__ */ import_react11.default.createElement("span", {
+      className: "font-semibold"
+    }, "Click to upload"), " or drag and drop"), /* @__PURE__ */ import_react11.default.createElement("p", {
+      className: "text-xs text-gray-500 dark:text-gray-400"
+    }, "SVG, PNG, JPG or GIF (MAX. 800x400px)")), /* @__PURE__ */ import_react11.default.createElement("input", {
+      name: "attachments",
+      multiple: true,
+      onChange: (e) => {
+        e.persist();
+        setValues({ ...values2, attachments: e.target.files[0] });
+        console.log(e.target.files[0]);
+      },
+      id: "dropzone-file",
+      type: "file",
+      className: "hidden"
+    }))), /* @__PURE__ */ import_react11.default.createElement("input", {
+      type: "submit",
+      className: "mt-3 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+    })));
+  }
+  var AddDoc_default = AddDoc;
+
+  // app/javascript/components/ConstructionDrawings/MasterInquiry.jsx
+  var import_react12 = __toESM(require_react());
+  function MasterInquiry() {
+    const [drawings, setDrawings] = (0, import_react12.useState)([]);
+    const [searchTerm, setSearchTerm] = (0, import_react12.useState)("");
+    const [loading, setLoading] = (0, import_react12.useState)(false);
+    const [showModal, setShowModal] = (0, import_react12.useState)(false);
+    const [userId, setUserId] = (0, import_react12.useState)("");
+    const navigate = useNavigate();
+    const [userData, setUserData] = (0, import_react12.useState)({
+      first_name: "",
+      last_name: "",
+      email: ""
+    });
+    (0, import_react12.useEffect)(() => {
+      const fetchDrawings = async () => {
+        const apiEndpoint = `/api/construction_drawings?search_term=${searchTerm}`;
+        try {
+          const response = await fetch(apiEndpoint);
+          const data = await response.json();
+          setDrawings(data["construction_drawings"]);
+          setLoading(false);
+        } catch (err) {
+          console.log(err.message);
+        }
+      };
+      fetchDrawings();
+    }, [searchTerm]);
+    const onSearchTextChange = (e) => {
+      setLoading(true);
+      setSearchTerm(e.target.value);
+    };
+    const loadDrawings = drawings.map(
+      (cd) => {
+        return /* @__PURE__ */ import_react12.default.createElement("tr", {
+          key: cd.document_number,
+          className: "text-center"
+        }, /* @__PURE__ */ import_react12.default.createElement("th", {
+          className: "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center"
+        }, /* @__PURE__ */ import_react12.default.createElement("span", {
+          className: "ml-3 font-bold text-white"
+        }, cd.document_number)), /* @__PURE__ */ import_react12.default.createElement("td", {
+          className: "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+        }, cd.subject), /* @__PURE__ */ import_react12.default.createElement("td", {
+          className: "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+        }, /* @__PURE__ */ import_react12.default.createElement("i", {
+          className: "fas fa-circle text-orange-500 mr-2"
+        }, cd.document_status)), /* @__PURE__ */ import_react12.default.createElement("td", {
+          className: "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+        }, cd.published_by), /* @__PURE__ */ import_react12.default.createElement("td", {
+          className: "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+        }, /* @__PURE__ */ import_react12.default.createElement("a", {
+          href: cd.attachments,
+          target: "_blank",
+          className: "shadow bg-gray-700 hover:bg-indigo-700 focus:shadow-outline focus:outline-none text-white text-xs py-3 px-10 rounded ml-5"
+        }, "View")), /* @__PURE__ */ import_react12.default.createElement("td", {
+          className: "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right"
+        }, cd.created), /* @__PURE__ */ import_react12.default.createElement("td", {
+          className: "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right"
+        }, cd.last_updated));
+      }
+    );
+    return /* @__PURE__ */ import_react12.default.createElement("div", null, /* @__PURE__ */ import_react12.default.createElement("section", {
+      className: "relative py-16 bg-blueGray-50"
+    }, /* @__PURE__ */ import_react12.default.createElement("div", {
+      className: "w-full mb-12 px-4"
+    }, /* @__PURE__ */ import_react12.default.createElement("div", {
+      className: "relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded bg-sky-700 text-white"
+    }, /* @__PURE__ */ import_react12.default.createElement("div", {
+      className: "rounded-t mb-0 px-4 py-3 border-0"
+    }, /* @__PURE__ */ import_react12.default.createElement("div", {
+      className: "flex justify-between items-center"
+    }, /* @__PURE__ */ import_react12.default.createElement("h3", {
+      className: "font-semibold text-lg text-white"
+    }, "Construction Drawings"), /* @__PURE__ */ import_react12.default.createElement("div", {
+      className: "flex justify-between"
+    }, /* @__PURE__ */ import_react12.default.createElement("div", null, /* @__PURE__ */ import_react12.default.createElement("div", {
+      className: "flex bg-gray-50 items-center p-2 rounded-md"
+    }, /* @__PURE__ */ import_react12.default.createElement("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      className: "h-5 w-5 text-gray-400",
+      viewBox: "0 0 20 20",
+      fill: "currentColor"
+    }, /* @__PURE__ */ import_react12.default.createElement("path", {
+      d: "M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+    })), /* @__PURE__ */ import_react12.default.createElement("input", {
+      className: "bg-gray-50 outline-none ml-1 block text-black",
+      type: "text",
+      value: searchTerm,
+      placeholder: "search...",
+      onChange: onSearchTextChange
+    }))), /* @__PURE__ */ import_react12.default.createElement(Link, {
+      to: "/new-user"
+    }, /* @__PURE__ */ import_react12.default.createElement("button", {
+      className: "shadow bg-indigo-800 hover:bg-indigo-700 focus:shadow-outline focus:outline-none text-white text-xs py-3 px-10 rounded ml-5"
+    }, "Add new CD"))))), /* @__PURE__ */ import_react12.default.createElement("div", {
+      className: "block w-full overflow-x-auto "
+    }, /* @__PURE__ */ import_react12.default.createElement("table", {
+      className: "items-center w-full bg-transparent border-collapse"
+    }, /* @__PURE__ */ import_react12.default.createElement("thead", {
+      className: "bg-sky-600 "
+    }, /* @__PURE__ */ import_react12.default.createElement("tr", null, /* @__PURE__ */ import_react12.default.createElement("th", {
+      className: "text-center px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-white"
+    }, "Document No."), /* @__PURE__ */ import_react12.default.createElement("th", {
+      className: "text-center px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-white"
+    }, "Subject"), /* @__PURE__ */ import_react12.default.createElement("th", {
+      className: "text-center px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-white"
+    }, "Status"), /* @__PURE__ */ import_react12.default.createElement("th", {
+      className: "text-center px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-white"
+    }, "Published by"), /* @__PURE__ */ import_react12.default.createElement("th", {
+      className: "text-center px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-white"
+    }, "Action"), /* @__PURE__ */ import_react12.default.createElement("th", {
+      className: "text-center px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-white"
+    }, "Created at"), /* @__PURE__ */ import_react12.default.createElement("th", {
+      className: "text-center px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-white"
+    }, "Last updated"))), /* @__PURE__ */ import_react12.default.createElement("tbody", null, loading && /* @__PURE__ */ import_react12.default.createElement("tr", null, /* @__PURE__ */ import_react12.default.createElement("td", null, "Loading...")), loadDrawings)))))));
+  }
+  var MasterInquiry_default = MasterInquiry;
+
+  // app/javascript/components/ConstructionDrawings/ConstructionDrawings.jsx
+  function ConstructionDrawings() {
+    return /* @__PURE__ */ import_react13.default.createElement("div", null, /* @__PURE__ */ import_react13.default.createElement(Routes, null, /* @__PURE__ */ import_react13.default.createElement(Route, {
+      path: "/addCD",
+      element: /* @__PURE__ */ import_react13.default.createElement(AddDoc_default, null)
+    }), /* @__PURE__ */ import_react13.default.createElement(Route, {
+      path: "/masterInquiry",
+      element: /* @__PURE__ */ import_react13.default.createElement(MasterInquiry_default, null)
+    })));
+  }
+  var ConstructionDrawings_default = ConstructionDrawings;
+
   // app/javascript/components/App.jsx
   function App() {
-    const [userRole, setUserRole] = (0, import_react11.useState)("");
-    (0, import_react11.useEffect)(() => {
+    const [userRole, setUserRole] = (0, import_react14.useState)("");
+    (0, import_react14.useEffect)(() => {
       checkUserRole();
     }, []);
     const checkUserRole = async () => {
@@ -37219,19 +37645,22 @@
         console.log(err.message);
       }
     };
-    return /* @__PURE__ */ import_react11.default.createElement("div", {
+    return /* @__PURE__ */ import_react14.default.createElement("div", {
       className: "w-full h-screen"
-    }, /* @__PURE__ */ import_react11.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react11.default.createElement(Routes, null, /* @__PURE__ */ import_react11.default.createElement(Route, {
+    }, /* @__PURE__ */ import_react14.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react14.default.createElement(Routes, null, /* @__PURE__ */ import_react14.default.createElement(Route, {
       path: "*",
-      element: userRole === "Admin" ? /* @__PURE__ */ import_react11.default.createElement(Users_default, null) : /* @__PURE__ */ import_react11.default.createElement(Home_default, null)
-    }), /* @__PURE__ */ import_react11.default.createElement(Route, {
+      element: userRole === "Admin" ? /* @__PURE__ */ import_react14.default.createElement(Users_default, null) : /* @__PURE__ */ import_react14.default.createElement(Home_default, null)
+    }), /* @__PURE__ */ import_react14.default.createElement(Route, {
       path: "/new-user",
-      element: /* @__PURE__ */ import_react11.default.createElement(NewUser_default, null)
+      element: /* @__PURE__ */ import_react14.default.createElement(NewUser_default, null)
+    }), /* @__PURE__ */ import_react14.default.createElement(Route, {
+      path: "/construction-drawings/*",
+      element: /* @__PURE__ */ import_react14.default.createElement(ConstructionDrawings_default, null)
     }))));
   }
   var root = import_client.default.createRoot(document.getElementById("app"));
   root.render(
-    /* @__PURE__ */ import_react11.default.createElement(import_react11.default.StrictMode, null, /* @__PURE__ */ import_react11.default.createElement(App, null))
+    /* @__PURE__ */ import_react14.default.createElement(App, null)
   );
 })();
 /*

@@ -1,6 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-function PopOutOptions() {
+function PopOutOptions({optionAdd, masterInquiry}) {
   return (
     <div className='absolute z-50 top-[40%]'>
         
@@ -16,9 +17,9 @@ function PopOutOptions() {
                     
                     <ul className="my-4 p-4 rounded dark:bg-gray-600">
                         <li className='w-full p-2 rounded  hover:bg-gray-100 group hover:shadow dark:hover:bg-gray-500'>
-                            <a href="#" className="w-full p-2 rounded-lg items-center text-base font-bold text-gray-900 dark:text-white">
+                            <Link to ={`/construction-drawings/${optionAdd}`} className="w-full p-2 rounded-lg items-center text-base font-bold text-gray-900 dark:text-white">
                                 <span className="whitespace-nowrap w-full">Add Document</span>
-                            </a>
+                            </Link>
                         </li>
                         <li className='w-full p-2 rounded  hover:bg-gray-100 group hover:shadow dark:hover:bg-gray-500'>
                             <a href="#" className="w-full p-2 rounded-lg items-center text-base font-bold text-gray-900  dark:text-white">
@@ -26,9 +27,10 @@ function PopOutOptions() {
                             </a>
                         </li>
                         <li className='w-full p-2 rounded  hover:bg-gray-100 group hover:shadow dark:hover:bg-gray-500'>
-                            <a href="#" className="w-full p-2 rounded-lg items-center text-base font-bold text-gray-900  dark:text-white">
+                            <Link to ={`/construction-drawings/${masterInquiry}`} className="w-full p-2 rounded-lg items-center text-base font-bold text-gray-900 dark:text-white">
                                 <span className="whitespace-nowrap w-full">Master Inquiry</span>
-                            </a>
+                            </Link>
+                            
                         </li>
                     </ul>   
                    

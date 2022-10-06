@@ -8,6 +8,7 @@ import {
 import Users from "./Users";
 import Home from "./Home";
 import NewUser from './NewUser';
+import ConstructionDrawings from './ConstructionDrawings/ConstructionDrawings';
 // import reportWebVitals from "./reportWebVitals";
 
 function App() {
@@ -41,6 +42,8 @@ function App() {
         <Route path="*" element={userRole === 'Admin'? <Users />:<Home />} /> 
         {/* <Route path="/users/*" element={} /> */}
         <Route path="/new-user" element={<NewUser />} />  
+        <Route path="/construction-drawings/*" element={<ConstructionDrawings />} />  
+        
       </Routes>
     </Router>
     </div>
@@ -56,8 +59,8 @@ const root = ReactDOM.createRoot(document.getElementById("app"));
 // const root = ReactDOM.createRoot(rootElement);
 
 root.render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <App />
-  </React.StrictMode>
+  // </React.StrictMode>
 );
 // reportWebVitals();
