@@ -72,8 +72,8 @@ export default function DocNavBar({documentNumber, workflowStage}) {
                             <Link to={`/${documentNumber}/data`} className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0 hover:text-blue-300 hover:cursor-pointer"
                             >{documentNumber}</Link>
 
-                            {workflowStage === 0?<Link to={`/${documentNumber}/newForm`} className="hover:text-blue-300 hover:cursor-pointer">Initiate Workflow</Link>:
-                            <Link to={`/${documentNumber}/workflow-summary`} className="hover:text-blue-300 hover:cursor-pointer">Workflow</Link>
+                            {workflowStage === 0?<Link to={`/${documentNumber}/newForm/${documentNumber}`} className="hover:text-blue-300 hover:cursor-pointer">Initiate Workflow</Link>:
+                            <Link to={`/${documentNumber}/workflow-summary/${documentNumber}`} className="hover:text-blue-300 hover:cursor-pointer">Workflow</Link>
 
                                 }  
                           <Link to={`/${documentNumber}/attachments`} className="hover:text-blue-300 hover:cursor-pointer">Attachments</Link>

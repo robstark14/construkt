@@ -15,10 +15,10 @@ import DocInfo from './DocInfo';
 
 
 function App() {
-  const [userRole, setUserRole] = useState("")
+  const [user, setUser] = useState({})
 
   useEffect(() => {
-    checkUserRole()
+    checkUser()
     console.log('cache');
 
     if ("caches" in window) {
@@ -32,12 +32,12 @@ function App() {
    
   }, [])
   
- const checkUserRole= async () => {
+ const checkUser= async () => {
   const apiEndpoint =`/api/user-role`
   try{
       const response = await fetch(apiEndpoint)
       const data = await response.json()
-      setUserRole(data["user_role"])
+      setUser(data["user"])
      
   } catch (err) {
       console.log(err.message);
@@ -51,12 +51,12 @@ function App() {
 
     <Router>
       <Routes>
-        <Route path="*" element={userRole === 'Admin'? <Users />:<Home />} /> 
+        <Route path="*" element={user.user_role === 'Admin'? <Users />:<Home />} /> 
         {/* <Route path="/users/*" element={} /> */}
         <Route path="/new-user" element={<NewUser />} />  
         <Route path="/construction-drawings/*" element={<ConstructionDrawings />} />  
         <Route path="/shop-drawings/*" element={<ShopDrawings />} />  
-        <Route path={`/:params/*`} element={<DocInfo />}/>
+        <Route path={`/:params/*`} element={<DocInfo user={user}/>}/>
         
 
             

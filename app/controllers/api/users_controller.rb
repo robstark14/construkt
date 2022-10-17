@@ -84,9 +84,14 @@ module Api
     end
 
     def check_if_admin
-        user_role = current_user.role
+        user = {
+          user_role:current_user.role,
+          user_name: current_user.first_name + " " + current_user.last_name,
+          user_id:current_user.id
+          
+        }
 
-        render(json: {user_role: user_role})
+        render(json: {user: user})
     end
     private
     def user_params

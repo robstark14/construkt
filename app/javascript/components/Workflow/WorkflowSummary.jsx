@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 
-function WorkflowSummary({getWorkflowSummary, summary}) {
+function WorkflowSummary({getWorkflowSummary, summary, document, getDocument, documentNumber, user}) {
   
   useEffect(() => {  
       getWorkflowSummary()
+      getDocument()
+      console.log(user?.user_name);
+      console.log(document?.next_activity_owner);
+
   }, [])
 
   
@@ -12,7 +17,7 @@ function WorkflowSummary({getWorkflowSummary, summary}) {
   const loadSummary = summary?.map((wf)=>{
     return(     
         <tr key={wf.id} className ="text-center">
-            <td className="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">{wf.workflow_activity}</td>
+             <td className="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">{wf.activity_subject}</td>
             <td className="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
             <i className="fas fa-circle text-orange-500 mr-2">{wf.outcome}</i></td>
             <td className="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
@@ -24,7 +29,7 @@ function WorkflowSummary({getWorkflowSummary, summary}) {
             </td>
             <td className="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-center">{wf.created_at.split('T')[0].split("-").reverse().join("-")}</td>
             <td className="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-center">{wf.workflow_deadline.split('T')[0].split("-").reverse().join("-")}</td>
-      </tr>      
+        </tr>      
     
     )
   }
@@ -52,6 +57,22 @@ function WorkflowSummary({getWorkflowSummary, summary}) {
 
                 <tbody>
                     {loadSummary}
+                    <tr className ="text-center">
+                        <td className="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4  text-orange-500 hover:cursor-pointer">
+                        <Link to={user?.user_name === document?.next_activity_owner?`${documentNumber}/form/${documentNumber}`:`/${documentNumber}/workflow-summary/${documentNumber}`}>{document?.activity}</Link>
+                            </td>
+                        <td className="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                        <i className="fas fa-circle mr-2">---</i></td>
+                        <td className="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                            ---
+                        </td>
+                        <td className="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center">
+                            <img src="https://as2.ftcdn.net/v2/jpg/02/15/84/43/1000_F_215844325_ttX9YiIIyeaR7Ne6EaLLjMAmy4GvPC69.jpg" className="h-12 w-12 bg-white rounded-full border" alt=""/>
+                            <span className="ml-3 font-bold text-black">{document?.next_activity_owner}</span>
+                        </td>
+                        <td className="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-center">--</td>
+                        <td className="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-center">--</td>
+                    </tr>
                 </tbody>
             </table>
         </div>

@@ -27,11 +27,27 @@ module Api
           2 => 'Revise and Resubmit',
           3 => 'Return to the Contractor'
         }
-       @document = ShopDrawing.last
+       @document = ShopDrawing.where(document_number: params[:id])[0]
         # puts document.id
-     
+        previous_workflow = Workflow.where(shop_drawings_id: @document['id'])[0]
 
+        puts 'hello'
+        puts @document
+        puts @document.class
+        puts @document['required_response_date']
+        puts @document['id']
+        puts @document['id'].class
+
+
+        puts 'hello'
         
+        puts 'gege'
+        puts previous_workflow
+        puts previous_workflow.class
+        puts previous_workflow['next_activity_owner']
+        puts previous_workflow['next_activity_owner'].class
+        puts 'gege'
+
         # document = activity[@document[0]['workflow_stage'].to_i]
         if @document['workflow_stage'] == 0
 
@@ -43,6 +59,8 @@ module Api
         else
           document = {
             activity: activity[@document['workflow_stage'].to_i],
+            next_activity_owner: previous_workflow['next_activity_owner'],
+            next_activity: activity[@document['workflow_stage'].to_i + 1],
             workflow_stage: @document['workflow_stage'] 
           }
         end
@@ -55,7 +73,8 @@ module Api
       end
 
       def create_sd
-       @document = ShopDrawing.last
+        document = ShopDrawing.where(document_number: params[:id])[0]
+
                    
         @workflow = Workflow.create!(
           current_activity_owner: params[:current_activity_owner],
@@ -64,12 +83,12 @@ module Api
           outcome: params[:outcome], 
           activity_remarks: params[:activity_remarks],
           attachments: params[:attachments],
-          workflow_deadline: @document['required_response_date'], 
-          shop_drawings_id: @document.id
+          workflow_deadline: document['required_response_date'], 
+          shop_drawings_id: document['id']
         )
 
-        @document['workflow_stage'] += 1
-        @document.save!
+        document['workflow_stage'] += 1
+        document.save!
 
         render(json: @workflow, status: :created) # Return 201 to client
   
@@ -77,7 +96,9 @@ module Api
   
       def workflow_summary
         # users = User.all.order(updated_at: "DESC").map do |user|
-        workflow = Workflow.all.order(created_at: 'ASC')
+        sd = ShopDrawing.where(document_number: params[:id])[0]
+
+        workflow = Workflow.where(shop_drawings_id: sd['id'])
           # {
           #   id: user.id,
           #   email: user.email,

@@ -9,7 +9,7 @@ import WorkflowForm from './Workflow/WorkflowForm';
 import WorkflowSummary from './Workflow/WorkflowSummary';
 
 
-function DocInfo() {
+function DocInfo({user}) {
     const [document, setDocument] = useState({})
     const params = useParams()
     const [showAlert, setShowAlert] = useState(false);
@@ -116,9 +116,9 @@ function DocInfo() {
       <Routes>
          {/* <Route path="/attachments" element={ <DocNavBar documentNumber = {values?.documentNumber}/>}/> */}
          <Route path="/attachments" element={ <Attachments />}/>
-         <Route path="/workflow-summary" element={ <WorkflowSummary getWorkflowSummary={getWorkflowSummary} summary={summary}/>}/>
-         <Route path="/form" element={ <WorkflowForm register={values?.register} documentNumber = {values?.documentNumber} subject ={values?.subject} deadline={values?.deadline} getDocument={getDocument}/>}/>
-         <Route path="/newForm" element={ <InitialWorkflowForm document={document} register={values?.register} documentNumber = {values?.documentNumber} subject ={values?.subject} deadline={values?.deadline } getDocument={getDocument} publishedBy={values?.publishedBy}/>}/>
+         <Route path={`/workflow-summary/${values?.documentNumber}`} element={ <WorkflowSummary documentNumber = {values?.documentNumber} user={user} getWorkflowSummary={getWorkflowSummary} summary={summary} document={document} getDocument={getDocument} />}/>
+         <Route path={`/form/${values?.documentNumber}`}element={ <WorkflowForm document={document} register={values?.register} documentNumber = {values?.documentNumber} subject ={values?.subject} deadline={values?.deadline } getDocument={getDocument} publishedBy={values?.publishedBy}/>}/>
+         <Route path={`/newForm/${values?.documentNumber}`} element={ <InitialWorkflowForm document={document} register={values?.register} documentNumber = {values?.documentNumber} subject ={values?.subject} deadline={values?.deadline } getDocument={getDocument} publishedBy={values?.publishedBy}/>}/>
          <Route path ={`/data`} element={ <DocData values={values} fetchCurrentDoc={fetchCurrentDoc} />}/>
 
       </Routes>

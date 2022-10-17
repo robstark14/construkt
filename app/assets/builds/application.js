@@ -37992,10 +37992,10 @@
       to: `/${documentNumber}/data`,
       className: "items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0 hover:text-blue-300 hover:cursor-pointer"
     }, documentNumber), workflowStage === 0 ? /* @__PURE__ */ import_react19.default.createElement(Link, {
-      to: `/${documentNumber}/newForm`,
+      to: `/${documentNumber}/newForm/${documentNumber}`,
       className: "hover:text-blue-300 hover:cursor-pointer"
     }, "Initiate Workflow") : /* @__PURE__ */ import_react19.default.createElement(Link, {
-      to: `/${documentNumber}/workflow-summary`,
+      to: `/${documentNumber}/workflow-summary/${documentNumber}`,
       className: "hover:text-blue-300 hover:cursor-pointer"
     }, "Workflow"), /* @__PURE__ */ import_react19.default.createElement(Link, {
       to: `/${documentNumber}/attachments`,
@@ -38122,6 +38122,7 @@
 
   // app/javascript/components/Workflow/InitialWorkflowForm.jsx
   function InitialWorkflowForm({ documentNumber, subject, deadline, getDocument, publishedBy, register, document: document2 }) {
+    const navigate = useNavigate();
     const [showUsers, setShowUsers] = (0, import_react22.useState)(false);
     const [users, setUsers] = (0, import_react22.useState)([]);
     const [searchTerm, setSearchTerm] = (0, import_react22.useState)("");
@@ -38167,7 +38168,7 @@
       form.append("activity_remarks", values2?.activityRemarks);
       form.append("workflow_deadline", values2?.workflowDeadline);
       form.append("attachments", values2?.attachments);
-      const apiEndpoint = `/api/create-${register?.toLowerCase()}-activity`;
+      const apiEndpoint = `/api/create-${register?.toLowerCase()}-activity/${documentNumber}`;
       console.log(apiEndpoint);
       try {
         setLoader(true);
@@ -38178,6 +38179,7 @@
         });
         if (response.ok) {
           console.log("posted!!");
+          navigate(`/${documentNumber}/workflow-summary`);
         } else {
           setShowAlert(true);
           setLoader(false);
@@ -38304,108 +38306,197 @@
 
   // app/javascript/components/Workflow/WorkflowForm.jsx
   var import_react23 = __toESM(require_react());
-  function WorkflowForm({ documentNumber, subject, deadline, getDocument }) {
+  function WorkflowForm({ documentNumber, subject, deadline, getDocument, publishedBy, register, document: document2 }) {
+    const navigate = useNavigate();
+    const [showUsers, setShowUsers] = (0, import_react23.useState)(false);
+    const [users, setUsers] = (0, import_react23.useState)([]);
+    const [searchTerm, setSearchTerm] = (0, import_react23.useState)("");
+    const [loading, setLoading] = (0, import_react23.useState)(false);
+    const [nextActivityOwner, setNextActivityOwner] = (0, import_react23.useState)("");
+    const [loader, setLoader] = (0, import_react23.useState)(false);
+    const [showAlert, setShowAlert] = (0, import_react23.useState)(false);
+    const [values2, setValues] = (0, import_react23.useState)({
+      activitySubject: "Initiated Workflow",
+      outcome: "",
+      activityRemarks: "",
+      attachments: {},
+      workflowDeadline: ""
+    });
     (0, import_react23.useEffect)(() => {
       getDocument();
+      console.log(publishedBy);
+      console.log(`${nextActivityOwner.first_name} ${nextActivityOwner.last_name}`);
     }, []);
+    const fetchUsers = async () => {
+      const apiEndpoint = `/api/users?search_term=${searchTerm}`;
+      try {
+        const response = await fetch(apiEndpoint);
+        const data = await response.json();
+        setUsers(data["users"]);
+        setLoading(false);
+      } catch (err) {
+        console.log(err.message);
+      }
+    };
+    const onSearchTextChange = (e) => {
+      setLoading(true);
+      setSearchTerm(e.target.value);
+    };
+    const createDoc = async (e) => {
+      console.log(values2.attachments);
+      e.preventDefault();
+      const form = new FormData();
+      form.append("current_activity_owner", publishedBy);
+      form.append("next_activity_owner", `${nextActivityOwner.first_name} ${nextActivityOwner.last_name}`);
+      form.append("activity_subject", values2?.activitySubject);
+      form.append("outcome", document2?.activity);
+      form.append("activity_remarks", values2?.activityRemarks);
+      form.append("workflow_deadline", values2?.workflowDeadline);
+      form.append("attachments", values2?.attachments);
+      const apiEndpoint = `/api/create-${register?.toLowerCase()}-activity/${documentNumber}`;
+      console.log(apiEndpoint);
+      try {
+        setLoader(true);
+        const response = await fetch(apiEndpoint, {
+          mode: "no-cors",
+          method: "POST",
+          body: form
+        });
+        if (response.ok) {
+          console.log("posted!!");
+          navigate(`/${documentNumber}/workflow-summary`);
+        } else {
+          setShowAlert(true);
+          setLoader(false);
+        }
+      } catch (err) {
+        console.log(err);
+        console.log(values2.attachments);
+      }
+    };
     return /* @__PURE__ */ import_react23.default.createElement("div", {
       className: "h-full w-full p-4"
+    }, loader && /* @__PURE__ */ import_react23.default.createElement(PageLoader_default, null), showAlert && /* @__PURE__ */ import_react23.default.createElement(Alert_default, {
+      alertStatement: "Something went wrong, please try again.",
+      color: "red",
+      setShowAlert
+    }), showUsers && /* @__PURE__ */ import_react23.default.createElement(UsersList_default, {
+      setShowUsers,
+      fetchUsers,
+      users,
+      loading,
+      onSearchTextChange,
+      setNextActivityOwner,
+      searchTerm
+    }), /* @__PURE__ */ import_react23.default.createElement("div", {
+      className: "border border-y-2 border-gray-800 w-full h-[50px] relative bg-white mb-4 text-black flex justify-around items-center"
+    }, /* @__PURE__ */ import_react23.default.createElement("span", null, documentNumber), /* @__PURE__ */ import_react23.default.createElement("span", null, subject), /* @__PURE__ */ import_react23.default.createElement("span", null, "Document Required by: ", deadline.split("T")[0].split("-").reverse().join("-"))), /* @__PURE__ */ import_react23.default.createElement("form", {
+      className: "w-full grid grid-cols-3 h-full gap-5 place-content-center",
+      onSubmit: createDoc
     }, /* @__PURE__ */ import_react23.default.createElement("div", {
-      className: "border border-y-4 w-full h-[50px] relative bg-white mb-4 text-black flex justify-around items-center"
-    }, /* @__PURE__ */ import_react23.default.createElement("span", null, documentNumber), /* @__PURE__ */ import_react23.default.createElement("span", null, subject), /* @__PURE__ */ import_react23.default.createElement("span", null, "Document Required by: ", deadline.split("T")[0].split("-").reverse().join("-"))), /* @__PURE__ */ import_react23.default.createElement("div", {
-      className: "w-full grid grid-cols-3 h-full gap-5"
-    }, /* @__PURE__ */ import_react23.default.createElement("form", {
       className: "bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
     }, /* @__PURE__ */ import_react23.default.createElement("div", {
       className: "bg-gray-300 w-full p-2 border text-black"
     }, /* @__PURE__ */ import_react23.default.createElement("span", {
       className: "w-72 h-72 rounded-[50%] bg-blue-700 text-white px-2 py-1 mr-4"
     }, "1"), /* @__PURE__ */ import_react23.default.createElement("span", null, "Review Information")), /* @__PURE__ */ import_react23.default.createElement("div", {
-      className: "mb-4"
+      className: "my-4"
     }, /* @__PURE__ */ import_react23.default.createElement("label", {
       className: "block text-gray-700 text-sm font-bold mb-2",
       htmlFor: "username"
-    }, "Username"), /* @__PURE__ */ import_react23.default.createElement("input", {
+    }, "Actvity Owner"), /* @__PURE__ */ import_react23.default.createElement("input", {
+      readOnly: true,
+      value: publishedBy,
+      name: "current_activity_owner",
       className: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
       id: "username",
       type: "text",
       placeholder: "Username"
-    }))), /* @__PURE__ */ import_react23.default.createElement("form", {
+    })), /* @__PURE__ */ import_react23.default.createElement("div", {
+      className: "mb-6 h-[5rem]"
+    }, /* @__PURE__ */ import_react23.default.createElement("label", {
+      className: "block mb-2 text-sm font-medium text-gray-900"
+    }, "Remarks"), /* @__PURE__ */ import_react23.default.createElement("textarea", {
+      name: "activity_remarks",
+      onChange: (e) => {
+        return setValues({ ...values2, activityRemarks: e.target.value });
+      },
+      value: values2.activityRemarks,
+      className: "border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:focus:ring-blue-500 dark:focus:border-blue-500 h-[5rem]",
+      required: true
+    }))), /* @__PURE__ */ import_react23.default.createElement("div", {
       className: "bg-white shadow-4xl rounded px-8 pt-6 pb-8 mb-4"
     }, /* @__PURE__ */ import_react23.default.createElement("div", {
-      className: "mb-4"
+      className: "bg-gray-300 w-full p-2 border text-black"
+    }, /* @__PURE__ */ import_react23.default.createElement("span", {
+      className: "w-72 h-72 rounded-[50%] bg-yellow-700 text-white px-2 py-1 mr-4"
+    }, "2"), /* @__PURE__ */ import_react23.default.createElement("span", null, "Select Next Activity Owner")), /* @__PURE__ */ import_react23.default.createElement("div", {
+      className: "my-4"
     }, /* @__PURE__ */ import_react23.default.createElement("label", {
       className: "block text-gray-700 text-sm font-bold mb-2",
       htmlFor: "username"
-    }, "Username"), /* @__PURE__ */ import_react23.default.createElement("input", {
-      className: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
-      id: "username",
-      type: "text",
-      placeholder: "Username"
-    }))), /* @__PURE__ */ import_react23.default.createElement("form", {
-      className: "bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
-    }, /* @__PURE__ */ import_react23.default.createElement("div", {
-      className: "mb-4"
-    }, /* @__PURE__ */ import_react23.default.createElement("label", {
-      className: "block text-gray-700 text-sm font-bold mb-2",
-      htmlFor: "username"
-    }, "Username"), /* @__PURE__ */ import_react23.default.createElement("input", {
-      className: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
-      id: "username",
-      type: "text",
-      placeholder: "Username"
-    }))), /* @__PURE__ */ import_react23.default.createElement("div", {
-      className: "col-span-2"
+    }, "Next Activity Owner"), /* @__PURE__ */ import_react23.default.createElement(SearchUsers_default, {
+      setShowUsers
+    }), nextActivityOwner !== void 0 && nextActivityOwner !== "" ? /* @__PURE__ */ import_react23.default.createElement("div", {
+      className: "p-2 mt-5 text-white bg-blue-600 rounded-lg w-fit "
+    }, `${nextActivityOwner?.last_name}, ${nextActivityOwner?.first_name}   -  ${nextActivityOwner?.company}`) : null)), /* @__PURE__ */ import_react23.default.createElement("button", {
+      type: "submit",
+      className: "bg-sky-600 hover:bg-blue-700 text-white font-bold py-2 px-4 border-b-4 border-sky-700 hover:border-sky-500 rounded-xl m-4"
+    }, "Send to next Activity"), /* @__PURE__ */ import_react23.default.createElement("div", {
+      className: "col-span-3"
     }, /* @__PURE__ */ import_react23.default.createElement("div", {
       className: "overflow-x-auto"
     }, /* @__PURE__ */ import_react23.default.createElement("div", {
       className: "p-1.5 w-full inline-block align-middle bg-white"
     }, /* @__PURE__ */ import_react23.default.createElement("div", {
       className: "overflow-hidden border rounded-lg"
-    }, /* @__PURE__ */ import_react23.default.createElement("table", {
+    }, /* @__PURE__ */ import_react23.default.createElement("div", {
+      className: "bg-gray-300 w-full p-2 border text-black"
+    }, /* @__PURE__ */ import_react23.default.createElement("span", {
+      className: "w-72 h-72 rounded-[50%] bg-rose-700 text-white px-2 py-1 mr-4"
+    }, "3"), /* @__PURE__ */ import_react23.default.createElement("span", null, "Upload Documents")), /* @__PURE__ */ import_react23.default.createElement("table", {
       className: "min-w-full divide-y divide-gray-200"
     }, /* @__PURE__ */ import_react23.default.createElement("thead", {
       className: "bg-gray-50"
     }, /* @__PURE__ */ import_react23.default.createElement("tr", null, /* @__PURE__ */ import_react23.default.createElement("th", {
       scope: "col",
       className: "px-6 py-3 text-xs font-bold text-left text-gray-500 uppercase "
-    }, "Name"), /* @__PURE__ */ import_react23.default.createElement("th", {
+    }, "No."), /* @__PURE__ */ import_react23.default.createElement("th", {
       scope: "col",
       className: "px-6 py-3 text-xs font-bold text-left text-gray-500 uppercase "
-    }, "Email"), /* @__PURE__ */ import_react23.default.createElement("th", {
-      scope: "col",
-      className: "px-6 py-3 text-xs font-bold text-right text-gray-500 uppercase "
-    }, "Edit"))), /* @__PURE__ */ import_react23.default.createElement("tbody", {
+    }, "Subject"))), /* @__PURE__ */ import_react23.default.createElement("tbody", {
       className: "divide-y divide-gray-200 w-[70%]"
     }, /* @__PURE__ */ import_react23.default.createElement("tr", null, /* @__PURE__ */ import_react23.default.createElement("td", {
       className: "px-6 py-4 text-sm font-medium text-gray-800 whitespace-nowrap"
     }, "1"), /* @__PURE__ */ import_react23.default.createElement("td", {
       className: "px-6 py-4 text-sm text-gray-800 whitespace-nowrap"
-    }, "Jone Doe"), /* @__PURE__ */ import_react23.default.createElement("td", {
-      className: "px-6 py-4 text-sm text-gray-800 whitespace-nowrap"
-    }, "jonne62@gmail.com"), /* @__PURE__ */ import_react23.default.createElement("td", {
-      className: "px-6 py-4 text-sm font-medium text-right whitespace-nowrap"
-    }, /* @__PURE__ */ import_react23.default.createElement("a", {
-      className: "text-green-500 hover:text-green-700",
-      href: "#"
-    }, "Edit"))))))), /* @__PURE__ */ import_react23.default.createElement("label", {
-      className: "block text-sm font-medium text-gray-900 dark:text-gray-300",
-      htmlFor: "multiple_files"
+    }, values2?.attachments.name)))))), /* @__PURE__ */ import_react23.default.createElement("div", {
+      className: "grid grid-flow-col w-full bg-white p-2"
+    }, /* @__PURE__ */ import_react23.default.createElement("label", {
+      className: "text-right block text-sm font-medium text-black",
+      htmlFor: "multiple_files pl-4"
     }, "Upload multiple files"), /* @__PURE__ */ import_react23.default.createElement("input", {
-      className: "block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 \n            focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400",
+      className: "ml-4 block text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 \n            focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 w-fit",
       type: "file",
-      multiple: ""
-    }))), /* @__PURE__ */ import_react23.default.createElement("button", {
-      className: "bg-sky-600 hover:bg-blue-700 text-white font-bold py-2 px-4 border-b-4 border-sky-700 hover:border-sky-500 rounded"
-    }, "Send to next Activity")));
+      multiple: true,
+      name: "attachments",
+      onChange: (e) => {
+        e.persist();
+        setValues({ ...values2, attachments: e.target.files[0] });
+        console.log(e.target.files[0].name);
+      }
+    }))))));
   }
   var WorkflowForm_default = WorkflowForm;
 
   // app/javascript/components/Workflow/WorkflowSummary.jsx
   var import_react24 = __toESM(require_react());
-  function WorkflowSummary({ getWorkflowSummary, summary }) {
+  function WorkflowSummary({ getWorkflowSummary, summary, document: document2, getDocument, documentNumber, user }) {
     (0, import_react24.useEffect)(() => {
       getWorkflowSummary();
+      getDocument();
+      console.log(user?.user_name);
+      console.log(document2?.next_activity_owner);
     }, []);
     const loadSummary = summary?.map(
       (wf) => {
@@ -38414,7 +38505,7 @@
           className: "text-center"
         }, /* @__PURE__ */ import_react24.default.createElement("td", {
           className: "border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-        }, wf.workflow_activity), /* @__PURE__ */ import_react24.default.createElement("td", {
+        }, wf.activity_subject), /* @__PURE__ */ import_react24.default.createElement("td", {
           className: "border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
         }, /* @__PURE__ */ import_react24.default.createElement("i", {
           className: "fas fa-circle text-orange-500 mr-2"
@@ -38461,12 +38552,36 @@
       className: "text-center px-4 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-black"
     }, "Published at"), /* @__PURE__ */ import_react24.default.createElement("th", {
       className: "text-center px-4 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-black"
-    }, "Deadline"))), /* @__PURE__ */ import_react24.default.createElement("tbody", null, loadSummary)))))));
+    }, "Deadline"))), /* @__PURE__ */ import_react24.default.createElement("tbody", null, loadSummary, /* @__PURE__ */ import_react24.default.createElement("tr", {
+      className: "text-center"
+    }, /* @__PURE__ */ import_react24.default.createElement("td", {
+      className: "border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4  text-orange-500 hover:cursor-pointer"
+    }, /* @__PURE__ */ import_react24.default.createElement(Link, {
+      to: user?.user_name === document2?.next_activity_owner ? `${documentNumber}/form/${documentNumber}` : `/${documentNumber}/workflow-summary/${documentNumber}`
+    }, document2?.activity)), /* @__PURE__ */ import_react24.default.createElement("td", {
+      className: "border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+    }, /* @__PURE__ */ import_react24.default.createElement("i", {
+      className: "fas fa-circle mr-2"
+    }, "---")), /* @__PURE__ */ import_react24.default.createElement("td", {
+      className: "border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+    }, "---"), /* @__PURE__ */ import_react24.default.createElement("td", {
+      className: "border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center"
+    }, /* @__PURE__ */ import_react24.default.createElement("img", {
+      src: "https://as2.ftcdn.net/v2/jpg/02/15/84/43/1000_F_215844325_ttX9YiIIyeaR7Ne6EaLLjMAmy4GvPC69.jpg",
+      className: "h-12 w-12 bg-white rounded-full border",
+      alt: ""
+    }), /* @__PURE__ */ import_react24.default.createElement("span", {
+      className: "ml-3 font-bold text-black"
+    }, document2?.next_activity_owner)), /* @__PURE__ */ import_react24.default.createElement("td", {
+      className: "border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-center"
+    }, "--"), /* @__PURE__ */ import_react24.default.createElement("td", {
+      className: "border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-center"
+    }, "--")))))))));
   }
   var WorkflowSummary_default = WorkflowSummary;
 
   // app/javascript/components/DocInfo.jsx
-  function DocInfo() {
+  function DocInfo({ user }) {
     const [document2, setDocument] = (0, import_react25.useState)({});
     const params = useParams();
     const [showAlert, setShowAlert] = (0, import_react25.useState)(false);
@@ -38552,22 +38667,28 @@
       path: "/attachments",
       element: /* @__PURE__ */ import_react25.default.createElement(Attachments_default, null)
     }), /* @__PURE__ */ import_react25.default.createElement(Route, {
-      path: "/workflow-summary",
+      path: `/workflow-summary/${values2?.documentNumber}`,
       element: /* @__PURE__ */ import_react25.default.createElement(WorkflowSummary_default, {
+        documentNumber: values2?.documentNumber,
+        user,
         getWorkflowSummary,
-        summary
+        summary,
+        document: document2,
+        getDocument
       })
     }), /* @__PURE__ */ import_react25.default.createElement(Route, {
-      path: "/form",
+      path: `/form/${values2?.documentNumber}`,
       element: /* @__PURE__ */ import_react25.default.createElement(WorkflowForm_default, {
+        document: document2,
         register: values2?.register,
         documentNumber: values2?.documentNumber,
         subject: values2?.subject,
         deadline: values2?.deadline,
-        getDocument
+        getDocument,
+        publishedBy: values2?.publishedBy
       })
     }), /* @__PURE__ */ import_react25.default.createElement(Route, {
-      path: "/newForm",
+      path: `/newForm/${values2?.documentNumber}`,
       element: /* @__PURE__ */ import_react25.default.createElement(InitialWorkflowForm_default, {
         document: document2,
         register: values2?.register,
@@ -38593,9 +38714,9 @@
 
   // app/javascript/components/App.jsx
   function App() {
-    const [userRole, setUserRole] = (0, import_react26.useState)("");
+    const [user, setUser] = (0, import_react26.useState)({});
     (0, import_react26.useEffect)(() => {
-      checkUserRole();
+      checkUser();
       console.log("cache");
       if ("caches" in window) {
         caches.keys().then((names) => {
@@ -38606,12 +38727,12 @@
         });
       }
     }, []);
-    const checkUserRole = async () => {
+    const checkUser = async () => {
       const apiEndpoint = `/api/user-role`;
       try {
         const response = await fetch(apiEndpoint);
         const data = await response.json();
-        setUserRole(data["user_role"]);
+        setUser(data["user"]);
       } catch (err) {
         console.log(err.message);
       }
@@ -38620,7 +38741,7 @@
       className: "w-full h-screen"
     }, /* @__PURE__ */ import_react26.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react26.default.createElement(Routes, null, /* @__PURE__ */ import_react26.default.createElement(Route, {
       path: "*",
-      element: userRole === "Admin" ? /* @__PURE__ */ import_react26.default.createElement(Users_default, null) : /* @__PURE__ */ import_react26.default.createElement(Home_default, null)
+      element: user.user_role === "Admin" ? /* @__PURE__ */ import_react26.default.createElement(Users_default, null) : /* @__PURE__ */ import_react26.default.createElement(Home_default, null)
     }), /* @__PURE__ */ import_react26.default.createElement(Route, {
       path: "/new-user",
       element: /* @__PURE__ */ import_react26.default.createElement(NewUser_default, null)
@@ -38632,7 +38753,9 @@
       element: /* @__PURE__ */ import_react26.default.createElement(ShopDrawings_default, null)
     }), /* @__PURE__ */ import_react26.default.createElement(Route, {
       path: `/:params/*`,
-      element: /* @__PURE__ */ import_react26.default.createElement(DocInfo_default, null)
+      element: /* @__PURE__ */ import_react26.default.createElement(DocInfo_default, {
+        user
+      })
     }))));
   }
   var root = import_client.default.createRoot(document.getElementById("app"));

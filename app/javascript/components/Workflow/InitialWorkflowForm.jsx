@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import Alert from '../Alert';
 import PageLoader from '../PageLoader';
 import SearchUsers from './SearchUsers';
@@ -6,6 +7,7 @@ import UsersList from './UsersList';
 
 
 function InitialWorkflowForm({documentNumber, subject, deadline, getDocument, publishedBy, register, document}) {
+const navigate= useNavigate()
 const [showUsers, setShowUsers] = useState(false)
 const [users, setUsers] = useState([]);
 const [searchTerm, setSearchTerm] = useState("")
@@ -62,7 +64,7 @@ const [values, setValues] = useState({
 
 
 
-    const apiEndpoint = `/api/create-${register?.toLowerCase()}-activity`
+    const apiEndpoint = `/api/create-${register?.toLowerCase()}-activity/${documentNumber}`
   
         console.log(apiEndpoint);
 
@@ -81,6 +83,7 @@ const [values, setValues] = useState({
 
             if (response.ok) {
             console.log('posted!!');
+            navigate(`/${documentNumber}/workflow-summary`)
 
             }
             else {
