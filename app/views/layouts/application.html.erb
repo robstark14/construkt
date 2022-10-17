@@ -3,6 +3,9 @@
   <head>
     <title>Construkt</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv='cache-control' content='no-cache'>
+    <meta http-equiv='expires' content='0'>
+    <meta http-equiv='pragma' content='no-cache'>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -25,7 +28,7 @@
     </nav>
 
 
-    <p class="notice"><%= notice %></p> 
+    <p class="notice bg-gray-800 text-green-500 text-center"><%= notice %></p> 
     <p class="alert"><%= alert %></p> 
     
     <%= yield %>

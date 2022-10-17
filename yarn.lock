@@ -273,6 +273,11 @@ csstype@^3.0.2:
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.1.1.tgz#841b532c45c758ee546a11d5bd7b7b473c8c30b9"
   integrity sha512-DJR/VvkAvSZW9bTouZue2sSxDwdTN92uHjqeKVm+0dAqdfNykRzQ95tay8aXMBAAPpUiq4Qcug2L7neoRh2Egw==
 
+date-and-time@^2.4.1:
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/date-and-time/-/date-and-time-2.4.1.tgz#e028851fcaf01e2626934742cf625e75d9bc2258"
+  integrity sha512-fG+ClATev+wHryqxOoGcTTegr5RhYE+tz/XHUkTQ/zvpWqQ90oOxjOhuMQ02bw87Oy9N3qBENCHHHSKdWJjgTg==
+
 defined@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/defined/-/defined-1.0.0.tgz#c98d9bcef75674188e110969151199e39b1fa693"
@@ -809,6 +814,11 @@ react-is@^16.13.1, react-is@^16.7.0:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.2.tgz#e691d4a8e9c789365655539ab372762b0efb54f0"
   integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
 
+react-responsive-datepicker@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/react-responsive-datepicker/-/react-responsive-datepicker-1.0.6.tgz#7d17a5b0a5d557eb0f44759c959ca229b781b541"
+  integrity sha512-R0YCJe32wayGNItwDDAj8IufoZZKZeuloUHKcAUk9pKbROjb0kj7caoJSxVWUxLKJau2jmwZ20o2HK1J2a/xuw==
+
 react-router-dom@6:
   version "6.4.1"
   resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-6.4.1.tgz#99c9b7c4967890701c888517475aa5d54d25760e"
@@ -880,6 +890,13 @@ run-parallel@^1.1.9:
   integrity sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==
   dependencies:
     queue-microtask "^1.2.2"
+
+sassy-datepicker@^0.10.1:
+  version "0.10.1"
+  resolved "https://registry.yarnpkg.com/sassy-datepicker/-/sassy-datepicker-0.10.1.tgz#b22b3176a1f1be75c1aeb383db5eaeedca67fd29"
+  integrity sha512-6eZZOUKCCDrKlYvJksWaCGNjLofzScJSqy3/xe2NahHqcvOKtti6QLl5tIjQlREzMPMnBR8ETZQ0O/wvwi/l0g==
+  dependencies:
+    date-and-time "^2.4.1"
 
 scheduler@^0.23.0:
   version "0.23.0"

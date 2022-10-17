@@ -9,14 +9,26 @@ import Users from "./Users";
 import Home from "./Home";
 import NewUser from './NewUser';
 import ConstructionDrawings from './ConstructionDrawings/ConstructionDrawings';
-// import reportWebVitals from "./reportWebVitals";
+import ShopDrawings from './ShopDrawings/ShopDrawings';
+import DocInfo from './DocInfo';
+
+
 
 function App() {
   const [userRole, setUserRole] = useState("")
 
   useEffect(() => {
     checkUserRole()
-  
+    console.log('cache');
+
+    if ("caches" in window) {
+      caches.keys().then((names) => {
+        names.forEach((name) => {
+          caches.delete(name);
+          console.log('cache');
+        });
+      });
+    }
    
   }, [])
   
@@ -43,7 +55,11 @@ function App() {
         {/* <Route path="/users/*" element={} /> */}
         <Route path="/new-user" element={<NewUser />} />  
         <Route path="/construction-drawings/*" element={<ConstructionDrawings />} />  
+        <Route path="/shop-drawings/*" element={<ShopDrawings />} />  
+        <Route path={`/:params/*`} element={<DocInfo />}/>
         
+
+            
       </Routes>
     </Router>
     </div>
@@ -61,6 +77,6 @@ const root = ReactDOM.createRoot(document.getElementById("app"));
 root.render(
   // <React.StrictMode>
     <App />
-  // </React.StrictMode>
+  /* </React.StrictMode> */
 );
 // reportWebVitals();

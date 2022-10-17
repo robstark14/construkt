@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-function PopOutOptions({optionAdd, masterInquiry}) {
+function PopOutOptions({optionAdd, masterInquiry, drawingType}) {
   return (
     <div className='absolute z-50 top-[40%]'>
         
@@ -17,7 +17,7 @@ function PopOutOptions({optionAdd, masterInquiry}) {
                     
                     <ul className="my-4 p-4 rounded dark:bg-gray-600">
                         <li className='w-full p-2 rounded  hover:bg-gray-100 group hover:shadow dark:hover:bg-gray-500'>
-                            <Link to ={`/construction-drawings/${optionAdd}`} className="w-full p-2 rounded-lg items-center text-base font-bold text-gray-900 dark:text-white">
+                            <Link to ={`/${drawingType}/${optionAdd}`} className="w-full p-2 rounded-lg items-center text-base font-bold text-gray-900 dark:text-white">
                                 <span className="whitespace-nowrap w-full">Add Document</span>
                             </Link>
                         </li>
@@ -27,7 +27,7 @@ function PopOutOptions({optionAdd, masterInquiry}) {
                             </a>
                         </li>
                         <li className='w-full p-2 rounded  hover:bg-gray-100 group hover:shadow dark:hover:bg-gray-500'>
-                            <Link to ={`/construction-drawings/${masterInquiry}`} className="w-full p-2 rounded-lg items-center text-base font-bold text-gray-900 dark:text-white">
+                            <Link to ={`/${drawingType}/${masterInquiry}`} className="w-full p-2 rounded-lg items-center text-base font-bold text-gray-900 dark:text-white">
                                 <span className="whitespace-nowrap w-full">Master Inquiry</span>
                             </Link>
                             

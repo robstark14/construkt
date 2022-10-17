@@ -11,7 +11,7 @@ User.create(
     first_name: "Rob",
     last_name: "Pajarin",
     password_confirmation: ENV['ADMIN_PASS_CONFIRM'], 
-    company_name: "Others",
+    company_name: "Project Management",
     role: 'Admin',
     package: 'none'
 )

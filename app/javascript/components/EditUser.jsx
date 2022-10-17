@@ -25,7 +25,18 @@ function EditUser() {
 
   useEffect(() => {
       // console.log(userData);
+
     
+        if ("caches" in window) {
+          caches.keys().then((names) => {
+            names.forEach((name) => {
+              caches.delete(name);
+              console.log('cache');
+            });
+          });
+        }
+       
+
     const fetchUser= async () =>{
       const apiEndpointGetUserData = `/api/edit-user/${params.id}`
         try{
@@ -81,7 +92,7 @@ function EditUser() {
           })
 
           if (response.ok) {
-            navigate("/users")
+            navigate("/")
             navigate(0)
           } 
       } catch (err) {
@@ -155,6 +166,7 @@ function EditUser() {
         PASSWORD
       </label>
       <Input
+        required
         placeholder="******************"
         className="appearance-none block bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3 w-[350px]"
         type={values.showPassword ? "text" : "password"}
