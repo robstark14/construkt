@@ -30,7 +30,9 @@ Rails.application.routes.draw do
   post "/api/new-user-create", to: "api/users#create"
   
   get "api/get_activity/:id", to: "api/workflows#get_activity"
-  post "api/create-sd-activity/:id", to: "api/workflows#create_sd"
+  post "api/create-sd-activity", to: "api/workflows#create_sd"
+  get "api/workflow_summary/:id", to: "api/workflows#workflow_summary"
+
 
 
   get "*path", to: "react#home"

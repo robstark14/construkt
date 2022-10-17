@@ -56,7 +56,7 @@ function MasterInquiry({drawingType, drawing}) {
 
 
 
-  const loadDrawings = drawings.map((cd)=>{
+  const loadDrawings = drawings?.map((cd)=>{
     
     return(     
         <tr key={cd.document_number} className ="text-center">
@@ -65,7 +65,8 @@ function MasterInquiry({drawingType, drawing}) {
             <button
              onClick={()=>{
               setDocNumber(cd.document_number)
-              navigate(`/${cd.document_number}`)  
+              navigate(`/${cd?.document_number}/data`)  
+           
               console.log('show');
              }}
              className="ml-3 font-bold text-white">{cd.document_number}</button>

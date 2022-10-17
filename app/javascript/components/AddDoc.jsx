@@ -164,7 +164,7 @@ function AddDoc({drawing}) {
   return (
     <div className='dark:text-gray-400'>
         {loader && <PageLoader />}
-        {showAlert && <Alert alertStatement='Something went wrong, please try again.' color = "reds" setShowAlert={setShowAlert}/>}
+        {showAlert && <Alert alertStatement='Something went wrong, please try again.' color = "red" setShowAlert={setShowAlert}/>}
       <form className="h-[90%] w-[90%] bg-white mx-auto py-[50px]" onSubmit={createDoc}>
         <div className="grid gap-6 mb-6 md:grid-cols-3 ">
             <div className='w-fit'>

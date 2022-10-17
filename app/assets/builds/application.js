@@ -1000,7 +1000,7 @@
             }
             return dispatcher.useContext(Context);
           }
-          function useState22(initialState) {
+          function useState23(initialState) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useState(initialState);
           }
@@ -1012,7 +1012,7 @@
             var dispatcher = resolveDispatcher();
             return dispatcher.useRef(initialValue);
           }
-          function useEffect24(create2, deps) {
+          function useEffect26(create2, deps) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useEffect(create2, deps);
           }
@@ -1792,7 +1792,7 @@
           exports.useContext = useContext4;
           exports.useDebugValue = useDebugValue3;
           exports.useDeferredValue = useDeferredValue;
-          exports.useEffect = useEffect24;
+          exports.useEffect = useEffect26;
           exports.useId = useId;
           exports.useImperativeHandle = useImperativeHandle3;
           exports.useInsertionEffect = useInsertionEffect;
@@ -1800,7 +1800,7 @@
           exports.useMemo = useMemo4;
           exports.useReducer = useReducer;
           exports.useRef = useRef8;
-          exports.useState = useState22;
+          exports.useState = useState23;
           exports.useSyncExternalStore = useSyncExternalStore2;
           exports.useTransition = useTransition;
           exports.version = ReactVersion;
@@ -2296,9 +2296,9 @@
           if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") {
             __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
           }
-          var React39 = require_react();
+          var React41 = require_react();
           var Scheduler = require_scheduler();
-          var ReactSharedInternals = React39.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          var ReactSharedInternals = React41.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
           var suppressWarning = false;
           function setSuppressWarning(newSuppressWarning) {
             {
@@ -3819,7 +3819,7 @@
             {
               if (props.value == null) {
                 if (typeof props.children === "object" && props.children !== null) {
-                  React39.Children.forEach(props.children, function(child) {
+                  React41.Children.forEach(props.children, function(child) {
                     if (child == null) {
                       return;
                     }
@@ -11980,7 +11980,7 @@
             }
           }
           var fakeInternalInstance = {};
-          var emptyRefsObject = new React39.Component().refs;
+          var emptyRefsObject = new React41.Component().refs;
           var didWarnAboutStateAssignmentForComponent;
           var didWarnAboutUninitializedState;
           var didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate;
@@ -31173,7 +31173,7 @@
       exports.default = exports.styles = void 0;
       var _extends22 = _interopRequireDefault(require_extends());
       var _objectWithoutProperties2 = _interopRequireDefault(require_objectWithoutProperties());
-      var React39 = _interopRequireWildcard(require_react());
+      var React41 = _interopRequireWildcard(require_react());
       var _propTypes = _interopRequireDefault(require_prop_types());
       var _clsx = _interopRequireDefault(require_clsx());
       var _utils = require_utils();
@@ -31220,9 +31220,9 @@
         };
       };
       exports.styles = styles14;
-      var SvgIcon = /* @__PURE__ */ React39.forwardRef(function SvgIcon2(props, ref) {
+      var SvgIcon = /* @__PURE__ */ React41.forwardRef(function SvgIcon2(props, ref) {
         var children = props.children, classes = props.classes, className = props.className, _props$color = props.color, color = _props$color === void 0 ? "inherit" : _props$color, _props$component = props.component, Component2 = _props$component === void 0 ? "svg" : _props$component, _props$fontSize = props.fontSize, fontSize = _props$fontSize === void 0 ? "medium" : _props$fontSize, htmlColor = props.htmlColor, titleAccess = props.titleAccess, _props$viewBox = props.viewBox, viewBox = _props$viewBox === void 0 ? "0 0 24 24" : _props$viewBox, other = (0, _objectWithoutProperties2.default)(props, ["children", "classes", "className", "color", "component", "fontSize", "htmlColor", "titleAccess", "viewBox"]);
-        return /* @__PURE__ */ React39.createElement(Component2, (0, _extends22.default)({
+        return /* @__PURE__ */ React41.createElement(Component2, (0, _extends22.default)({
           className: (0, _clsx.default)(classes.root, className, color !== "inherit" && classes["color".concat((0, _capitalize.default)(color))], fontSize !== "default" && fontSize !== "medium" && classes["fontSize".concat((0, _capitalize.default)(fontSize))]),
           focusable: "false",
           viewBox,
@@ -31230,7 +31230,7 @@
           "aria-hidden": titleAccess ? void 0 : true,
           role: titleAccess ? "img" : void 0,
           ref
-        }, other), children, titleAccess ? /* @__PURE__ */ React39.createElement("title", null, titleAccess) : null);
+        }, other), children, titleAccess ? /* @__PURE__ */ React41.createElement("title", null, titleAccess) : null);
       });
       true ? SvgIcon.propTypes = {
         children: _propTypes.default.node,
@@ -31368,9 +31368,9 @@
         value: true
       });
       exports.default = isMuiElement;
-      var React39 = _interopRequireWildcard(require_react());
+      var React41 = _interopRequireWildcard(require_react());
       function isMuiElement(element, muiNames) {
-        return /* @__PURE__ */ React39.isValidElement(element) && muiNames.indexOf(element.type.muiName) !== -1;
+        return /* @__PURE__ */ React41.isValidElement(element) && muiNames.indexOf(element.type.muiName) !== -1;
       }
     }
   });
@@ -31482,26 +31482,26 @@
         value: true
       });
       exports.default = useControlled;
-      var React39 = _interopRequireWildcard(require_react());
+      var React41 = _interopRequireWildcard(require_react());
       function useControlled(_ref) {
         var controlled = _ref.controlled, defaultProp = _ref.default, name = _ref.name, _ref$state = _ref.state, state = _ref$state === void 0 ? "value" : _ref$state;
-        var _React$useRef = React39.useRef(controlled !== void 0), isControlled = _React$useRef.current;
-        var _React$useState = React39.useState(defaultProp), valueState = _React$useState[0], setValue = _React$useState[1];
+        var _React$useRef = React41.useRef(controlled !== void 0), isControlled = _React$useRef.current;
+        var _React$useState = React41.useState(defaultProp), valueState = _React$useState[0], setValue = _React$useState[1];
         var value = isControlled ? controlled : valueState;
         if (true) {
-          React39.useEffect(function() {
+          React41.useEffect(function() {
             if (isControlled !== (controlled !== void 0)) {
               console.error(["Material-UI: A component is changing the ".concat(isControlled ? "" : "un", "controlled ").concat(state, " state of ").concat(name, " to be ").concat(isControlled ? "un" : "", "controlled."), "Elements should not switch from uncontrolled to controlled (or vice versa).", "Decide between using a controlled or uncontrolled ".concat(name, " ") + "element for the lifetime of the component.", "The nature of the state is determined during the first render, it's considered controlled if the value is not `undefined`.", "More info: https://fb.me/react-controlled-components"].join("\n"));
             }
           }, [controlled]);
-          var _React$useRef2 = React39.useRef(defaultProp), defaultValue = _React$useRef2.current;
-          React39.useEffect(function() {
+          var _React$useRef2 = React41.useRef(defaultProp), defaultValue = _React$useRef2.current;
+          React41.useEffect(function() {
             if (!isControlled && defaultValue !== defaultProp) {
               console.error(["Material-UI: A component is changing the default ".concat(state, " state of an uncontrolled ").concat(name, " after being initialized. ") + "To suppress this warning opt to use a controlled ".concat(name, ".")].join("\n"));
             }
           }, [JSON.stringify(defaultProp)]);
         }
-        var setValueIfUncontrolled = React39.useCallback(function(newValue) {
+        var setValueIfUncontrolled = React41.useCallback(function(newValue) {
           if (!isControlled) {
             setValue(newValue);
           }
@@ -31520,14 +31520,14 @@
         value: true
       });
       exports.default = useEventCallback2;
-      var React39 = _interopRequireWildcard(require_react());
-      var useEnhancedEffect5 = typeof window !== "undefined" ? React39.useLayoutEffect : React39.useEffect;
+      var React41 = _interopRequireWildcard(require_react());
+      var useEnhancedEffect5 = typeof window !== "undefined" ? React41.useLayoutEffect : React41.useEffect;
       function useEventCallback2(fn) {
-        var ref = React39.useRef(fn);
+        var ref = React41.useRef(fn);
         useEnhancedEffect5(function() {
           ref.current = fn;
         });
-        return React39.useCallback(function() {
+        return React41.useCallback(function() {
           return (0, ref.current).apply(void 0, arguments);
         }, []);
       }
@@ -31544,10 +31544,10 @@
         value: true
       });
       exports.default = useForkRef2;
-      var React39 = _interopRequireWildcard(require_react());
+      var React41 = _interopRequireWildcard(require_react());
       var _setRef = _interopRequireDefault(require_setRef());
       function useForkRef2(refA, refB) {
-        return React39.useMemo(function() {
+        return React41.useMemo(function() {
           if (refA == null && refB == null) {
             return null;
           }
@@ -31569,11 +31569,11 @@
         value: true
       });
       exports.default = useId;
-      var React39 = _interopRequireWildcard(require_react());
+      var React41 = _interopRequireWildcard(require_react());
       function useId(idOverride) {
-        var _React$useState = React39.useState(idOverride), defaultId = _React$useState[0], setDefaultId = _React$useState[1];
+        var _React$useState = React41.useState(idOverride), defaultId = _React$useState[0], setDefaultId = _React$useState[1];
         var id = idOverride || defaultId;
-        React39.useEffect(function() {
+        React41.useEffect(function() {
           if (defaultId == null) {
             setDefaultId("mui-".concat(Math.round(Math.random() * 1e5)));
           }
@@ -31593,7 +31593,7 @@
       });
       exports.teardown = teardown;
       exports.default = useIsFocusVisible2;
-      var React39 = _interopRequireWildcard(require_react());
+      var React41 = _interopRequireWildcard(require_react());
       var ReactDOM4 = _interopRequireWildcard(require_react_dom());
       var hadKeyboardEvent2 = true;
       var hadFocusVisibleRecently2 = false;
@@ -31672,14 +31672,14 @@
         }, 100);
       }
       function useIsFocusVisible2() {
-        var ref = React39.useCallback(function(instance) {
+        var ref = React41.useCallback(function(instance) {
           var node = ReactDOM4.findDOMNode(instance);
           if (node != null) {
             prepare2(node.ownerDocument);
           }
         }, []);
         if (true) {
-          React39.useDebugValue(isFocusVisible2);
+          React41.useDebugValue(isFocusVisible2);
         }
         return {
           isFocusVisible: isFocusVisible2,
@@ -31840,9 +31840,9 @@
         value: true
       });
       exports.default = void 0;
-      var React39 = _interopRequireWildcard(require_react());
+      var React41 = _interopRequireWildcard(require_react());
       var _createSvgIcon = _interopRequireDefault(require_createSvgIcon2());
-      var _default = (0, _createSvgIcon.default)(/* @__PURE__ */ React39.createElement("path", {
+      var _default = (0, _createSvgIcon.default)(/* @__PURE__ */ React41.createElement("path", {
         d: "M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"
       }), "Visibility");
       exports.default = _default;
@@ -31859,9 +31859,9 @@
         value: true
       });
       exports.default = void 0;
-      var React39 = _interopRequireWildcard(require_react());
+      var React41 = _interopRequireWildcard(require_react());
       var _createSvgIcon = _interopRequireDefault(require_createSvgIcon2());
-      var _default = (0, _createSvgIcon.default)(/* @__PURE__ */ React39.createElement("path", {
+      var _default = (0, _createSvgIcon.default)(/* @__PURE__ */ React41.createElement("path", {
         d: "M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46C3.08 8.3 1.78 10.02 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.53-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.53.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"
       }), "VisibilityOff");
       exports.default = _default;
@@ -31869,7 +31869,7 @@
   });
 
   // app/javascript/components/App.jsx
-  var import_react24 = __toESM(require_react());
+  var import_react26 = __toESM(require_react());
   var import_client = __toESM(require_client());
 
   // node_modules/react-router-dom/dist/index.js
@@ -37217,7 +37217,7 @@
 
   // app/javascript/components/Alert.jsx
   var import_react11 = __toESM(require_react());
-  function Alert({ color, setShowAlert: setShowAlert2, alertStatement }) {
+  function Alert({ color, setShowAlert, alertStatement }) {
     console.log(alertStatement);
     console.log(color);
     (0, import_react11.useEffect)(() => {
@@ -37243,7 +37243,7 @@
       className: "capitalize"
     }, alertStatement)), /* @__PURE__ */ import_react11.default.createElement("button", {
       className: "absolute bg-transparent text-2xl font-semibold leading-none right-0 top-0 mt-4 mr-6 outline-none focus:outline-none",
-      onClick: () => setShowAlert2(false)
+      onClick: () => setShowAlert(false)
     }, /* @__PURE__ */ import_react11.default.createElement("span", null, "\xD7"))));
   }
   var Alert_default = Alert;
@@ -37266,11 +37266,11 @@
   var PageLoader_default = PageLoader;
 
   // app/javascript/components/AddDoc.jsx
-  function AddDoc({ drawing: drawing2 }) {
+  function AddDoc({ drawing }) {
     const [levels, setLevels] = (0, import_react13.useState)([]);
     const [navigateDoc, setNavigateDoc] = (0, import_react13.useState)("");
-    const [loader, setLoader2] = (0, import_react13.useState)(false);
-    const [showAlert, setShowAlert2] = (0, import_react13.useState)(false);
+    const [loader, setLoader] = (0, import_react13.useState)(false);
+    const [showAlert, setShowAlert] = (0, import_react13.useState)(false);
     const [user, setUser] = (0, import_react13.useState)({
       userName: "",
       documentNumber: "",
@@ -37311,11 +37311,11 @@
       form.append("subject", values2?.subject);
       form.append("remarks", values2?.remarks);
       values2.register === "SD" ? form.append("deadline", values2?.deadline) : null;
-      const apiEndpoint = `/api/create-${drawing2}`;
-      console.log(drawing2);
+      const apiEndpoint = `/api/create-${drawing}`;
+      console.log(drawing);
       console.log(apiEndpoint);
       try {
-        setLoader2(true);
+        setLoader(true);
         const response = await fetch(apiEndpoint, {
           mode: "no-cors",
           method: "POST",
@@ -37323,10 +37323,10 @@
         });
         if (response.ok) {
           console.log("posted!!");
-          getDocNumber2();
+          getDocNumber();
         } else {
-          setShowAlert2(true);
-          setLoader2(false);
+          setShowAlert(true);
+          setLoader(false);
         }
       } catch (err) {
         console.log(err);
@@ -37359,7 +37359,7 @@
       }
     };
     const fetchCurrentUser = async () => {
-      const apiEndpointGetUserData = `/api/user-${drawing2}`;
+      const apiEndpointGetUserData = `/api/user-${drawing}`;
       try {
         const response = await fetch(apiEndpointGetUserData);
         const data = await response.json();
@@ -37375,8 +37375,8 @@
         console.log(err);
       }
     };
-    const getDocNumber2 = async () => {
-      const apiEndpointGetDocNum = `/api/${drawing2}`;
+    const getDocNumber = async () => {
+      const apiEndpointGetDocNum = `/api/${drawing}`;
       try {
         const response = await fetch(apiEndpointGetDocNum);
         const data = await response.json();
@@ -37397,8 +37397,8 @@
       className: "dark:text-gray-400"
     }, loader && /* @__PURE__ */ import_react13.default.createElement(PageLoader_default, null), showAlert && /* @__PURE__ */ import_react13.default.createElement(Alert_default, {
       alertStatement: "Something went wrong, please try again.",
-      color: "reds",
-      setShowAlert: setShowAlert2
+      color: "red",
+      setShowAlert
     }), /* @__PURE__ */ import_react13.default.createElement("form", {
       className: "h-[90%] w-[90%] bg-white mx-auto py-[50px]",
       onSubmit: createDoc
@@ -37618,7 +37618,7 @@
 
   // app/javascript/components/MasterInquiry.jsx
   var import_react14 = __toESM(require_react());
-  function MasterInquiry({ drawingType, drawing: drawing2 }) {
+  function MasterInquiry({ drawingType, drawing }) {
     const [drawings, setDrawings] = (0, import_react14.useState)([]);
     const [searchTerm, setSearchTerm] = (0, import_react14.useState)("");
     const [loading, setLoading] = (0, import_react14.useState)(false);
@@ -37658,7 +37658,7 @@
       setLoading(true);
       setSearchTerm(e.target.value);
     };
-    const loadDrawings = drawings.map(
+    const loadDrawings = drawings?.map(
       (cd) => {
         return /* @__PURE__ */ import_react14.default.createElement("tr", {
           key: cd.document_number,
@@ -37668,7 +37668,7 @@
         }, /* @__PURE__ */ import_react14.default.createElement("button", {
           onClick: () => {
             setDocNumber(cd.document_number);
-            navigate(`/${cd.document_number}`);
+            navigate(`/${cd?.document_number}/data`);
             console.log("show");
           },
           className: "ml-3 font-bold text-white"
@@ -37797,7 +37797,7 @@
   var ShopDrawings_default = ShopDrawings;
 
   // app/javascript/components/DocInfo.jsx
-  var import_react23 = __toESM(require_react());
+  var import_react25 = __toESM(require_react());
 
   // app/javascript/components/Workflow/Attachments.jsx
   var import_react17 = __toESM(require_react());
@@ -37806,76 +37806,215 @@
   }
   var Attachments_default = Attachments;
 
-  // app/javascript/components/Workflow/DocNavBar.jsx
+  // app/javascript/components/Workflow/DocData.jsx
   var import_react18 = __toESM(require_react());
-  function DocNavBar({ documentNumber, workflowStage }) {
-    const [navbar, setNavbar] = (0, import_react18.useState)(false);
+  function DocData({ values: values2, fetchCurrentDoc }) {
     (0, import_react18.useEffect)(() => {
+      fetchCurrentDoc();
+      console.log(values2);
+    }, []);
+    return /* @__PURE__ */ import_react18.default.createElement("div", {
+      className: "h-[90%] w-[90%] bg-white mx-auto mt-[50px]"
+    }, /* @__PURE__ */ import_react18.default.createElement("div", {
+      className: "mx-auto py-[50px]"
+    }, /* @__PURE__ */ import_react18.default.createElement("div", {
+      className: "grid gap-6 mb-6 md:grid-cols-3 p-4"
+    }, /* @__PURE__ */ import_react18.default.createElement("div", {
+      className: "w-fit"
+    }, /* @__PURE__ */ import_react18.default.createElement("label", {
+      className: "block mb-2 text-sm font-medium text-gray-900"
+    }, "Doc(System Generated)"), /* @__PURE__ */ import_react18.default.createElement("input", {
+      name: "document_number",
+      value: values2?.documentNumber,
+      type: "text",
+      readOnly: true,
+      className: "border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:focus:ring-blue-500 dark:focus:border-blue-500",
+      placeholder: "Register Generated"
+    })), /* @__PURE__ */ import_react18.default.createElement("div", {
+      className: "w-fit"
+    }, /* @__PURE__ */ import_react18.default.createElement("label", {
+      className: "block mb-2 text-sm font-medium text-gray-900"
+    }, "Drawing Type"), /* @__PURE__ */ import_react18.default.createElement("input", {
+      name: "register",
+      value: values2?.register,
+      type: "text",
+      readOnly: true,
+      className: "border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+    })), /* @__PURE__ */ import_react18.default.createElement("div", {
+      className: "w-fit"
+    }, /* @__PURE__ */ import_react18.default.createElement("label", {
+      className: "block mb-2 text-sm font-medium text-gray-900"
+    }, "Location"), /* @__PURE__ */ import_react18.default.createElement("select", {
+      className: "block appearance-none bg-grey-lighter border border-grey-lighter text-black py-3 px-4 pr-8 w-fit",
+      id: "grid-state",
+      name: "location",
+      value: values2?.location,
+      readOnly: true
+    }, /* @__PURE__ */ import_react18.default.createElement("option", {
+      value: values2?.location
+    }, values2?.location))), /* @__PURE__ */ import_react18.default.createElement("div", {
+      className: "w-fit"
+    }, /* @__PURE__ */ import_react18.default.createElement("label", {
+      className: "block mb-2 text-sm font-medium text-gray-900"
+    }, "Latest Revision"), /* @__PURE__ */ import_react18.default.createElement("input", {
+      name: "revision_number",
+      value: values2?.revisionNumber,
+      readOnly: true,
+      min: "0",
+      max: "10",
+      type: "number",
+      placeholder: 0,
+      className: "appearance-none border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+    })), /* @__PURE__ */ import_react18.default.createElement("div", {
+      className: "relative"
+    }, /* @__PURE__ */ import_react18.default.createElement("label", {
+      htmlFor: "website",
+      className: "block mb-2 text-sm font-medium text-gray-900"
+    }, "Document Status"), /* @__PURE__ */ import_react18.default.createElement("select", {
+      className: "block appearance-none bg-grey-lighter border border-grey-lighter text-black py-3 px-4 pr-8 w-fit",
+      id: "grid-state",
+      name: "document_status",
+      value: values2?.documentStatus,
+      readOnly: true
+    }, /* @__PURE__ */ import_react18.default.createElement("option", {
+      value: values2?.documentStatus
+    }, values2?.documentStatus))), /* @__PURE__ */ import_react18.default.createElement("div", {
+      className: "relative"
+    }, /* @__PURE__ */ import_react18.default.createElement("label", {
+      htmlFor: "website",
+      className: "block mb-2 text-sm font-medium text-gray-900"
+    }, "Discipline"), /* @__PURE__ */ import_react18.default.createElement("select", {
+      className: "block appearance-none border border-grey-lighter  py-3 px-4 pr-8 w-fit text-black",
+      id: "grid-state",
+      name: "document_number",
+      value: values2?.discipline,
+      readOnly: true
+    }, /* @__PURE__ */ import_react18.default.createElement("option", {
+      value: values2?.discipline
+    }, values2?.discipline))), /* @__PURE__ */ import_react18.default.createElement("div", {
+      className: "w-fit"
+    }, /* @__PURE__ */ import_react18.default.createElement("label", {
+      className: "block mb-2 text-sm font-medium text-gray-900"
+    }, "Company from (System Generated)"), /* @__PURE__ */ import_react18.default.createElement("input", {
+      name: "company_from",
+      type: "text",
+      readOnly: true,
+      className: "border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+    })), /* @__PURE__ */ import_react18.default.createElement("div", null, /* @__PURE__ */ import_react18.default.createElement("label", {
+      className: "block mb-2 text-sm font-medium text-gray-900"
+    }, "Date Submitted"), /* @__PURE__ */ import_react18.default.createElement("input", {
+      name: "createdAt",
+      type: "text",
+      readOnly: true,
+      value: values2?.createdAt,
+      className: "border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+    })), /* @__PURE__ */ import_react18.default.createElement("div", null, /* @__PURE__ */ import_react18.default.createElement("label", {
+      className: "block mb-2 text-sm font-medium text-gray-900"
+    }, "Created by"), /* @__PURE__ */ import_react18.default.createElement("input", {
+      name: "published_by",
+      value: values2?.publishedBy,
+      type: "text",
+      readOnly: true,
+      className: "border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+    })), values2?.register === "SD" ? /* @__PURE__ */ import_react18.default.createElement("div", {
+      className: "flex w-full text-black"
+    }, /* @__PURE__ */ import_react18.default.createElement("p", {
+      className: "text-sm font-medium text-gray-900 mr-7"
+    }, " Response Date: "), /* @__PURE__ */ import_react18.default.createElement("p", {
+      className: "ml-5 bg-gray-lighter p-2"
+    }, values2?.deadline.split("T")[0].split("-").reverse().join("-"))) : null), /* @__PURE__ */ import_react18.default.createElement("div", {
+      className: "mb-6 p-4"
+    }, /* @__PURE__ */ import_react18.default.createElement("label", {
+      className: "block mb-2 text-sm font-medium text-gray-900"
+    }, "Subject"), /* @__PURE__ */ import_react18.default.createElement("input", {
+      readOnly: true,
+      name: "subject",
+      type: "text",
+      value: values2?.subject,
+      className: "border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+    })), /* @__PURE__ */ import_react18.default.createElement("div", {
+      className: "mb-6 h-[5rem] p-4"
+    }, /* @__PURE__ */ import_react18.default.createElement("label", {
+      className: "block mb-2 text-sm font-medium text-gray-900"
+    }, "Remarks"), /* @__PURE__ */ import_react18.default.createElement("textarea", {
+      readOnly: true,
+      name: "remarks",
+      value: values2?.remarks,
+      className: "border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:focus:ring-blue-500 dark:focus:border-blue-500 h-[5rem]"
+    }))));
+  }
+  var DocData_default = DocData;
+
+  // app/javascript/components/Workflow/DocNavBar.jsx
+  var import_react19 = __toESM(require_react());
+  function DocNavBar({ documentNumber, workflowStage }) {
+    const [navbar, setNavbar] = (0, import_react19.useState)(false);
+    (0, import_react19.useEffect)(() => {
       console.log(typeof workflowStage);
       console.log(workflowStage);
     }, []);
-    return /* @__PURE__ */ import_react18.default.createElement("nav", {
+    return /* @__PURE__ */ import_react19.default.createElement("nav", {
       className: "w-full shadow bg-gray-600 text-white text-shadow"
-    }, /* @__PURE__ */ import_react18.default.createElement("div", {
+    }, /* @__PURE__ */ import_react19.default.createElement("div", {
       className: "px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8"
-    }, /* @__PURE__ */ import_react18.default.createElement("div", null, /* @__PURE__ */ import_react18.default.createElement("div", {
+    }, /* @__PURE__ */ import_react19.default.createElement("div", null, /* @__PURE__ */ import_react19.default.createElement("div", {
       className: "flex items-center justify-between py-3 md:py-5 md:block"
-    }, /* @__PURE__ */ import_react18.default.createElement("div", {
+    }, /* @__PURE__ */ import_react19.default.createElement("div", {
       className: "md:hidden"
-    }, /* @__PURE__ */ import_react18.default.createElement("button", {
+    }, /* @__PURE__ */ import_react19.default.createElement("button", {
       className: "p-2 rounded-md outline-none focus:border-gray-400 focus:border",
       onClick: () => setNavbar(!navbar)
-    }, navbar ? /* @__PURE__ */ import_react18.default.createElement("svg", {
+    }, navbar ? /* @__PURE__ */ import_react19.default.createElement("svg", {
       xmlns: "http://www.w3.org/2000/svg",
       className: "w-6 h-6",
       viewBox: "0 0 20 20",
       fill: "currentColor"
-    }, /* @__PURE__ */ import_react18.default.createElement("path", {
+    }, /* @__PURE__ */ import_react19.default.createElement("path", {
       fillRule: "evenodd",
       d: "M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z",
       clipRule: "evenodd"
-    })) : /* @__PURE__ */ import_react18.default.createElement("svg", {
+    })) : /* @__PURE__ */ import_react19.default.createElement("svg", {
       xmlns: "http://www.w3.org/2000/svg",
       className: "w-6 h-6",
       fill: "none",
       viewBox: "0 0 24 24",
       stroke: "currentColor",
       strokeWidth: 2
-    }, /* @__PURE__ */ import_react18.default.createElement("path", {
+    }, /* @__PURE__ */ import_react19.default.createElement("path", {
       strokeLinecap: "round",
       strokeLinejoin: "round",
       d: "M4 6h16M4 12h16M4 18h16"
-    })))))), /* @__PURE__ */ import_react18.default.createElement("div", null, /* @__PURE__ */ import_react18.default.createElement("div", {
+    })))))), /* @__PURE__ */ import_react19.default.createElement("div", null, /* @__PURE__ */ import_react19.default.createElement("div", {
       className: `flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${navbar ? "block" : "hidden"}`
-    }, /* @__PURE__ */ import_react18.default.createElement("ul", {
+    }, /* @__PURE__ */ import_react19.default.createElement("ul", {
       className: "items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0"
-    }, /* @__PURE__ */ import_react18.default.createElement(Link, {
-      to: `/${documentNumber}`,
+    }, /* @__PURE__ */ import_react19.default.createElement(Link, {
+      to: `/${documentNumber}/data`,
       className: "items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0 hover:text-blue-300 hover:cursor-pointer"
-    }, documentNumber), workflowStage === 0 ? /* @__PURE__ */ import_react18.default.createElement(Link, {
+    }, documentNumber), workflowStage === 0 ? /* @__PURE__ */ import_react19.default.createElement(Link, {
       to: `/${documentNumber}/newForm`,
       className: "hover:text-blue-300 hover:cursor-pointer"
-    }, "Initiate Workflow") : /* @__PURE__ */ import_react18.default.createElement(Link, {
-      to: `/${documentNumber}/form`,
+    }, "Initiate Workflow") : /* @__PURE__ */ import_react19.default.createElement(Link, {
+      to: `/${documentNumber}/workflow-summary`,
       className: "hover:text-blue-300 hover:cursor-pointer"
-    }, "Workflow"), /* @__PURE__ */ import_react18.default.createElement(Link, {
+    }, "Workflow"), /* @__PURE__ */ import_react19.default.createElement(Link, {
       to: `/${documentNumber}/attachments`,
       className: "hover:text-blue-300 hover:cursor-pointer"
     }, "Attachments"))))));
   }
 
   // app/javascript/components/Workflow/InitialWorkflowForm.jsx
-  var import_react21 = __toESM(require_react());
+  var import_react22 = __toESM(require_react());
 
   // app/javascript/components/Workflow/SearchUsers.jsx
-  var import_react19 = __toESM(require_react());
+  var import_react20 = __toESM(require_react());
   function SearchUsers({ setShowUsers }) {
-    return /* @__PURE__ */ import_react19.default.createElement("div", null, /* @__PURE__ */ import_react19.default.createElement("div", {
+    return /* @__PURE__ */ import_react20.default.createElement("div", null, /* @__PURE__ */ import_react20.default.createElement("div", {
       className: "flex"
-    }, /* @__PURE__ */ import_react19.default.createElement("label", {
+    }, /* @__PURE__ */ import_react20.default.createElement("label", {
       htmlFor: "location-search",
       className: "mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300"
-    }, "Your Email"), /* @__PURE__ */ import_react19.default.createElement("button", {
+    }, "Your Email"), /* @__PURE__ */ import_react20.default.createElement("button", {
       onClick: () => {
         setShowUsers(true);
       },
@@ -37883,125 +38022,124 @@
       "data-dropdown-toggle": "dropdown-search-city",
       className: "flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-500 bg-gray-100 border border-gray-300 rounded-l-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600",
       type: "button"
-    }, "Show Names"), /* @__PURE__ */ import_react19.default.createElement("div", {
+    }, "Show Names"), /* @__PURE__ */ import_react20.default.createElement("div", {
       className: "relative w-full"
-    }, /* @__PURE__ */ import_react19.default.createElement("input", {
+    }, /* @__PURE__ */ import_react20.default.createElement("input", {
       type: "search",
       id: "location-search",
       className: "block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-r-lg border-l-gray-50 border-l-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-l-gray-700  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500",
-      placeholder: "Search for names",
-      required: true
-    }), /* @__PURE__ */ import_react19.default.createElement("button", {
+      placeholder: "Search for names"
+    }), /* @__PURE__ */ import_react20.default.createElement("button", {
       type: "submit",
       className: "absolute top-0 right-0 p-2.5 text-sm font-medium text-white bg-blue-700 rounded-r-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-    }, /* @__PURE__ */ import_react19.default.createElement("svg", {
+    }, /* @__PURE__ */ import_react20.default.createElement("svg", {
       "aria-hidden": "true",
       className: "w-5 h-5",
       fill: "none",
       stroke: "currentColor",
       viewBox: "0 0 24 24",
       xmlns: "http://www.w3.org/2000/svg"
-    }, /* @__PURE__ */ import_react19.default.createElement("path", {
+    }, /* @__PURE__ */ import_react20.default.createElement("path", {
       strokeLinecap: "round",
       strokeLinejoin: "round",
       strokeWidth: "2",
       d: "M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-    })), /* @__PURE__ */ import_react19.default.createElement("span", {
+    })), /* @__PURE__ */ import_react20.default.createElement("span", {
       className: "sr-only"
     }, "Search")))));
   }
   var SearchUsers_default = SearchUsers;
 
   // app/javascript/components/Workflow/UsersList.jsx
-  var import_react20 = __toESM(require_react());
+  var import_react21 = __toESM(require_react());
   function UsersList({ setShowUsers, fetchUsers, users, loading, onSearchTextChange, setNextActivityOwner, searchTerm }) {
-    (0, import_react20.useEffect)(() => {
+    (0, import_react21.useEffect)(() => {
       fetchUsers();
     }, [searchTerm]);
     const loadUsers = users.map(
       (user) => {
-        return /* @__PURE__ */ import_react20.default.createElement("tr", {
+        return /* @__PURE__ */ import_react21.default.createElement("tr", {
           key: user.email,
           className: "text-center hover:cursor-pointer hover:bg-white hover:text-black text-white",
           onClick: () => {
             setNextActivityOwner(user);
             setShowUsers(false);
           }
-        }, /* @__PURE__ */ import_react20.default.createElement("th", {
+        }, /* @__PURE__ */ import_react21.default.createElement("th", {
           className: "border-t-0 px-2 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center"
-        }, /* @__PURE__ */ import_react20.default.createElement("span", {
+        }, /* @__PURE__ */ import_react21.default.createElement("span", {
           className: "ml-3 font-bold"
-        }, user.first_name, " ", user.last_name, " ")), /* @__PURE__ */ import_react20.default.createElement("td", {
+        }, user.first_name, " ", user.last_name, " ")), /* @__PURE__ */ import_react21.default.createElement("td", {
           className: "border-t-0 px-2 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
         }, user.company));
       }
     );
-    return /* @__PURE__ */ import_react20.default.createElement("div", {
+    return /* @__PURE__ */ import_react21.default.createElement("div", {
       className: "fixed inset-0 z-[999999] overflow-y-auto w-full flex justify-center items-center"
-    }, /* @__PURE__ */ import_react20.default.createElement("div", {
+    }, /* @__PURE__ */ import_react21.default.createElement("div", {
       className: "fixed inset-0 w-full h-full bg-black opacity-40",
       onClick: () => setShowUsers(false)
-    }), /* @__PURE__ */ import_react20.default.createElement("section", {
+    }), /* @__PURE__ */ import_react21.default.createElement("section", {
       className: "bg-blueGray-50 w-[350px]  "
-    }, /* @__PURE__ */ import_react20.default.createElement("div", {
+    }, /* @__PURE__ */ import_react21.default.createElement("div", {
       className: "w-full px-4"
-    }, /* @__PURE__ */ import_react20.default.createElement("div", {
+    }, /* @__PURE__ */ import_react21.default.createElement("div", {
       className: "min-h-[400px] max-h-[600px] relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded bg-gray-700 text-white"
-    }, /* @__PURE__ */ import_react20.default.createElement("div", {
+    }, /* @__PURE__ */ import_react21.default.createElement("div", {
       className: "rounded-t mb-0 px-4 py-3 border-0"
-    }, /* @__PURE__ */ import_react20.default.createElement("div", {
+    }, /* @__PURE__ */ import_react21.default.createElement("div", {
       className: "flex justify-between items-center"
-    }, /* @__PURE__ */ import_react20.default.createElement("div", {
+    }, /* @__PURE__ */ import_react21.default.createElement("div", {
       className: "flex justify-between"
-    }, /* @__PURE__ */ import_react20.default.createElement("div", null, /* @__PURE__ */ import_react20.default.createElement("div", {
+    }, /* @__PURE__ */ import_react21.default.createElement("div", null, /* @__PURE__ */ import_react21.default.createElement("div", {
       className: "flex bg-gray-50 items-center p-2 rounded-md"
-    }, /* @__PURE__ */ import_react20.default.createElement("svg", {
+    }, /* @__PURE__ */ import_react21.default.createElement("svg", {
       xmlns: "http://www.w3.org/2000/svg",
       className: "h-5 w-5 text-gray-400",
       viewBox: "0 0 20 20",
       fill: "currentColor"
-    }, /* @__PURE__ */ import_react20.default.createElement("path", {
+    }, /* @__PURE__ */ import_react21.default.createElement("path", {
       d: "M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-    })), /* @__PURE__ */ import_react20.default.createElement("input", {
+    })), /* @__PURE__ */ import_react21.default.createElement("input", {
       className: "bg-gray-50 outline-none ml-1 block text-black",
       type: "text",
       value: searchTerm,
       placeholder: "Search",
       onChange: onSearchTextChange
-    })))))), /* @__PURE__ */ import_react20.default.createElement("div", {
+    })))))), /* @__PURE__ */ import_react21.default.createElement("div", {
       className: "block w-full overflow-x-auto "
-    }, /* @__PURE__ */ import_react20.default.createElement("table", {
+    }, /* @__PURE__ */ import_react21.default.createElement("table", {
       className: "items-center w-full bg-transparent border-collapse"
-    }, /* @__PURE__ */ import_react20.default.createElement("thead", {
+    }, /* @__PURE__ */ import_react21.default.createElement("thead", {
       className: "bg-sky-600 "
-    }, /* @__PURE__ */ import_react20.default.createElement("tr", null, /* @__PURE__ */ import_react20.default.createElement("th", {
+    }, /* @__PURE__ */ import_react21.default.createElement("tr", null, /* @__PURE__ */ import_react21.default.createElement("th", {
       className: "text-center px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-white"
-    }, "Full Name"), /* @__PURE__ */ import_react20.default.createElement("th", {
+    }, "Full Name"), /* @__PURE__ */ import_react21.default.createElement("th", {
       className: "text-center px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-white"
-    }, "Company"))), /* @__PURE__ */ import_react20.default.createElement("tbody", null, loading && /* @__PURE__ */ import_react20.default.createElement("tr", null, /* @__PURE__ */ import_react20.default.createElement("td", null, "Loadingssss....")), loadUsers)))))));
+    }, "Company"))), /* @__PURE__ */ import_react21.default.createElement("tbody", null, loading && /* @__PURE__ */ import_react21.default.createElement("tr", null, /* @__PURE__ */ import_react21.default.createElement("td", null, "Loadingssss....")), loadUsers)))))));
   }
   var UsersList_default = UsersList;
 
   // app/javascript/components/Workflow/InitialWorkflowForm.jsx
-  function InitialWorkflowForm({ documentNumber, subject, deadline, getDocument, publishedBy, register }) {
-    const [showUsers, setShowUsers] = (0, import_react21.useState)(false);
-    const [users, setUsers] = (0, import_react21.useState)([]);
-    const [searchTerm, setSearchTerm] = (0, import_react21.useState)("");
-    const [loading, setLoading] = (0, import_react21.useState)(false);
-    const [nextActivityOwner, setNextActivityOwner] = (0, import_react21.useState)("");
-    const [values2, setValues] = (0, import_react21.useState)({
-      currentActivityOwner: "",
-      nextActivityOwner: "",
-      activitySubject: "",
+  function InitialWorkflowForm({ documentNumber, subject, deadline, getDocument, publishedBy, register, document: document2 }) {
+    const [showUsers, setShowUsers] = (0, import_react22.useState)(false);
+    const [users, setUsers] = (0, import_react22.useState)([]);
+    const [searchTerm, setSearchTerm] = (0, import_react22.useState)("");
+    const [loading, setLoading] = (0, import_react22.useState)(false);
+    const [nextActivityOwner, setNextActivityOwner] = (0, import_react22.useState)("");
+    const [loader, setLoader] = (0, import_react22.useState)(false);
+    const [showAlert, setShowAlert] = (0, import_react22.useState)(false);
+    const [values2, setValues] = (0, import_react22.useState)({
+      activitySubject: "Initiated Workflow",
       outcome: "",
       activityRemarks: "",
       attachments: {},
       workflowDeadline: ""
     });
-    (0, import_react21.useEffect)(() => {
+    (0, import_react22.useEffect)(() => {
       getDocument();
       console.log(publishedBy);
-      console.log(nextActivityOwner);
+      console.log(`${nextActivityOwner.first_name} ${nextActivityOwner.last_name}`);
     }, []);
     const fetchUsers = async () => {
       const apiEndpoint = `/api/users?search_term=${searchTerm}`;
@@ -38022,15 +38160,14 @@
       console.log(values2.attachments);
       e.preventDefault();
       const form = new FormData();
-      form.append("current_activity_owner", values2?.currentActivityOwner);
-      form.append("next_activity_owner", values2?.nextActivityOwner);
+      form.append("current_activity_owner", publishedBy);
+      form.append("next_activity_owner", `${nextActivityOwner.first_name} ${nextActivityOwner.last_name}`);
       form.append("activity_subject", values2?.activitySubject);
-      form.append("outcome", values2?.outcome);
+      form.append("outcome", document2?.activity);
       form.append("activity_remarks", values2?.activityRemarks);
       form.append("workflow_deadline", values2?.workflowDeadline);
       form.append("attachments", values2?.attachments);
-      const apiEndpoint = `/api/create-${register?.toLowerCase}-activity`;
-      console.log(drawing);
+      const apiEndpoint = `/api/create-${register?.toLowerCase()}-activity`;
       console.log(apiEndpoint);
       try {
         setLoader(true);
@@ -38041,7 +38178,6 @@
         });
         if (response.ok) {
           console.log("posted!!");
-          getDocNumber();
         } else {
           setShowAlert(true);
           setLoader(false);
@@ -38051,9 +38187,13 @@
         console.log(values2.attachments);
       }
     };
-    return /* @__PURE__ */ import_react21.default.createElement("div", {
+    return /* @__PURE__ */ import_react22.default.createElement("div", {
       className: "h-full w-full p-4"
-    }, showUsers && /* @__PURE__ */ import_react21.default.createElement(UsersList_default, {
+    }, loader && /* @__PURE__ */ import_react22.default.createElement(PageLoader_default, null), showAlert && /* @__PURE__ */ import_react22.default.createElement(Alert_default, {
+      alertStatement: "Something went wrong, please try again.",
+      color: "red",
+      setShowAlert
+    }), showUsers && /* @__PURE__ */ import_react22.default.createElement(UsersList_default, {
       setShowUsers,
       fetchUsers,
       users,
@@ -38061,195 +38201,277 @@
       onSearchTextChange,
       setNextActivityOwner,
       searchTerm
-    }), /* @__PURE__ */ import_react21.default.createElement("div", {
-      className: "border border-y-4 w-full h-[50px] relative bg-white mb-4 text-black flex justify-around items-center"
-    }, /* @__PURE__ */ import_react21.default.createElement("span", null, documentNumber), /* @__PURE__ */ import_react21.default.createElement("span", null, subject), /* @__PURE__ */ import_react21.default.createElement("span", null, "Document Required by: ", deadline.split("T")[0].split("-").reverse().join("-"))), /* @__PURE__ */ import_react21.default.createElement("form", {
-      className: "w-full grid grid-cols-3 h-full gap-5 place-content-center"
-    }, /* @__PURE__ */ import_react21.default.createElement("div", {
-      className: "bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
-    }, /* @__PURE__ */ import_react21.default.createElement("div", {
-      className: "bg-gray-300 w-full p-2 border text-black"
-    }, /* @__PURE__ */ import_react21.default.createElement("span", {
-      className: "w-72 h-72 rounded-[50%] bg-blue-700 text-white px-2 py-1 mr-4"
-    }, "1"), /* @__PURE__ */ import_react21.default.createElement("span", null, "Review Information")), /* @__PURE__ */ import_react21.default.createElement("div", {
-      className: "my-4"
-    }, /* @__PURE__ */ import_react21.default.createElement("label", {
-      className: "block text-gray-700 text-sm font-bold mb-2",
-      htmlFor: "username"
-    }, "Actvity Owner"), /* @__PURE__ */ import_react21.default.createElement("input", {
-      readOnly: true,
-      value: publishedBy,
-      className: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
-      id: "username",
-      type: "text",
-      placeholder: "Username"
-    })), /* @__PURE__ */ import_react21.default.createElement("div", {
-      className: "mb-6 h-[5rem]"
-    }, /* @__PURE__ */ import_react21.default.createElement("label", {
-      className: "block mb-2 text-sm font-medium text-gray-900"
-    }, "Remarks"), /* @__PURE__ */ import_react21.default.createElement("textarea", {
-      name: "remarks",
-      className: "border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:focus:ring-blue-500 dark:focus:border-blue-500 h-[5rem]",
-      required: true
-    }))), /* @__PURE__ */ import_react21.default.createElement("div", {
-      className: "bg-white shadow-4xl rounded px-8 pt-6 pb-8 mb-4"
-    }, /* @__PURE__ */ import_react21.default.createElement("div", {
-      className: "bg-gray-300 w-full p-2 border text-black"
-    }, /* @__PURE__ */ import_react21.default.createElement("span", {
-      className: "w-72 h-72 rounded-[50%] bg-yellow-700 text-white px-2 py-1 mr-4"
-    }, "2"), /* @__PURE__ */ import_react21.default.createElement("span", null, "Select Next Activity Owner")), /* @__PURE__ */ import_react21.default.createElement("div", {
-      className: "my-4"
-    }, /* @__PURE__ */ import_react21.default.createElement("label", {
-      className: "block text-gray-700 text-sm font-bold mb-2",
-      htmlFor: "username"
-    }, "Next Activity Owner"), /* @__PURE__ */ import_react21.default.createElement(SearchUsers_default, {
-      setShowUsers
-    }), nextActivityOwner !== void 0 && nextActivityOwner !== "" ? /* @__PURE__ */ import_react21.default.createElement("div", {
-      className: "p-2 mt-5 text-white bg-blue-600 rounded-lg w-fit "
-    }, `${nextActivityOwner?.last_name}, ${nextActivityOwner?.first_name}   -  ${nextActivityOwner?.company}`) : null)), /* @__PURE__ */ import_react21.default.createElement("button", {
-      className: "bg-sky-600 hover:bg-blue-700 text-white font-bold py-2 px-4 border-b-4 border-sky-700 hover:border-sky-500 rounded-xl m-4"
-    }, "Send to next Activity"), /* @__PURE__ */ import_react21.default.createElement("div", {
-      className: "col-span-3"
-    }, /* @__PURE__ */ import_react21.default.createElement("div", {
-      className: "overflow-x-auto"
-    }, /* @__PURE__ */ import_react21.default.createElement("div", {
-      className: "p-1.5 w-full inline-block align-middle bg-white"
-    }, /* @__PURE__ */ import_react21.default.createElement("div", {
-      className: "overflow-hidden border rounded-lg"
-    }, /* @__PURE__ */ import_react21.default.createElement("table", {
-      className: "min-w-full divide-y divide-gray-200"
-    }, /* @__PURE__ */ import_react21.default.createElement("thead", {
-      className: "bg-gray-50"
-    }, /* @__PURE__ */ import_react21.default.createElement("tr", null, /* @__PURE__ */ import_react21.default.createElement("th", {
-      scope: "col",
-      className: "px-6 py-3 text-xs font-bold text-left text-gray-500 uppercase "
-    }, "No."), /* @__PURE__ */ import_react21.default.createElement("th", {
-      scope: "col",
-      className: "px-6 py-3 text-xs font-bold text-left text-gray-500 uppercase "
-    }, "Subject"))), /* @__PURE__ */ import_react21.default.createElement("tbody", {
-      className: "divide-y divide-gray-200 w-[70%]"
-    }, /* @__PURE__ */ import_react21.default.createElement("tr", null, /* @__PURE__ */ import_react21.default.createElement("td", {
-      className: "px-6 py-4 text-sm font-medium text-gray-800 whitespace-nowrap"
-    }, "1"), /* @__PURE__ */ import_react21.default.createElement("td", {
-      className: "px-6 py-4 text-sm text-gray-800 whitespace-nowrap"
-    }, "Document Title")))))), /* @__PURE__ */ import_react21.default.createElement("div", {
-      className: "grid grid-flow-col w-full bg-white p-2"
-    }, /* @__PURE__ */ import_react21.default.createElement("label", {
-      className: "text-right block text-sm font-medium text-black",
-      htmlFor: "multiple_files pl-4"
-    }, "Upload multiple files"), /* @__PURE__ */ import_react21.default.createElement("input", {
-      className: "ml-4 block text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 \n            focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 w-fit",
-      type: "file",
-      multiple: ""
-    }))))));
-  }
-  var InitialWorkflowForm_default = InitialWorkflowForm;
-
-  // app/javascript/components/Workflow/WorkflowForm.jsx
-  var import_react22 = __toESM(require_react());
-  function WorkflowForm({ documentNumber, subject, deadline, getDocument }) {
-    (0, import_react22.useEffect)(() => {
-      getDocument();
-    }, []);
-    return /* @__PURE__ */ import_react22.default.createElement("div", {
-      className: "h-full w-full p-4"
+    }), /* @__PURE__ */ import_react22.default.createElement("div", {
+      className: "border border-y-2 border-gray-800 w-full h-[50px] relative bg-white mb-4 text-black flex justify-around items-center"
+    }, /* @__PURE__ */ import_react22.default.createElement("span", null, documentNumber), /* @__PURE__ */ import_react22.default.createElement("span", null, subject), /* @__PURE__ */ import_react22.default.createElement("span", null, "Document Required by: ", deadline.split("T")[0].split("-").reverse().join("-"))), /* @__PURE__ */ import_react22.default.createElement("form", {
+      className: "w-full grid grid-cols-3 h-full gap-5 place-content-center",
+      onSubmit: createDoc
     }, /* @__PURE__ */ import_react22.default.createElement("div", {
-      className: "border border-y-4 w-full h-[50px] relative bg-white mb-4 text-black flex justify-around items-center"
-    }, /* @__PURE__ */ import_react22.default.createElement("span", null, documentNumber), /* @__PURE__ */ import_react22.default.createElement("span", null, subject), /* @__PURE__ */ import_react22.default.createElement("span", null, "Document Required by: ", deadline.split("T")[0].split("-").reverse().join("-"))), /* @__PURE__ */ import_react22.default.createElement("div", {
-      className: "w-full grid grid-cols-3 h-full gap-5"
-    }, /* @__PURE__ */ import_react22.default.createElement("form", {
       className: "bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
     }, /* @__PURE__ */ import_react22.default.createElement("div", {
       className: "bg-gray-300 w-full p-2 border text-black"
     }, /* @__PURE__ */ import_react22.default.createElement("span", {
       className: "w-72 h-72 rounded-[50%] bg-blue-700 text-white px-2 py-1 mr-4"
     }, "1"), /* @__PURE__ */ import_react22.default.createElement("span", null, "Review Information")), /* @__PURE__ */ import_react22.default.createElement("div", {
-      className: "mb-4"
+      className: "my-4"
     }, /* @__PURE__ */ import_react22.default.createElement("label", {
       className: "block text-gray-700 text-sm font-bold mb-2",
       htmlFor: "username"
-    }, "Username"), /* @__PURE__ */ import_react22.default.createElement("input", {
+    }, "Actvity Owner"), /* @__PURE__ */ import_react22.default.createElement("input", {
+      readOnly: true,
+      value: publishedBy,
+      name: "current_activity_owner",
       className: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
       id: "username",
       type: "text",
       placeholder: "Username"
-    }))), /* @__PURE__ */ import_react22.default.createElement("form", {
+    })), /* @__PURE__ */ import_react22.default.createElement("div", {
+      className: "mb-6 h-[5rem]"
+    }, /* @__PURE__ */ import_react22.default.createElement("label", {
+      className: "block mb-2 text-sm font-medium text-gray-900"
+    }, "Remarks"), /* @__PURE__ */ import_react22.default.createElement("textarea", {
+      name: "activity_remarks",
+      onChange: (e) => {
+        return setValues({ ...values2, activityRemarks: e.target.value });
+      },
+      value: values2.activityRemarks,
+      className: "border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:focus:ring-blue-500 dark:focus:border-blue-500 h-[5rem]",
+      required: true
+    }))), /* @__PURE__ */ import_react22.default.createElement("div", {
       className: "bg-white shadow-4xl rounded px-8 pt-6 pb-8 mb-4"
     }, /* @__PURE__ */ import_react22.default.createElement("div", {
-      className: "mb-4"
+      className: "bg-gray-300 w-full p-2 border text-black"
+    }, /* @__PURE__ */ import_react22.default.createElement("span", {
+      className: "w-72 h-72 rounded-[50%] bg-yellow-700 text-white px-2 py-1 mr-4"
+    }, "2"), /* @__PURE__ */ import_react22.default.createElement("span", null, "Select Next Activity Owner")), /* @__PURE__ */ import_react22.default.createElement("div", {
+      className: "my-4"
     }, /* @__PURE__ */ import_react22.default.createElement("label", {
       className: "block text-gray-700 text-sm font-bold mb-2",
       htmlFor: "username"
-    }, "Username"), /* @__PURE__ */ import_react22.default.createElement("input", {
-      className: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
-      id: "username",
-      type: "text",
-      placeholder: "Username"
-    }))), /* @__PURE__ */ import_react22.default.createElement("form", {
-      className: "bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
-    }, /* @__PURE__ */ import_react22.default.createElement("div", {
-      className: "mb-4"
-    }, /* @__PURE__ */ import_react22.default.createElement("label", {
-      className: "block text-gray-700 text-sm font-bold mb-2",
-      htmlFor: "username"
-    }, "Username"), /* @__PURE__ */ import_react22.default.createElement("input", {
-      className: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
-      id: "username",
-      type: "text",
-      placeholder: "Username"
-    }))), /* @__PURE__ */ import_react22.default.createElement("div", {
-      className: "col-span-2"
+    }, "Next Activity Owner"), /* @__PURE__ */ import_react22.default.createElement(SearchUsers_default, {
+      setShowUsers
+    }), nextActivityOwner !== void 0 && nextActivityOwner !== "" ? /* @__PURE__ */ import_react22.default.createElement("div", {
+      className: "p-2 mt-5 text-white bg-blue-600 rounded-lg w-fit "
+    }, `${nextActivityOwner?.last_name}, ${nextActivityOwner?.first_name}   -  ${nextActivityOwner?.company}`) : null)), /* @__PURE__ */ import_react22.default.createElement("button", {
+      type: "submit",
+      className: "bg-sky-600 hover:bg-blue-700 text-white font-bold py-2 px-4 border-b-4 border-sky-700 hover:border-sky-500 rounded-xl m-4"
+    }, "Send to next Activity"), /* @__PURE__ */ import_react22.default.createElement("div", {
+      className: "col-span-3"
     }, /* @__PURE__ */ import_react22.default.createElement("div", {
       className: "overflow-x-auto"
     }, /* @__PURE__ */ import_react22.default.createElement("div", {
       className: "p-1.5 w-full inline-block align-middle bg-white"
     }, /* @__PURE__ */ import_react22.default.createElement("div", {
       className: "overflow-hidden border rounded-lg"
-    }, /* @__PURE__ */ import_react22.default.createElement("table", {
+    }, /* @__PURE__ */ import_react22.default.createElement("div", {
+      className: "bg-gray-300 w-full p-2 border text-black"
+    }, /* @__PURE__ */ import_react22.default.createElement("span", {
+      className: "w-72 h-72 rounded-[50%] bg-rose-700 text-white px-2 py-1 mr-4"
+    }, "3"), /* @__PURE__ */ import_react22.default.createElement("span", null, "Upload Documents")), /* @__PURE__ */ import_react22.default.createElement("table", {
       className: "min-w-full divide-y divide-gray-200"
     }, /* @__PURE__ */ import_react22.default.createElement("thead", {
       className: "bg-gray-50"
     }, /* @__PURE__ */ import_react22.default.createElement("tr", null, /* @__PURE__ */ import_react22.default.createElement("th", {
       scope: "col",
       className: "px-6 py-3 text-xs font-bold text-left text-gray-500 uppercase "
-    }, "Name"), /* @__PURE__ */ import_react22.default.createElement("th", {
+    }, "No."), /* @__PURE__ */ import_react22.default.createElement("th", {
       scope: "col",
       className: "px-6 py-3 text-xs font-bold text-left text-gray-500 uppercase "
-    }, "Email"), /* @__PURE__ */ import_react22.default.createElement("th", {
-      scope: "col",
-      className: "px-6 py-3 text-xs font-bold text-right text-gray-500 uppercase "
-    }, "Edit"))), /* @__PURE__ */ import_react22.default.createElement("tbody", {
+    }, "Subject"))), /* @__PURE__ */ import_react22.default.createElement("tbody", {
       className: "divide-y divide-gray-200 w-[70%]"
     }, /* @__PURE__ */ import_react22.default.createElement("tr", null, /* @__PURE__ */ import_react22.default.createElement("td", {
       className: "px-6 py-4 text-sm font-medium text-gray-800 whitespace-nowrap"
     }, "1"), /* @__PURE__ */ import_react22.default.createElement("td", {
       className: "px-6 py-4 text-sm text-gray-800 whitespace-nowrap"
-    }, "Jone Doe"), /* @__PURE__ */ import_react22.default.createElement("td", {
+    }, values2?.attachments.name)))))), /* @__PURE__ */ import_react22.default.createElement("div", {
+      className: "grid grid-flow-col w-full bg-white p-2"
+    }, /* @__PURE__ */ import_react22.default.createElement("label", {
+      className: "text-right block text-sm font-medium text-black",
+      htmlFor: "multiple_files pl-4"
+    }, "Upload multiple files"), /* @__PURE__ */ import_react22.default.createElement("input", {
+      className: "ml-4 block text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 \n            focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 w-fit",
+      type: "file",
+      multiple: true,
+      name: "attachments",
+      onChange: (e) => {
+        e.persist();
+        setValues({ ...values2, attachments: e.target.files[0] });
+        console.log(e.target.files[0].name);
+      }
+    }))))));
+  }
+  var InitialWorkflowForm_default = InitialWorkflowForm;
+
+  // app/javascript/components/Workflow/WorkflowForm.jsx
+  var import_react23 = __toESM(require_react());
+  function WorkflowForm({ documentNumber, subject, deadline, getDocument }) {
+    (0, import_react23.useEffect)(() => {
+      getDocument();
+    }, []);
+    return /* @__PURE__ */ import_react23.default.createElement("div", {
+      className: "h-full w-full p-4"
+    }, /* @__PURE__ */ import_react23.default.createElement("div", {
+      className: "border border-y-4 w-full h-[50px] relative bg-white mb-4 text-black flex justify-around items-center"
+    }, /* @__PURE__ */ import_react23.default.createElement("span", null, documentNumber), /* @__PURE__ */ import_react23.default.createElement("span", null, subject), /* @__PURE__ */ import_react23.default.createElement("span", null, "Document Required by: ", deadline.split("T")[0].split("-").reverse().join("-"))), /* @__PURE__ */ import_react23.default.createElement("div", {
+      className: "w-full grid grid-cols-3 h-full gap-5"
+    }, /* @__PURE__ */ import_react23.default.createElement("form", {
+      className: "bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+    }, /* @__PURE__ */ import_react23.default.createElement("div", {
+      className: "bg-gray-300 w-full p-2 border text-black"
+    }, /* @__PURE__ */ import_react23.default.createElement("span", {
+      className: "w-72 h-72 rounded-[50%] bg-blue-700 text-white px-2 py-1 mr-4"
+    }, "1"), /* @__PURE__ */ import_react23.default.createElement("span", null, "Review Information")), /* @__PURE__ */ import_react23.default.createElement("div", {
+      className: "mb-4"
+    }, /* @__PURE__ */ import_react23.default.createElement("label", {
+      className: "block text-gray-700 text-sm font-bold mb-2",
+      htmlFor: "username"
+    }, "Username"), /* @__PURE__ */ import_react23.default.createElement("input", {
+      className: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
+      id: "username",
+      type: "text",
+      placeholder: "Username"
+    }))), /* @__PURE__ */ import_react23.default.createElement("form", {
+      className: "bg-white shadow-4xl rounded px-8 pt-6 pb-8 mb-4"
+    }, /* @__PURE__ */ import_react23.default.createElement("div", {
+      className: "mb-4"
+    }, /* @__PURE__ */ import_react23.default.createElement("label", {
+      className: "block text-gray-700 text-sm font-bold mb-2",
+      htmlFor: "username"
+    }, "Username"), /* @__PURE__ */ import_react23.default.createElement("input", {
+      className: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
+      id: "username",
+      type: "text",
+      placeholder: "Username"
+    }))), /* @__PURE__ */ import_react23.default.createElement("form", {
+      className: "bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+    }, /* @__PURE__ */ import_react23.default.createElement("div", {
+      className: "mb-4"
+    }, /* @__PURE__ */ import_react23.default.createElement("label", {
+      className: "block text-gray-700 text-sm font-bold mb-2",
+      htmlFor: "username"
+    }, "Username"), /* @__PURE__ */ import_react23.default.createElement("input", {
+      className: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
+      id: "username",
+      type: "text",
+      placeholder: "Username"
+    }))), /* @__PURE__ */ import_react23.default.createElement("div", {
+      className: "col-span-2"
+    }, /* @__PURE__ */ import_react23.default.createElement("div", {
+      className: "overflow-x-auto"
+    }, /* @__PURE__ */ import_react23.default.createElement("div", {
+      className: "p-1.5 w-full inline-block align-middle bg-white"
+    }, /* @__PURE__ */ import_react23.default.createElement("div", {
+      className: "overflow-hidden border rounded-lg"
+    }, /* @__PURE__ */ import_react23.default.createElement("table", {
+      className: "min-w-full divide-y divide-gray-200"
+    }, /* @__PURE__ */ import_react23.default.createElement("thead", {
+      className: "bg-gray-50"
+    }, /* @__PURE__ */ import_react23.default.createElement("tr", null, /* @__PURE__ */ import_react23.default.createElement("th", {
+      scope: "col",
+      className: "px-6 py-3 text-xs font-bold text-left text-gray-500 uppercase "
+    }, "Name"), /* @__PURE__ */ import_react23.default.createElement("th", {
+      scope: "col",
+      className: "px-6 py-3 text-xs font-bold text-left text-gray-500 uppercase "
+    }, "Email"), /* @__PURE__ */ import_react23.default.createElement("th", {
+      scope: "col",
+      className: "px-6 py-3 text-xs font-bold text-right text-gray-500 uppercase "
+    }, "Edit"))), /* @__PURE__ */ import_react23.default.createElement("tbody", {
+      className: "divide-y divide-gray-200 w-[70%]"
+    }, /* @__PURE__ */ import_react23.default.createElement("tr", null, /* @__PURE__ */ import_react23.default.createElement("td", {
+      className: "px-6 py-4 text-sm font-medium text-gray-800 whitespace-nowrap"
+    }, "1"), /* @__PURE__ */ import_react23.default.createElement("td", {
       className: "px-6 py-4 text-sm text-gray-800 whitespace-nowrap"
-    }, "jonne62@gmail.com"), /* @__PURE__ */ import_react22.default.createElement("td", {
+    }, "Jone Doe"), /* @__PURE__ */ import_react23.default.createElement("td", {
+      className: "px-6 py-4 text-sm text-gray-800 whitespace-nowrap"
+    }, "jonne62@gmail.com"), /* @__PURE__ */ import_react23.default.createElement("td", {
       className: "px-6 py-4 text-sm font-medium text-right whitespace-nowrap"
-    }, /* @__PURE__ */ import_react22.default.createElement("a", {
+    }, /* @__PURE__ */ import_react23.default.createElement("a", {
       className: "text-green-500 hover:text-green-700",
       href: "#"
-    }, "Edit"))))))), /* @__PURE__ */ import_react22.default.createElement("label", {
+    }, "Edit"))))))), /* @__PURE__ */ import_react23.default.createElement("label", {
       className: "block text-sm font-medium text-gray-900 dark:text-gray-300",
       htmlFor: "multiple_files"
-    }, "Upload multiple files"), /* @__PURE__ */ import_react22.default.createElement("input", {
+    }, "Upload multiple files"), /* @__PURE__ */ import_react23.default.createElement("input", {
       className: "block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 \n            focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400",
       type: "file",
       multiple: ""
-    }))), /* @__PURE__ */ import_react22.default.createElement("button", {
+    }))), /* @__PURE__ */ import_react23.default.createElement("button", {
       className: "bg-sky-600 hover:bg-blue-700 text-white font-bold py-2 px-4 border-b-4 border-sky-700 hover:border-sky-500 rounded"
     }, "Send to next Activity")));
   }
   var WorkflowForm_default = WorkflowForm;
 
+  // app/javascript/components/Workflow/WorkflowSummary.jsx
+  var import_react24 = __toESM(require_react());
+  function WorkflowSummary({ getWorkflowSummary, summary }) {
+    (0, import_react24.useEffect)(() => {
+      getWorkflowSummary();
+    }, []);
+    const loadSummary = summary?.map(
+      (wf) => {
+        return /* @__PURE__ */ import_react24.default.createElement("tr", {
+          key: wf.id,
+          className: "text-center"
+        }, /* @__PURE__ */ import_react24.default.createElement("td", {
+          className: "border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+        }, wf.workflow_activity), /* @__PURE__ */ import_react24.default.createElement("td", {
+          className: "border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+        }, /* @__PURE__ */ import_react24.default.createElement("i", {
+          className: "fas fa-circle text-orange-500 mr-2"
+        }, wf.outcome)), /* @__PURE__ */ import_react24.default.createElement("td", {
+          className: "border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+        }, wf.activity_remarks), /* @__PURE__ */ import_react24.default.createElement("td", {
+          className: "border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center"
+        }, /* @__PURE__ */ import_react24.default.createElement("img", {
+          src: "https://as2.ftcdn.net/v2/jpg/02/15/84/43/1000_F_215844325_ttX9YiIIyeaR7Ne6EaLLjMAmy4GvPC69.jpg",
+          className: "h-12 w-12 bg-white rounded-full border",
+          alt: ""
+        }), /* @__PURE__ */ import_react24.default.createElement("span", {
+          className: "ml-3 font-bold text-black"
+        }, wf.current_activity_owner)), /* @__PURE__ */ import_react24.default.createElement("td", {
+          className: "border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-center"
+        }, wf.created_at.split("T")[0].split("-").reverse().join("-")), /* @__PURE__ */ import_react24.default.createElement("td", {
+          className: "border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-center"
+        }, wf.workflow_deadline.split("T")[0].split("-").reverse().join("-")));
+      }
+    );
+    return /* @__PURE__ */ import_react24.default.createElement("div", {
+      className: "text-center"
+    }, /* @__PURE__ */ import_react24.default.createElement("section", {
+      className: "relative py-16 bg-blueGray-50"
+    }, /* @__PURE__ */ import_react24.default.createElement("div", {
+      className: "w-full mb-12 px-4"
+    }, /* @__PURE__ */ import_react24.default.createElement("div", {
+      className: "relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded bg-gray-100 text-black"
+    }, /* @__PURE__ */ import_react24.default.createElement("div", {
+      className: "block w-full overflow-x-auto "
+    }, /* @__PURE__ */ import_react24.default.createElement("table", {
+      className: "items-center w-full bg-transparent border-collapse"
+    }, /* @__PURE__ */ import_react24.default.createElement("thead", {
+      className: "bg-gray-100 "
+    }, /* @__PURE__ */ import_react24.default.createElement("tr", null, /* @__PURE__ */ import_react24.default.createElement("th", {
+      className: "text-center px-4 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-black"
+    }, "Activity"), /* @__PURE__ */ import_react24.default.createElement("th", {
+      className: "text-center px-4 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-black"
+    }, "Outcome"), /* @__PURE__ */ import_react24.default.createElement("th", {
+      className: "text-center px-4 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-black"
+    }, "Remarks"), /* @__PURE__ */ import_react24.default.createElement("th", {
+      className: "text-center px-4 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-black"
+    }, "Activity Owner"), /* @__PURE__ */ import_react24.default.createElement("th", {
+      className: "text-center px-4 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-black"
+    }, "Published at"), /* @__PURE__ */ import_react24.default.createElement("th", {
+      className: "text-center px-4 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-black"
+    }, "Deadline"))), /* @__PURE__ */ import_react24.default.createElement("tbody", null, loadSummary)))))));
+  }
+  var WorkflowSummary_default = WorkflowSummary;
+
   // app/javascript/components/DocInfo.jsx
   function DocInfo() {
-    const [document2, setDocument] = (0, import_react23.useState)({});
+    const [document2, setDocument] = (0, import_react25.useState)({});
     const params = useParams();
-    const [showAlert, setShowAlert2] = (0, import_react23.useState)(false);
-    const [values2, setValues] = (0, import_react23.useState)({
+    const [showAlert, setShowAlert] = (0, import_react25.useState)(false);
+    const [summary, setSummary] = (0, import_react25.useState)([]);
+    const [values2, setValues] = (0, import_react25.useState)({
       register: "",
       location: "",
       revisionNumber: "",
@@ -38264,37 +38486,36 @@
       deadline: "",
       workflowStage: 0
     });
-    (0, import_react23.useEffect)(() => {
-      console.log(document2);
-      const fetchCurrentDoc = async () => {
-        const apiEndpointGetDocData = params.params.includes("CD") ? `/api/cd/${params.params}` : `/api/sd/${params.params}`;
-        try {
-          const response = await fetch(apiEndpointGetDocData);
-          const data = await response.json();
-          const dataObject = data.drawing[0];
-          setValues({
-            register: dataObject.register,
-            location: dataObject.location,
-            revisionNumber: dataObject.revision_number,
-            documentStatus: dataObject.document_status,
-            documentNumber: dataObject.document_number,
-            discipline: dataObject.discipline,
-            dateSubmitted: dataObject.date_submitted,
-            publishedBy: dataObject.published_by,
-            subject: dataObject.subject,
-            attachments: dataObject.attachments,
-            remarks: dataObject.remarks,
-            createdAt: dataObject.created_at,
-            lastUpdated: dataObject.updated_at,
-            deadline: dataObject.register === "SD" ? dataObject.required_response_date : "",
-            workflowStage: dataObject.register === "SD" ? dataObject.workflow_stage : ""
-          });
-        } catch (err) {
-          console.log(err);
-        }
-      };
+    (0, import_react25.useEffect)(() => {
       fetchCurrentDoc();
     }, []);
+    const fetchCurrentDoc = async () => {
+      const apiEndpointGetDocData = params.params.includes("CD") ? `/api/cd/${params.params}` : `/api/sd/${params.params}`;
+      try {
+        const response = await fetch(apiEndpointGetDocData);
+        const data = await response.json();
+        const dataObject = data?.drawing[0];
+        setValues({
+          register: dataObject?.register,
+          location: dataObject?.location,
+          revisionNumber: dataObject?.revision_number,
+          documentStatus: dataObject?.document_status,
+          documentNumber: dataObject?.document_number,
+          discipline: dataObject?.discipline,
+          dateSubmitted: dataObject?.date_submitted,
+          publishedBy: dataObject?.published_by,
+          subject: dataObject?.subject,
+          attachments: dataObject?.attachments,
+          remarks: dataObject?.remarks,
+          createdAt: dataObject?.created_at,
+          lastUpdated: dataObject?.updated_at,
+          deadline: dataObject?.register === "SD" ? dataObject?.required_response_date : "",
+          workflowStage: dataObject?.register === "SD" ? dataObject?.workflow_stage : ""
+        });
+      } catch (err) {
+        console.log(err);
+      }
+    };
     const getDocument = async () => {
       const apiEndpoint = `/api/get_activity/${values2?.documentNumber}`;
       try {
@@ -38309,26 +38530,46 @@
         console.log(apiEndpoint);
       }
     };
-    return /* @__PURE__ */ import_react23.default.createElement("div", {
+    const getWorkflowSummary = async () => {
+      const apiEndpoint = `/api/workflow_summary/${values2?.documentNumber}`;
+      try {
+        const response = await fetch(apiEndpoint);
+        const data = await response.json();
+        console.log(data);
+        setSummary(data);
+        console.log(apiEndpoint);
+      } catch (err) {
+        console.log(err);
+        console.log(apiEndpoint);
+      }
+    };
+    return /* @__PURE__ */ import_react25.default.createElement("div", {
       className: "dark:text-gray-400 bg-gray-300"
-    }, /* @__PURE__ */ import_react23.default.createElement(DocNavBar, {
+    }, /* @__PURE__ */ import_react25.default.createElement(DocNavBar, {
       documentNumber: values2?.documentNumber,
       workflowStage: values2?.workflowStage
-    }), /* @__PURE__ */ import_react23.default.createElement(Routes, null, /* @__PURE__ */ import_react23.default.createElement(Route, {
+    }), /* @__PURE__ */ import_react25.default.createElement(Routes, null, /* @__PURE__ */ import_react25.default.createElement(Route, {
       path: "/attachments",
-      element: /* @__PURE__ */ import_react23.default.createElement(Attachments_default, null)
-    }), /* @__PURE__ */ import_react23.default.createElement(Route, {
+      element: /* @__PURE__ */ import_react25.default.createElement(Attachments_default, null)
+    }), /* @__PURE__ */ import_react25.default.createElement(Route, {
+      path: "/workflow-summary",
+      element: /* @__PURE__ */ import_react25.default.createElement(WorkflowSummary_default, {
+        getWorkflowSummary,
+        summary
+      })
+    }), /* @__PURE__ */ import_react25.default.createElement(Route, {
       path: "/form",
-      element: /* @__PURE__ */ import_react23.default.createElement(WorkflowForm_default, {
+      element: /* @__PURE__ */ import_react25.default.createElement(WorkflowForm_default, {
         register: values2?.register,
         documentNumber: values2?.documentNumber,
         subject: values2?.subject,
         deadline: values2?.deadline,
         getDocument
       })
-    }), /* @__PURE__ */ import_react23.default.createElement(Route, {
+    }), /* @__PURE__ */ import_react25.default.createElement(Route, {
       path: "/newForm",
-      element: /* @__PURE__ */ import_react23.default.createElement(InitialWorkflowForm_default, {
+      element: /* @__PURE__ */ import_react25.default.createElement(InitialWorkflowForm_default, {
+        document: document2,
         register: values2?.register,
         documentNumber: values2?.documentNumber,
         subject: values2?.subject,
@@ -38336,155 +38577,24 @@
         getDocument,
         publishedBy: values2?.publishedBy
       })
-    })), showAlert && /* @__PURE__ */ import_react23.default.createElement(Alert_default, {
+    }), /* @__PURE__ */ import_react25.default.createElement(Route, {
+      path: `/data`,
+      element: /* @__PURE__ */ import_react25.default.createElement(DocData_default, {
+        values: values2,
+        fetchCurrentDoc
+      })
+    })), showAlert && /* @__PURE__ */ import_react25.default.createElement(Alert_default, {
       color: "green",
       showAlert,
       alertStatement: "Successfully submitted!."
-    }), /* @__PURE__ */ import_react23.default.createElement("div", {
-      className: "h-[90%] w-[90%] bg-white mx-auto mt-[50px]"
-    }, /* @__PURE__ */ import_react23.default.createElement("div", {
-      className: "mx-auto py-[50px]"
-    }, /* @__PURE__ */ import_react23.default.createElement("div", {
-      className: "grid gap-6 mb-6 md:grid-cols-3 p-4"
-    }, /* @__PURE__ */ import_react23.default.createElement("div", {
-      className: "w-fit"
-    }, /* @__PURE__ */ import_react23.default.createElement("label", {
-      className: "block mb-2 text-sm font-medium text-gray-900"
-    }, "Doc(System Generated)"), /* @__PURE__ */ import_react23.default.createElement("input", {
-      name: "document_number",
-      value: values2?.documentNumber,
-      type: "text",
-      readOnly: true,
-      className: "border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:focus:ring-blue-500 dark:focus:border-blue-500",
-      placeholder: "Register Generated",
-      required: true
-    })), /* @__PURE__ */ import_react23.default.createElement("div", {
-      className: "w-fit"
-    }, /* @__PURE__ */ import_react23.default.createElement("label", {
-      className: "block mb-2 text-sm font-medium text-gray-900"
-    }, "Drawing Type"), /* @__PURE__ */ import_react23.default.createElement("input", {
-      name: "register",
-      value: values2?.register,
-      type: "text",
-      readOnly: true,
-      className: "border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:focus:ring-blue-500 dark:focus:border-blue-500",
-      required: true
-    })), /* @__PURE__ */ import_react23.default.createElement("div", {
-      className: "w-fit"
-    }, /* @__PURE__ */ import_react23.default.createElement("label", {
-      className: "block mb-2 text-sm font-medium text-gray-900"
-    }, "Location"), /* @__PURE__ */ import_react23.default.createElement("select", {
-      className: "block appearance-none bg-grey-lighter border border-grey-lighter text-black py-3 px-4 pr-8 w-fit",
-      id: "grid-state",
-      required: true,
-      name: "location",
-      value: values2?.location,
-      readOnly: true
-    }, /* @__PURE__ */ import_react23.default.createElement("option", {
-      value: values2?.location
-    }, values2?.location))), /* @__PURE__ */ import_react23.default.createElement("div", {
-      className: "w-fit"
-    }, /* @__PURE__ */ import_react23.default.createElement("label", {
-      className: "block mb-2 text-sm font-medium text-gray-900"
-    }, "Latest Revision"), /* @__PURE__ */ import_react23.default.createElement("input", {
-      name: "revision_number",
-      value: values2?.revisionNumber,
-      readOnly: true,
-      min: "0",
-      max: "10",
-      type: "number",
-      placeholder: 0,
-      className: "appearance-none border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:focus:ring-blue-500 dark:focus:border-blue-500",
-      required: true
-    })), /* @__PURE__ */ import_react23.default.createElement("div", {
-      className: "relative"
-    }, /* @__PURE__ */ import_react23.default.createElement("label", {
-      htmlFor: "website",
-      className: "block mb-2 text-sm font-medium text-gray-900"
-    }, "Document Status"), /* @__PURE__ */ import_react23.default.createElement("select", {
-      className: "block appearance-none bg-grey-lighter border border-grey-lighter text-black py-3 px-4 pr-8 w-fit",
-      id: "grid-state",
-      name: "document_status",
-      value: values2?.documentStatus,
-      readOnly: true
-    }, /* @__PURE__ */ import_react23.default.createElement("option", {
-      value: values2?.documentStatus
-    }, values2?.documentStatus))), /* @__PURE__ */ import_react23.default.createElement("div", {
-      className: "relative"
-    }, /* @__PURE__ */ import_react23.default.createElement("label", {
-      htmlFor: "website",
-      className: "block mb-2 text-sm font-medium text-gray-900"
-    }, "Discipline"), /* @__PURE__ */ import_react23.default.createElement("select", {
-      className: "block appearance-none border border-grey-lighter  py-3 px-4 pr-8 w-fit text-black",
-      id: "grid-state",
-      name: "document_number",
-      value: values2?.discipline,
-      readOnly: true
-    }, /* @__PURE__ */ import_react23.default.createElement("option", {
-      value: values2?.discipline
-    }, values2?.discipline))), /* @__PURE__ */ import_react23.default.createElement("div", {
-      className: "w-fit"
-    }, /* @__PURE__ */ import_react23.default.createElement("label", {
-      className: "block mb-2 text-sm font-medium text-gray-900"
-    }, "Company from (System Generated)"), /* @__PURE__ */ import_react23.default.createElement("input", {
-      name: "company_from",
-      type: "text",
-      readOnly: true,
-      className: "border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:focus:ring-blue-500 dark:focus:border-blue-500",
-      required: true
-    })), /* @__PURE__ */ import_react23.default.createElement("div", null, /* @__PURE__ */ import_react23.default.createElement("label", {
-      className: "block mb-2 text-sm font-medium text-gray-900"
-    }, "Date Submitted"), /* @__PURE__ */ import_react23.default.createElement("input", {
-      name: "createdAt",
-      type: "text",
-      readOnly: true,
-      value: values2?.createdAt,
-      className: "border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:focus:ring-blue-500 dark:focus:border-blue-500",
-      required: true
-    })), /* @__PURE__ */ import_react23.default.createElement("div", null, /* @__PURE__ */ import_react23.default.createElement("label", {
-      className: "block mb-2 text-sm font-medium text-gray-900"
-    }, "Created by"), /* @__PURE__ */ import_react23.default.createElement("input", {
-      name: "published_by",
-      value: values2?.publishedBy,
-      type: "text",
-      readOnly: true,
-      className: "border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:focus:ring-blue-500 dark:focus:border-blue-500",
-      required: true
-    })), values2.register === "SD" ? /* @__PURE__ */ import_react23.default.createElement("div", {
-      className: "flex w-full text-black"
-    }, /* @__PURE__ */ import_react23.default.createElement("p", {
-      className: "text-sm font-medium text-gray-900 mr-7"
-    }, "Required Response Date: "), /* @__PURE__ */ import_react23.default.createElement("p", {
-      className: "ml-5 bg-gray-500"
-    }, values2?.deadline.split("T")[0].split("-").reverse().join("-"))) : null), /* @__PURE__ */ import_react23.default.createElement("div", {
-      className: "mb-6 p-4"
-    }, /* @__PURE__ */ import_react23.default.createElement("label", {
-      className: "block mb-2 text-sm font-medium text-gray-900"
-    }, "Subject"), /* @__PURE__ */ import_react23.default.createElement("input", {
-      readOnly: true,
-      name: "subject",
-      type: "text",
-      value: values2?.subject,
-      className: "border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:focus:ring-blue-500 dark:focus:border-blue-500",
-      required: true
-    })), /* @__PURE__ */ import_react23.default.createElement("div", {
-      className: "mb-6 h-[5rem] p-4"
-    }, /* @__PURE__ */ import_react23.default.createElement("label", {
-      className: "block mb-2 text-sm font-medium text-gray-900"
-    }, "Remarks"), /* @__PURE__ */ import_react23.default.createElement("textarea", {
-      readOnly: true,
-      name: "remarks",
-      value: values2?.remarks,
-      className: "border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:focus:ring-blue-500 dark:focus:border-blue-500 h-[5rem]",
-      required: true
-    })))));
+    }));
   }
   var DocInfo_default = DocInfo;
 
   // app/javascript/components/App.jsx
   function App() {
-    const [userRole, setUserRole] = (0, import_react24.useState)("");
-    (0, import_react24.useEffect)(() => {
+    const [userRole, setUserRole] = (0, import_react26.useState)("");
+    (0, import_react26.useEffect)(() => {
       checkUserRole();
       console.log("cache");
       if ("caches" in window) {
@@ -38506,28 +38616,28 @@
         console.log(err.message);
       }
     };
-    return /* @__PURE__ */ import_react24.default.createElement("div", {
+    return /* @__PURE__ */ import_react26.default.createElement("div", {
       className: "w-full h-screen"
-    }, /* @__PURE__ */ import_react24.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react24.default.createElement(Routes, null, /* @__PURE__ */ import_react24.default.createElement(Route, {
+    }, /* @__PURE__ */ import_react26.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react26.default.createElement(Routes, null, /* @__PURE__ */ import_react26.default.createElement(Route, {
       path: "*",
-      element: userRole === "Admin" ? /* @__PURE__ */ import_react24.default.createElement(Users_default, null) : /* @__PURE__ */ import_react24.default.createElement(Home_default, null)
-    }), /* @__PURE__ */ import_react24.default.createElement(Route, {
+      element: userRole === "Admin" ? /* @__PURE__ */ import_react26.default.createElement(Users_default, null) : /* @__PURE__ */ import_react26.default.createElement(Home_default, null)
+    }), /* @__PURE__ */ import_react26.default.createElement(Route, {
       path: "/new-user",
-      element: /* @__PURE__ */ import_react24.default.createElement(NewUser_default, null)
-    }), /* @__PURE__ */ import_react24.default.createElement(Route, {
+      element: /* @__PURE__ */ import_react26.default.createElement(NewUser_default, null)
+    }), /* @__PURE__ */ import_react26.default.createElement(Route, {
       path: "/construction-drawings/*",
-      element: /* @__PURE__ */ import_react24.default.createElement(ConstructionDrawings_default, null)
-    }), /* @__PURE__ */ import_react24.default.createElement(Route, {
+      element: /* @__PURE__ */ import_react26.default.createElement(ConstructionDrawings_default, null)
+    }), /* @__PURE__ */ import_react26.default.createElement(Route, {
       path: "/shop-drawings/*",
-      element: /* @__PURE__ */ import_react24.default.createElement(ShopDrawings_default, null)
-    }), /* @__PURE__ */ import_react24.default.createElement(Route, {
+      element: /* @__PURE__ */ import_react26.default.createElement(ShopDrawings_default, null)
+    }), /* @__PURE__ */ import_react26.default.createElement(Route, {
       path: `/:params/*`,
-      element: /* @__PURE__ */ import_react24.default.createElement(DocInfo_default, null)
+      element: /* @__PURE__ */ import_react26.default.createElement(DocInfo_default, null)
     }))));
   }
   var root = import_client.default.createRoot(document.getElementById("app"));
   root.render(
-    /* @__PURE__ */ import_react24.default.createElement(App, null)
+    /* @__PURE__ */ import_react26.default.createElement(App, null)
   );
 })();
 /*

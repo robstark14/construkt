@@ -27,22 +27,25 @@ module Api
           2 => 'Revise and Resubmit',
           3 => 'Return to the Contractor'
         }
-       @document = ShopDrawing.where(document_number: params[:id])
+       @document = ShopDrawing.last
         # puts document.id
      
 
         
         # document = activity[@document[0]['workflow_stage'].to_i]
-        # if @document[0]['workflow_stage'] == 0
+        if @document['workflow_stage'] == 0
 
-        #   document = activity[1]
-
-        # else
           document = {
-            activity: activity[@document[0]['workflow_stage'].to_i],
-            workflow_stage: @document[0]['workflow_stage'] 
+            activity: activity[1],
+            workflow_stage: 0 
           }
-        # end
+
+        else
+          document = {
+            activity: activity[@document['workflow_stage'].to_i],
+            workflow_stage: @document['workflow_stage'] 
+          }
+        end
         
 
         render(json: {document: document}, status: :ok)
@@ -52,38 +55,45 @@ module Api
       end
 
       def create_sd
-
+       @document = ShopDrawing.last
+                   
         @workflow = Workflow.create!(
-          current_activity_owner:params[:current_activity_owner],
-          next_activity_owner:params[:next_activity_owner], 
+          current_activity_owner: params[:current_activity_owner],
+          next_activity_owner: params[:next_activity_owner], 
           activity_subject: params[:activity_subject],
           outcome: params[:outcome], 
           activity_remarks: params[:activity_remarks],
           attachments: params[:attachments],
-          workflow_deadline: params[workflow_deadline], 
-          shop_drawings_id: @document[0]['id']        
+          workflow_deadline: @document['required_response_date'], 
+          shop_drawings_id: @document.id
         )
+
+        @document['workflow_stage'] += 1
+        @document.save!
+
         render(json: @workflow, status: :created) # Return 201 to client
   
       end
   
-      # def index
-      #   # users = User.all.order(updated_at: "DESC").map do |user|
-      #   users = get_matching_users(params["search_term"]).map do |user|
-      #     {
-      #       id: user.id,
-      #       email: user.email,
-      #       first_name: user.first_name,
-      #       last_name: user.last_name,
-      #       role: user.role,
-      #       company: user.company_name,
-      #       package: user.package,
-      #       created: user.created_at.strftime("%B %d, %Y"),
-      #       last_updated: user.updated_at.strftime("%B %d, %Y"),
-      #       open_items: user.open_items_count
+      def workflow_summary
+        # users = User.all.order(updated_at: "DESC").map do |user|
+        workflow = Workflow.all.order(created_at: 'ASC')
+          # {
+          #   id: user.id,
+          #   email: user.email,
+          #   first_name: user.first_name,
+          #   last_name: user.last_name,
+          #   role: user.role,
+          #   company: user.company_name,
+          #   package: user.package,
+          #   created: user.created_at.strftime("%B %d, %Y"),
+          #   last_updated: user.updated_at.strftime("%B %d, %Y"),
+          #   open_items: user.open_items_count
   
-      #     }
-      #   end
+          # }
+        render(json: workflow, status: :ok) # Return 201 to client
+
+      end
   
       #   render(json: {users: users})
       # end
