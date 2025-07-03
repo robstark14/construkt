@@ -1,0 +1,26 @@
+ Rails
+/log/*
+/tmp/*
+/db/*.sqlite3
+/db/*.sqlite3-journal
+/public/assets
+/public/packs
+.byebug_history
+
+# Node
+/node_modules
+/app/assets/builds
+
+# OS
+.DS_Store
+
+# Yarn & npm
+yarn-error.log
+npm-debug.log
+
+# dotenv
+.env
+.env.*
+
+# VSCode
+.vscode

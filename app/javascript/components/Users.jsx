@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link, Route, Routes, useNavigate } from 'react-router-dom';
-import Button from "@material-ui/core/Button";
+import Button from "@mui/material/Button";
 import EditUser from './EditUser';
 import ConfirmationModal from './ConfirmationModal';
 
